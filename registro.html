@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../css/registros.css">
+	<link rel="icon" href="../img/cineco.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<title>Formulario de registro</title>
+</head>
+
+<body>
+	<header class="contenedor">
+		<nav>
+			<input type="checkbox" id="toggle">
+			<div class="logo">
+				<img id="logo" src="/img/logo.webp" alt="cineco>">
+			</div>
+
+			<ul class="list">
+				<li> <a href='/'>Inicio</a> </li>
+				<li> <a href='/html/boleteria'>Boletería</a> </li>
+				<li> <a class='actual' href='/html/registros'>Registro</a> </li>
+				<li> <a href='/html/nosotros'>Nosotros</a> </li>
+				<li> <a href='/html/contacto'>Contacto</a> </li>
+				<li> <a href='/html/login'>Iniciar Sesion</a> </li>
+			</ul>
+
+			<label for="toggle" class="icon-bars">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</label>
+		</nav>
+
+	</header>
+
+	<main>
+		<h1>Formulario de registro</h1><br>
+		<div class="container">
+
+			<form class="animacionBorde-form miForm">
+				<div class="form-group">
+					<label for="usuario">Usuario<span style="color: red;">*</span>:</label>
+					<input type="text" id="usuario" name="usuario" placeholder="Ingrese su Usuario aqui..." required>
+				</div>
+				<div class="form-group">
+					<label for="contraseña">Contraseña<span style="color: red;">*</span>:</label>
+					<input type="password" id="contraseña" name="contraseña" placeholder="Ingrese su Contraseña aqui..."
+						required>
+				</div>
+				<div class="form-group">
+					<label for="confirmar_contraseña">Repetir contraseña<span style="color: red;">*</span>:</label>
+					<input type="password" id="confirmar_contraseña" name="confirmar_contraseña"
+						placeholder="Ingrese su Contraseña aqui..." required>
+				</div>
+				<div class="form-group">
+					<label for="nombre">Nombre<span style="color: red;">*</span>:</label>
+					<input type="text" id="nombre" name="nombre" placeholder="Ingrese su Nombre aqui..." required>
+				</div>
+				<div class="form-group">
+					<label for="apellido">Apellido<span style="color: red;">*</span>:</label>
+					<input type="text" id="apellido" name="apellido" placeholder="Ingrese su Apellido aqui..." required>
+				</div>
+				<div class="form-group">
+					<label for="dni">DNI<span style="color: red;">*</span>:</label>
+					<input type="text" id="dni" name="dni" placeholder="Ingrese su Dni aqui..." required>
+				</div>
+				<div class="form-group">
+					<label for="fecha_nacimiento">Fecha de nacimiento<span style="color: red;">*</span>:</label>
+					<input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+				</div>
+				<div class="form-group">
+					<label for="email">Email<span style="color: red;">*</span>:</label>
+					<input type="email" id="email" name="email" placeholder="Ingrese su Email aqui..." required>
+				</div>
+				<div class="button-group">
+					<input type="submit" id="botonEnviar" class="BotonEnviar" value="Enviar">
+					<input type="reset" class="BotonBorrar" value="Borrar">
+				</div>
+			</form>
+		</div>
+	</main>
+	<footer class="pie">
+
+		<div class="direccion">
+			<!-- <br><br> -->
+			<p class="subtitulo">Domicilio:</p>
+			<p>Calle 50 N°750</p>
+			<p>La Plata</p>
+			<p class="subtitulo">Correo electronico:</p>
+			<p><a href="mailto:sebastian.geronimoo@gmail.com">cineco@gmail.com</a></p>
+			<p class="subtitulo">Telefono:</p>
+			<p>+541100324561</p>
+		</div>
+
+
+		<div class="redes">
+			<p>Nuestras redes</p>
+			<a href="https://es-la.facebook.com/" target="_blank"> <img src="../img/01facebook.svg" alt="facebook"></a>
+			<a href="https://www.instagram.com/" target="_blank"><img src="../img/02instagram.svg" alt="instragram"></a>
+			<a href="https://wa.me/543875743689"> <img src="../img/03whatsapp.svg" alt="whatsapp"></a>
+		</div>
+
+	</footer>
+	<script type="text/javascript" src="../js/registros.js"></script>
+</body>
+
+</html>

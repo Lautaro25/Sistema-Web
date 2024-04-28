@@ -3,12 +3,19 @@
     padding: 0;
 }
 
+nav h2 {
+    margin-left: 40px;
+}
+
 .nav-li {
     text-decoration: underline;
     margin-right: 10px;
 }
 
+/*Aplicamos estos cambios cuando la pantalla es más chica. Ej.(Dispositivos moviles, Tablets, etc.)*/
 @media only screen and (max-width: 768px) {
+
+    /*Le quitamos el subrayado y le ponemos bordes a la parte inferior de los li para separar el menú*/
     .nav-li {
         text-decoration: none;
         border-bottom: 1px solid #555;
@@ -32,6 +39,7 @@
         /* Rotación del icono del botón cuando el menú está desplegado */
     }
 
+    /*Animación de despliegue de la barra*/
     .navbar-collapse {
         overflow: hidden;
         max-height: 0;
@@ -45,4 +53,34 @@
         opacity: 1;
     }
 
+}
+
+.main {
+    display: flex;
+    margin-top: 20px;
+}
+
+.item {
+    margin: 10px;
+    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.item img {
+    width: 100%;
+    /* Amplía la imagen al máximo posible */
+    height: auto;
+}
+
+.item:hover {
+    transform: scale(1.1);
+    /* Aumenta el tamaño en un 10% cuando pasas el mouse por encima */
+}
+
+.item h4 {
+    margin-left: 10px;
+    justify-content: center;
+    align-content: center;
+    /* Añade espacio a la izquierda del encabezado */
 }

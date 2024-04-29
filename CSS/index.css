@@ -1,101 +1,86 @@
-/* Estilos generales */
-body {
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
 }
 
-nav {
-    background-color: #333;
-    color: #fff;
+nav h2 {
+    margin-left: 40px;
 }
 
-.container {
-    margin: 0;
-    padding: 10px;
+.nav-li {
+    text-decoration: underline;
+    margin-right: 10px;
+}
+
+/*Aplicamos estos cambios cuando la pantalla es más chica. Ej.(Dispositivos moviles, Tablets, etc.)*/
+@media only screen and (max-width: 768px) {
+
+    /*Le quitamos el subrayado y le ponemos bordes a la parte inferior de los li para separar el menú*/
+    .nav-li {
+        text-decoration: none;
+        border-bottom: 1px solid #555;
+        padding-bottom: 5px;
+        margin-right: 0;
+    }
+
+
+    .navbar-toggler {
+        transition: transform 0.3s ease-in-out;
+        /* Agregamos una transición para la propiedad transform */
+    }
+
+    .navbar-toggler.collapsed {
+        transform: rotate(0deg);
+        /* Rotación inicial del icono del botón */
+    }
+
+    .navbar-toggler:not(.collapsed) {
+        transform: rotate(180deg);
+        /* Rotación del icono del botón cuando el menú está desplegado */
+    }
+
+    /*Animación de despliegue de la barra*/
+    .navbar-collapse {
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        /* Ajustamos la transición para que se aplique tanto al despliegue como al ocultamiento */
+    }
+
+    .navbar-collapse.show {
+        max-height: 500px;
+        opacity: 1;
+    }
+
+}
+
+.main {
     display: flex;
-    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.item {
+    margin: 10px;
+    transition: transform 0.3s;
+    display: flex;
     align-items: center;
 }
 
-nav h1 {
-    margin: 0;
+.item img {
+    width: 100%;
+    /* Amplía la imagen al máximo posible */
+    height: auto;
 }
 
-
-.nav-links {
-    list-style-type: none;
-    margin-left: 0;
-    padding: 0;
-    display: flex;
+.item:hover {
+    transform: scale(1.1);
+    /* Aumenta el tamaño en un 10% cuando pasas el mouse por encima */
 }
 
-.nav-links li {
-    margin-right: 20px;
-}
-
-.nav-links li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.nav-div {
-    background-color: #555;
-    margin: auto 5px;
-    padding: 5px;
-    border-radius: 4px;
-}
-
-.nav-div-justify {
-    background-color: #555;
-    margin-right: auto;
-    padding: 5px;
-    border-radius: 4px;
-}
-
-
-
-/* Estilos responsive */
-@media screen and (max-width: 768px) {
-    .container {
-        padding: 10px 20px;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    .nav-links {
-        display: none;
-        /* Ocultar el menú desplegado inicialmente */
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        padding: 20px;
-        z-index: 1;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease-in-out;
-        /* Animación suave para el despliegue */
-    }
-
-    .nav-links.show {
-        transform: translateY(0);
-        /* Mostrar el menú desplegado */
-    }
-
-    .nav-links li {
-        margin-bottom: 10px;
-    }
-
-    .nav-links li:last-child {
-        margin-bottom: 0;
-    }
-
-    .nav-links li a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 18px;
-    }
+.item h4 {
+    margin-left: 10px;
+    justify-content: center;
+    align-content: center;
+    /* Añade espacio a la izquierda del encabezado */
 }

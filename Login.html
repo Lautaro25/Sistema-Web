@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
     <h2>Iniciar Sesion</h2>
     <form action="agregar URL" method="post">
-        <div></div>
+        
 <div class="form-group">
-    <input type="text" id="Usuario" name="Usuario">
+<input type="text" name="usuario" id="usuario" required placeholder="Ingrese su usuario">
 </div>
+
+<div class="form-group">
+    <input type="text" name="contraseña" id="contraseña" required placeholder="Ingrese su contraseña">
+</div>
+<button type="submit">Iniciar Sesion</button>
+<button type="submit">Regresar</button>
     </form>
 </div>
 </body>

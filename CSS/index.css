@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body {
+    background-color: #888;
+}
+
 nav h2 {
     margin-left: 40px;
 }
@@ -13,7 +17,7 @@ nav h2 {
 }
 
 /*Aplicamos estos cambios cuando la pantalla es más chica. Ej.(Dispositivos moviles, Tablets, etc.)*/
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 850px) {
 
     /*Le quitamos el subrayado y le ponemos bordes a la parte inferior de los li para separar el menú*/
     .nav-li {
@@ -25,7 +29,7 @@ nav h2 {
 
 
     .navbar-toggler {
-        transition: transform 0.3s ease-in-out;
+        transition: transform 0.5s ease-in-out;
         /* Agregamos una transición para la propiedad transform */
     }
 
@@ -55,6 +59,10 @@ nav h2 {
 
 }
 
+
+/*Esstilos del maín*/
+
+
 .main {
     display: flex;
     margin-top: 20px;
@@ -74,8 +82,10 @@ nav h2 {
 }
 
 .item:hover {
+    border: none;
     transform: scale(1.1);
     /* Aumenta el tamaño en un 10% cuando pasas el mouse por encima */
+
 }
 
 .item h4 {
@@ -83,4 +93,26 @@ nav h2 {
     justify-content: center;
     align-content: center;
     /* Añade espacio a la izquierda del encabezado */
+}
+
+.borderLeft {
+    border-left: 1px solid #000;
+}
+
+.borderRight {
+    border-right: 1px solid #000;
+}
+
+footer {
+    display: flex;
+    background-color: #000;
+    height: 200px;
+    margin-top: 20px;
+    align-content: center;
+    justify-content: center;
+}
+
+footer div {
+    color: #ddd;
+    margin: auto;
 }

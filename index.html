@@ -4,38 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar con inicio de sesión y registro</title>
+    <title>Inicio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="/CSS/index.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html">
-                <h2>Página Principal</h2>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
-                aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="menu">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link nav-li" href="#">Iniciar Sesión</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-li" href="#">Registrarse</a>
-                    </li>
-                </ul>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/index.html">
+                    <h2>Página Principal</h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="menu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link nav-li" href="#">Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-li" href="#">Registrarse</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <main class="main">
         <div class="container">
-            <div class="row item" >
+            <div class="row item borderRight">
                 <div class="col">
                     <img src="Img/basket.jpg" alt="">
                 </div>
@@ -43,7 +45,7 @@
                     <h4>Los partidos de basket son los mejores</h4>
                 </div>
             </div>
-            <div class="row item">
+            <div class="row item borderLeft">
                 <div class="col">
                     <h4>Los partidos de tenis son los mejores</h4>
                 </div>
@@ -51,7 +53,7 @@
                     <img src="Img/tenis.jpg" alt="">
                 </div>
             </div>
-            <div class="row item">
+            <div class="row item borderRight">
                 <div class="col">
                     <img src="Img/Correr.jpg" alt="">
                 </div>
@@ -59,7 +61,7 @@
                     <h4>Las maratones son las mejores</h4>
                 </div>
             </div>
-            <div class="row item">
+            <div class="row item borderLeft">
                 <div class="col">
                     <h4>Los partidos de futbol son los mejores</h4>
                 </div>
@@ -69,6 +71,11 @@
             </div>
         </div>
     </main>
+
+    <footer>
+        <div>Contactanos desde <a href="#" class="footer-div">Aquí</a></div>
+    </footer>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

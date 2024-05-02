@@ -30,7 +30,7 @@ nav h2 {
     transition: transform 0.3s, box-shadow 0.3s;
 
     &:hover {
-        background-color: #9f3647;
+        background-color: #2403b6;
     }
 }
 
@@ -191,12 +191,13 @@ input[type="reset"] {
 /* ----------------------------ESTILOS DEL FOOTER------------------ */
 
 .pie {
+    background-color: #030303;
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: space-between;
     padding-top: 20px;
     padding-bottom: 10px;
-    color: black;
+    color: rgb(245, 245, 245);
     text-align: center;
     align-items: center;
     font-family: 'Montserrat';

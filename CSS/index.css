@@ -286,7 +286,7 @@ textarea {
     box-sizing: border-box;
 }
 
-button[type="submit"] {
+button[type="sub"] {
     background-color: #007bff;
     margin: 3px;
     border-radius: 5px;
@@ -300,7 +300,7 @@ button[type="submit"] {
     transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover {
+button[type="sub"]:hover {
     background-color: #0056b3;
 }
 

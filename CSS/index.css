@@ -1,120 +1,91 @@
 * {
-    margin: 0;
-    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
 body {
-    background: linear-gradient(to top, #fff, #000)
-}
-
-nav h2 {
-    margin-left: 40px;
-}
-
-.nav-li {
-    text-decoration: underline;
-    margin-right: 10px;
-}
-
-/*Aplicamos estos cambios cuando la pantalla es más chica. Ej.(Dispositivos moviles, Tablets, etc.)*/
-@media only screen and (max-width: 850px) {
-
-    /*Le quitamos el subrayado y le ponemos bordes a la parte inferior de los li para separar el menú*/
-    .nav-li {
-        text-decoration: none;
-        border-bottom: 1px solid #555;
-        padding-bottom: 5px;
-        margin-right: 0;
-    }
-
-
-    .navbar-toggler {
-        transition: transform 0.5s ease-in-out;
-        /* Agregamos una transición para la propiedad transform */
-    }
-
-    .navbar-toggler.collapsed {
-        transform: rotate(0deg);
-        /* Rotación inicial del icono del botón */
-    }
-
-    .navbar-toggler:not(.collapsed) {
-        transform: rotate(180deg);
-        /* Rotación del icono del botón cuando el menú está desplegado */
-    }
-
-    /*Animación de despliegue de la barra*/
-    .navbar-collapse {
-        overflow: hidden;
-        max-height: 0;
-        opacity: 0;
-        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        /* Ajustamos la transición para que se aplique tanto al despliegue como al ocultamiento */
-    }
-
-    .navbar-collapse.show {
-        max-height: 500px;
-        opacity: 1;
-    }
-
+    background: linear-gradient(to top, #999, #000);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    color: #fff;
 }
 
 
-/*Esstilos del maín*/
-
-
-.main {
+main {
     display: flex;
-    margin-top: 20px;
+    justify-content: center;
+    text-align: center;
 }
 
-.item {
-    margin: 10px;
+@media screen and (min-height: 500px) {
+    body {
+        padding: 12vh;
+    }
+}
+
+.main_div {
+    margin: 20px auto;
+    border: 5px solid #000;
+    padding: 100px;
+    border-radius: 10em;
+    background: linear-gradient(to top, #000, #555);
+    width: 420px;
+}
+
+.main_div-img img {
+    width: 100px;
+    border-radius: 5em;
+    border: 2px solid #000;
+}
+
+.main_div-redes i {
+    font-size: 50px;
+    margin: 30px auto;
     transition: transform 0.3s;
+}
+
+.fa-facebook {
+    color: #1877f2;
+}
+
+.fa-twitter {
+    color: #1da1f2;
+}
+
+.fa-instagram {
+    background: linear-gradient(135deg, #bc2a8d, #e95950, #fccc63, #feea50);
+    color: white;
+    padding: 3px 9px;
+    border-radius: 20px;
+}
+
+.main_div-redes a {
+    margin: 50px 20px;
+}
+
+.main_div-alquiler {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.item img {
-    width: 100%;
-    /* Amplía la imagen al máximo posible */
-    height: auto;
+.main_div-alquiler input {
+    font-size: 2ch;
+    padding: 15px;
+    width: 400px;
+    border-radius: 5em;
+    margin-bottom: 20px;
+    background: linear-gradient(to top, #01ff22, #0b8000);
+    transition: transform 0.3s;
 }
 
-.item:hover {
-    border: none;
+.main_div-alquiler input:hover {
     transform: scale(1.1);
-    /* Aumenta el tamaño en un 10% cuando pasas el mouse por encima */
-
 }
 
-.item h4 {
-    margin-left: 10px;
-    justify-content: center;
-    align-content: center;
-    /* Añade espacio a la izquierda del encabezado */
-}
-
-.borderLeft {
-    border-left: 1px solid #000;
-}
-
-.borderRight {
-    border-right: 1px solid #000;
-}
-
-footer {
-    display: flex;
-    background-color: #000;
-    height: 200px;
-    margin-top: 20px;
-    align-content: center;
-    justify-content: center;
-}
-
-footer div {
-    color: #ddd;
-    margin: auto;
+.main_div-redes i:hover {
+    transform: scale(1.2);
 }
 
 /*---------------------------Sección Registro y Inicio de Sesión-----------------------------*/

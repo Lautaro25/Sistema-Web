@@ -5,7 +5,7 @@
 
 /*---------------------------estilos del boody-------------------------*/
 body {
-    background-image: url(../Img/fondo1.jpg);
+    background-color: aquamarine;
     background-size: cover;
     background-position: center;
     margin: 0;

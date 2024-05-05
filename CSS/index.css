@@ -1,6 +1,7 @@
 * {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
+    margin: 0;
+    padding: 0;
 }
 
 .index_body {
@@ -20,7 +21,7 @@
 }
 
 @media screen and (min-height: 500px) {
-    body {
+    .index_body {
         padding: 12vh;
     }
 }
@@ -73,7 +74,7 @@
 .index_main_div-alquiler input {
     font-size: 2ch;
     padding: 15px;
-    width: 400px;
+    width: 100%;
     border-radius: 5em;
     margin-bottom: 20px;
     background: linear-gradient(to top, #01ff22, #0b8000);
@@ -82,6 +83,10 @@
 
 .index_main_div-alquiler input:hover {
     transform: scale(1.1);
+}
+
+.index_main_div-alquiler form {
+    width: 100%;
 }
 
 .index_main_div-redes i:hover {
@@ -119,7 +124,39 @@
     }
 
     .index_main_div-alquiler input {
-        width: 100%;
         font-size: 1em;
     }
+}
+
+/*--------------------------------------------------------------------------     Menú     ---------------------------------------------------------------------------------*/
+.menu_body {
+    background-color: #a3a1a196;
+}
+
+#navbarNav {
+    justify-content: right;
+    margin-right: 20px;
+}
+
+#navbarNav a:hover {
+    text-decoration: underline;
+}
+
+
+.navbar-brand {
+    margin-left: 30px;
+}
+
+.menu_main {
+    display: flex;
+}
+
+.menu_main-img {
+    margin: 50px auto;
+}
+
+.menu_main-img img {
+    border-radius: 20px;
+    height: 60%;
+    width: 1000px
 }

@@ -51,8 +51,8 @@
     color: #1877f2;
 }
 
-.fa-twitter {
-    color: #1da1f2;
+.fa-whatsapp {
+    color: #01ff22;
 }
 
 .fa-instagram {
@@ -147,16 +147,65 @@
     margin-left: 30px;
 }
 
-.menu_main {
+.menu_main-img {
     display: flex;
 }
 
-.menu_main-img {
+.menu_main-img img {
     margin: 50px auto;
+    border-radius: 20px;
+    height: 400px;
+    width: 60%;
 }
 
-.menu_main-img img {
-    border-radius: 20px;
-    height: 60%;
-    width: 1000px
+.menu_main-nav {
+    display: flex;
+    background-color: #555;
+    height: 120px;
+}
+
+.menu_main-nav-content {
+    display: flex;
+    background-color: #777;
+    height: 80px;
+    width: 70%;
+    margin: auto;
+    border-radius: 40px;
+}
+
+.fas {
+    margin-right: 10px;
+}
+
+.nav-link {
+    margin: auto 10px;
+}
+
+.menu_main-nav-content input {
+    margin: auto;
+    background: transparent;
+    border: none;
+}
+
+.menu_main-nav-content-input {
+    margin: auto;
+    padding: 10px;
+    border-bottom: 1px solid #000;
+}
+
+.menu_main-nav-content input::placeholder {
+    color: #000;
+    opacity: .7;
+
+}
+
+.menu_main-nav-content input:focus-visible {
+    outline: none;
+    border: none;
+}
+
+
+.menu_main-ubi {
+    height: 200px;
+
 }

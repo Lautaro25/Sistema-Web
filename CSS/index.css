@@ -398,31 +398,10 @@ input[type="reset"] {
 /* ----------------------------ESTILOS DEL FOOTER------------------ */
 
 .pie {
-    background-color: #030303;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: space-between;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    color: rgb(245, 245, 245);
-    text-align: center;
-    align-items: center;
-    font-family: 'Montserrat';
+    height: 100%;
 }
 
-.direccion a {
-    color: #FDD306;
-    text-decoration: none;
-}
-
-.direccion {
-    text-align: left;
-}
-
-.redes {
-    text-align: right;
-}
-
+/* ----------------------------footer------------------ */
 
 /* ------------------------------- media queries ------------------------*/
 
@@ -518,13 +497,7 @@ input[type="reset"] {
 
 /* ------------------------------- media queries ------------------------*/
 /*----------------------Login-----------------*/
-
-.body_login {
-    background-color: #333;
-}
-
-.container_login {
-
+.container {
     width: 100%;
     max-width: 500px;
     margin: 20px auto;
@@ -547,7 +520,7 @@ input[type="reset"] {
     }
 }
 
-.T {
+h2 {
     font-size: 24px;
     color: #3f3d3d;
     text-align: center;
@@ -560,10 +533,7 @@ input[type="reset"] {
     align-items: center;
 }
 
-.form-group_login input {
-    display: block;
-    margin: 10px auto;
-}
+
 
 .us_login[type="text"],
 textarea {
@@ -593,8 +563,8 @@ textarea {
     background-color: #727471;
 }
 
-.footer_login {
-    background-color: #000;
+footer {
+    background-color: #333;
     color: #fff;
     text-align: center;
     padding: 50px 0;

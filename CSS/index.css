@@ -292,10 +292,12 @@
     font-size: calc(1em + 2vw);
 }
 
+
 .formularioContainer {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: fade-in 1s ease-in-out forwards;
 }
 
 .registro_form {
@@ -514,3 +516,95 @@ input[type="reset"] {
 }
 
 /* ------------------------------- media queries ------------------------*/
+/*----------------------Login-----------------*/
+
+.body_login {
+    background-color: #333;
+}
+
+.container_login {
+
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #6a6d6d;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    animation: fade-in 1s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.T {
+    font-size: 24px;
+    color: #3f3d3d;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group_login {
+    margin-bottom: 20px;
+
+    align-items: center;
+}
+
+.form-group_login input {
+    display: block;
+    margin: 10px auto;
+}
+
+.us_login[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.boton[type="sub"] {
+    background-color: #110b0c;
+    margin: 3px;
+    border-radius: 5px;
+    color: #f2f1f5;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.boton[type="sub"]:hover {
+    background-color: #727471;
+}
+
+.footer_login {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .container_login {
+        max-width: calc(100% - 40px);
+        padding: 10px;
+    }
+}

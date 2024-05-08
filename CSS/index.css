@@ -497,7 +497,12 @@ input[type="reset"] {
 
 /* ------------------------------- media queries ------------------------*/
 /*----------------------Login-----------------*/
-.container {
+
+.body_login{
+    background-color: #333;
+}
+.container_login {
+
     width: 100%;
     max-width: 500px;
     margin: 20px auto;
@@ -520,7 +525,7 @@ input[type="reset"] {
     }
 }
 
-h2 {
+.T{
     font-size: 24px;
     color: #3f3d3d;
     text-align: center;
@@ -533,7 +538,10 @@ h2 {
     align-items: center;
 }
 
-
+.form-group_login input{
+    display: block;
+    margin: 10px auto;
+}
 
 .us_login[type="text"],
 textarea {
@@ -563,8 +571,8 @@ textarea {
     background-color: #727471;
 }
 
-footer {
-    background-color: #333;
+.footer_login{
+    background-color: #000;
     color: #fff;
     text-align: center;
     padding: 50px 0;

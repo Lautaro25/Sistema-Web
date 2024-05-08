@@ -383,9 +383,8 @@ input[type="reset"] {
     transition: all 0.3s ease 0s;
 }
 
-.BotonEnviar:hover,
-/*Animaciones insertadas en el boton*/
-.BotonBorrar:hover {
+
+.button-group input:hover {
     background-color: transparent;
     border-radius: 6px;
     transition: all 0.3s ease 0s;

@@ -342,13 +342,13 @@
 
 }
 
-label {
+.form-group-label label {
     /* display: block;*/
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-input[type="text"],
+.form-group-input input[type="text"],
 input[type="password"],
 input[type="date"],
 input[type="email"] {
@@ -366,7 +366,7 @@ input[type="email"] {
     margin-top: 20px;
 }
 
-input[type="submit"],
+.form-group-input input[type="submit"],
 input[type="reset"] {
     display: inline-block;
     justify-content: space-around;
@@ -452,15 +452,15 @@ input[type="reset"] {
         transition: all .3s ease-in-out;
     }
 
-    nav .list a {
+    .navbar nav .list a {
         font-size: 1em;
     }
 
-    nav :checked~.list {
+    .navbar nav :checked~.list {
         bottom: 0;
     }
 
-    nav .icon-bars {
+    .navbar nav .icon-bars {
         display: block;
     }
 

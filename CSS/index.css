@@ -1,7 +1,8 @@
 * {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    justify-content: center;
+    align-items: center;
 }
 
 .index_body {
@@ -32,7 +33,7 @@
     padding: 100px;
     border-radius: 10em;
     background: linear-gradient(to top, #000, #555);
-    width: 420px;
+    width: 600px;
 }
 
 .index_main_div-img img {

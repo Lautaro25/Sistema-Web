@@ -342,7 +342,7 @@
 
 }
 
-.form-group-label label {
+.form-group-input label {
     /* display: block;*/
     font-weight: bold;
     margin-bottom: 5px;

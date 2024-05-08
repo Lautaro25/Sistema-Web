@@ -1,23 +1,249 @@
 * {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    justify-content: center;
+    align-items: center;
 }
 
-body {
-    background: linear-gradient(to top, #fff, #000)
+.index_body {
+    background: linear-gradient(to top, #999, #000);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    color: #fff;
 }
 
-nav h2 {
-    margin-left: 40px;
+
+.index_main {
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
+
+@media screen and (min-height: 500px) {
+    .index_body {
+        padding: 12vh;
+    }
+}
+
+.index_main_div {
+    margin: 20px auto;
+    border: 5px solid #000;
+    padding: 100px;
+    border-radius: 10em;
+    background: linear-gradient(to top, #000, #555);
+    width: 600px;
+}
+
+.index_main_div-img img {
+    width: 100px;
+    border-radius: 5em;
+    border: 2px solid #000;
+}
+
+.index_main_div-redes i {
+    font-size: 50px;
+    margin: 30px auto;
+    transition: transform 0.3s;
+}
+
+.fa-facebook {
+    color: #1877f2;
+}
+
+.fa-whatsapp {
+    color: #01ff22;
+}
+
+.fa-instagram {
+    color: #fff;
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
+    padding: 3px 9px;
+    border-radius: 20px;
+}
+
+.index_main_div-redes a {
+    margin: 50px 20px;
+}
+
+.index_main_div-alquiler {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.index_main_div-alquiler input {
+    font-size: 2ch;
+    padding: 15px;
+    width: 100%;
+    border-radius: 5em;
+    margin-bottom: 20px;
+    background: linear-gradient(to top, #01ff22, #0b8000);
+    transition: transform 0.3s;
+}
+
+.index_main_div-alquiler input:hover {
+    transform: scale(1.1);
+}
+
+.index_main_div-alquiler form {
+    width: 100%;
+}
+
+.index_main_div-redes i:hover {
+    transform: scale(1.2);
+}
+
+/* Estilos para dispositivos pequeños como teléfonos móviles */
+@media screen and (max-width: 767px) {
+    .index_body {
+        padding: 5%;
+    }
+
+    .index_main_div {
+        width: 90%;
+        padding: 5%;
+        border-radius: 20px;
+    }
+
+    .index_main_div-img img {
+        width: 70px;
+        border-radius: 3em;
+        border: 1px solid #000;
+    }
+
+    .index_main_div-h1 h2 {
+        font-size: 1.5em;
+    }
+
+    .index_main_div-direc p {
+        font-size: 0.8em;
+    }
+
+    .index_main_div-redes a {
+        margin: 20px 10px;
+    }
+
+    .index_main_div-alquiler input {
+        font-size: 1em;
+    }
+}
+
+/*--------------------------------------------------------------------------     Menú     ---------------------------------------------------------------------------------*/
+.menu_body {
+    background-color: #a3a1a196;
+}
+
+#navbarNav {
+    justify-content: right;
+    margin-right: 20px;
+}
+
+#navbarNav a:hover {
+    text-decoration: underline;
+}
+
+
+.navbar-brand {
+    margin-left: 30px;
+}
+
+.menu_main-img {
+    display: flex;
+}
+
+.menu_main-img img {
+    margin: 50px auto;
+    border-radius: 20px;
+    height: 400px;
+    width: 60%;
+}
+
+.menu_main-nav {
+    display: flex;
+    background-color: #555;
+    height: 120px;
+}
+
+.menu_main-nav-content {
+    display: flex;
+    background-color: #777;
+    height: 80px;
+    width: 70%;
+    margin: auto;
+    border-radius: 40px;
+}
+
+.fas {
+    margin-right: 10px;
+}
+
+.nav-link {
+    margin: auto 10px;
+}
+
+.menu_main-nav-content input {
+    margin: auto;
+    background: transparent;
+    border: none;
+}
+
+.menu_main-nav-content-input {
+    margin: auto;
+    padding: 10px;
+    border-bottom: 1px solid #000;
+}
+
+.menu_main-nav-content input::placeholder {
+    color: #000;
+    opacity: .7;
+
+}
+
+.menu_main-nav-content input:focus-visible {
+    outline: none;
+    border: none;
+}
+
+
+.menu_main-ubi {
+    height: 200px;
+
+}
+
+
+/*---------------------------estilos del boody-------------------------*/
+.registro_body {
+    background-color: rgb(133, 170, 84);
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+/*---------------------------estilos encabezado.........................*/
+
+.registro_nav_header {
+    background-color: #000000;
+}
+
 
 .nav-li {
     text-decoration: underline;
     margin-right: 10px;
+    background-color: #000000;
+    color: white;
+
+    border-radius: 5px;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+
 }
 
 /*Aplicamos estos cambios cuando la pantalla es más chica. Ej.(Dispositivos moviles, Tablets, etc.)*/
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 768px) {
 
     /*Le quitamos el subrayado y le ponemos bordes a la parte inferior de los li para separar el menú*/
     .nav-li {
@@ -29,7 +255,7 @@ nav h2 {
 
 
     .navbar-toggler {
-        transition: transform 0.5s ease-in-out;
+        transition: transform 0.3s ease-in-out;
         /* Agregamos una transición para la propiedad transform */
     }
 
@@ -59,66 +285,6 @@ nav h2 {
 
 }
 
-
-/*Esstilos del maín*/
-
-
-.main {
-    display: flex;
-    margin-top: 20px;
-}
-
-.item {
-    margin: 10px;
-    transition: transform 0.3s;
-    display: flex;
-    align-items: center;
-}
-
-.item img {
-    width: 100%;
-    /* Amplía la imagen al máximo posible */
-    height: auto;
-}
-
-.item:hover {
-    border: none;
-    transform: scale(1.1);
-    /* Aumenta el tamaño en un 10% cuando pasas el mouse por encima */
-
-}
-
-.item h4 {
-    margin-left: 10px;
-    justify-content: center;
-    align-content: center;
-    /* Añade espacio a la izquierda del encabezado */
-}
-
-.borderLeft {
-    border-left: 1px solid #000;
-}
-
-.borderRight {
-    border-right: 1px solid #000;
-}
-
-footer {
-    display: flex;
-    background-color: #000;
-    height: 200px;
-    margin-top: 20px;
-    align-content: center;
-    justify-content: center;
-}
-
-footer div {
-    color: #ddd;
-    margin: auto;
-}
-
-/*---------------------------Sección Registro y Inicio de Sesión-----------------------------*/
-
 /* --------------------------estilos formulario------------------------ */
 .tituloRegistro {
     color: #2b2b2c;
@@ -127,15 +293,17 @@ footer div {
     font-size: calc(1em + 2vw);
 }
 
+
 .formularioContainer {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: fade-in 1s ease-in-out forwards;
 }
 
-form {
-    background-color: #fff;
-    border: 1px solid #ddd;
+.registro_form {
+
+    border: 2px solid #0e0d0d;
     border-radius: 25px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -160,16 +328,14 @@ form {
     }
 }
 
-.form-group {
-    margin-bottom: 20px;
-    border-radius: 30px;
-}
 
 .animacionBorde-form {
     /*Animaciones insertadas en los bordes*/
-
     border: 4px solid #0c0a00;
     transition: border-color 0.3s ease-in-out;
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 20px;
 
 }
 
@@ -179,13 +345,13 @@ form {
 
 }
 
-label {
+.form-group-input label {
     /* display: block;*/
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-input[type="text"],
+.form-group-input input[type="text"],
 input[type="password"],
 input[type="date"],
 input[type="email"] {
@@ -203,7 +369,7 @@ input[type="email"] {
     margin-top: 20px;
 }
 
-input[type="submit"],
+.form-group-input input[type="submit"],
 input[type="reset"] {
     display: inline-block;
     justify-content: space-around;
@@ -220,9 +386,8 @@ input[type="reset"] {
     transition: all 0.3s ease 0s;
 }
 
-.BotonEnviar:hover,
-/*Animaciones insertadas en el boton*/
-.BotonBorrar:hover {
+
+.button-group input:hover {
     background-color: transparent;
     border-radius: 6px;
     transition: all 0.3s ease 0s;
@@ -230,22 +395,109 @@ input[type="reset"] {
     transform: translateY(-6px);
 }
 
+/* ----------------------------ESTILOS DEL FOOTER------------------ */
+
 .pie {
     height: 100%;
 }
-
 
 /* ----------------------------footer------------------ */
 
 /* ------------------------------- media queries ------------------------*/
 
-/*----------------------Login-----------------*/
+@media(max-width:600px) {
 
-.body_login{
-    background-color: #333;
+    #logo {
+        width: 50%;
+        margin-left: 50%;
+    }
+
+    nav {
+        position: fixed;
+    }
+
+    nav .list {
+        float: none;
+        position: fixed;
+        z-index: 9;
+        left: 0;
+        right: 0;
+        top: 48px;
+        bottom: 100%;
+        width: auto;
+        height: auto;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: black;
+        overflow: hidden;
+        transition: all .3s ease-in-out;
+    }
+
+    .navbar nav .list a {
+        font-size: 1em;
+    }
+
+    .navbar nav :checked~.list {
+        bottom: 0;
+    }
+
+    .navbar nav .icon-bars {
+        display: block;
+    }
+
+    .pie {
+        display: grid;
+        justify-content: space-around;
+        grid-template: auto auto / auto auto;
+        grid-template-areas: "direccion grupo" "redes redes";
+        row-gap: 5px;
+        text-align: center;
+        font-size: 0.8em;
+    }
+
+    .grupo {
+        grid-area: grupo;
+    }
+
+    .direccion {
+        grid-area: direccion;
+        text-align: center;
+    }
+
+    .redes {
+        grid-area: redes;
+        text-align: center;
+    }
 }
-.container_login {
 
+@media only screen and (min-width: 601px) {
+
+    #logo {
+        width: 50%;
+    }
+
+    .pie {
+        padding-left: 10px;
+        padding-right: 10px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto auto;
+        /* row-gap: 10px; */
+        font-size: 0.9em;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+
+    #logo {
+        width: 20%;
+    }
+}
+
+/* ------------------------------- media queries ------------------------*/
+/*----------------------Login-----------------*/
+.container {
     width: 100%;
     max-width: 500px;
     margin: 20px auto;
@@ -268,7 +520,7 @@ input[type="reset"] {
     }
 }
 
-.T{
+h2 {
     font-size: 24px;
     color: #3f3d3d;
     text-align: center;
@@ -281,9 +533,6 @@ input[type="reset"] {
     align-items: center;
 }
 
-.form-group_login input{
-    display: block;
-    margin: 10px auto;
 }
 
 .us_login[type="text"],
@@ -314,8 +563,8 @@ textarea {
     background-color: #727471;
 }
 
-.footer_login{
-    background-color: #000;
+footer {
+    background-color: #333;
     color: #fff;
     text-align: center;
     padding: 50px 0;

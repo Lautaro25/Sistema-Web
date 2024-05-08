@@ -211,7 +211,6 @@
 
 }
 
-------------------------
 
 /*---------------------------estilos del boody-------------------------*/
 .registro_body {
@@ -240,9 +239,6 @@
 
     transition: transform 0.3s, box-shadow 0.3s;
 
-    &:hover {
-        background-color: #2403b6;
-    }
 }
 
 /*Aplicamos estos cambios cuando la pantalla es más chica. Ej.(Dispositivos moviles, Tablets, etc.)*/
@@ -329,16 +325,14 @@
     }
 }
 
-.form-group {
-    margin-bottom: 20px;
-    border-radius: 30px;
-}
 
 .animacionBorde-form {
     /*Animaciones insertadas en los bordes*/
-
     border: 4px solid #0c0a00;
     transition: border-color 0.3s ease-in-out;
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 20px;
 
 }
 

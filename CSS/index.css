@@ -34,6 +34,7 @@
     border-radius: 10em;
     background: linear-gradient(to top, #000, #555);
     width: 600px;
+    animation: fade-in 1s ease-in-out forwards;
 }
 
 .index_main_div-img img {
@@ -71,9 +72,6 @@
     display: flex;
     justify-content: center;
     text-align: center;
-}
-
-.index_main_div-alquiler input {
     font-size: 2ch;
     padding: 15px;
     width: 100%;
@@ -83,13 +81,17 @@
     transition: transform 0.3s;
 }
 
-.index_main_div-alquiler input:hover {
+.index_main_div-alquiler:hover {
     transform: scale(1.1);
 }
 
-.index_main_div-alquiler form {
-    width: 100%;
+.index_main_div-alquiler input,
+i {
+    background: none;
+    border: none;
+    color: #000;
 }
+
 
 .index_main_div-redes i:hover {
     transform: scale(1.2);

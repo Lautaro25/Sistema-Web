@@ -212,298 +212,13 @@
 
 }
 
+/*----------------------Login y Registro-----------------*/
 
-/*---------------------------estilos del boody-------------------------*/
-.registro_body {
-    background-color: rgb(133, 170, 84);
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    justify-content: center;
-    align-items: center;
+.login_body {
+    background: radial-gradient(circle, #0F0, #0b2c0e)
 }
 
-/*---------------------------estilos encabezado.........................*/
-
-.registro_nav_header {
-    background-color: #000000;
-}
-
-
-.nav-li {
-    text-decoration: underline;
-    margin-right: 10px;
-    background-color: #000000;
-    color: white;
-
-    border-radius: 5px;
-
-    transition: transform 0.3s, box-shadow 0.3s;
-
-}
-
-/*Aplicamos estos cambios cuando la pantalla es más chica. Ej.(Dispositivos moviles, Tablets, etc.)*/
-@media only screen and (max-width: 768px) {
-
-    /*Le quitamos el subrayado y le ponemos bordes a la parte inferior de los li para separar el menú*/
-    .nav-li {
-        text-decoration: none;
-        border-bottom: 1px solid #555;
-        padding-bottom: 5px;
-        margin-right: 0;
-    }
-
-
-    .navbar-toggler {
-        transition: transform 0.3s ease-in-out;
-        /* Agregamos una transición para la propiedad transform */
-    }
-
-    .navbar-toggler.collapsed {
-        transform: rotate(0deg);
-        /* Rotación inicial del icono del botón */
-    }
-
-    .navbar-toggler:not(.collapsed) {
-        transform: rotate(180deg);
-        /* Rotación del icono del botón cuando el menú está desplegado */
-    }
-
-    /*Animación de despliegue de la barra*/
-    .navbar-collapse {
-        overflow: hidden;
-        max-height: 0;
-        opacity: 0;
-        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        /* Ajustamos la transición para que se aplique tanto al despliegue como al ocultamiento */
-    }
-
-    .navbar-collapse.show {
-        max-height: 500px;
-        opacity: 1;
-    }
-
-}
-
-/* --------------------------estilos formulario------------------------ */
-.tituloRegistro {
-    color: #2b2b2c;
-    text-align: center;
-    margin-top: 80px;
-    font-size: calc(1em + 2vw);
-}
-
-
-.formularioContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fade-in 1s ease-in-out forwards;
-}
-
-.registro_form {
-
-    border: 2px solid #0e0d0d;
-    border-radius: 25px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 500px;
-    width: 100%;
-    margin-bottom: 15px;
-    opacity: 0;
-    animation: fade-in 1s ease-in-out forwards;
-}
-
-@keyframes fade-in {
-
-    /*agregado de animacion movimiento del registro*/
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-.animacionBorde-form {
-    /*Animaciones insertadas en los bordes*/
-    border: 4px solid #0c0a00;
-    transition: border-color 0.3s ease-in-out;
-    padding: 40px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-
-}
-
-.animacionBorde-form:hover {
-    /*Animaciones insertadas en los bordes*/
-    border-color: #1302af;
-
-}
-
-.form-group-input label {
-    /* display: block;*/
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.form-group-input input[type="text"],
-input[type="password"],
-input[type="date"],
-input[type="email"] {
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    box-sizing: border-box;
-    font-size: 16px;
-    padding: 10px;
-    width: 100%;
-}
-
-.button-group {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.form-group-input input[type="submit"],
-input[type="reset"] {
-    display: inline-block;
-    justify-content: space-around;
-    width: 120px;
-    text-align: center;
-    margin-top: 20px;
-    margin-right: 20%;
-    color: rgba(8, 8, 8, 0.986);
-    padding: 8px 20px;
-    background-color: #998ffa;
-    border-radius: 35px;
-    border: 2px solid #1302af;
-    box-shadow: 0px 5px 18px rgba(252, 251, 251, 0.986);
-    transition: all 0.3s ease 0s;
-}
-
-
-.button-group input:hover {
-    background-color: transparent;
-    border-radius: 6px;
-    transition: all 0.3s ease 0s;
-    box-shadow: 0px 15px 18px rgba(8, 8, 8, 0.986);
-    transform: translateY(-6px);
-}
-
-/* ----------------------------ESTILOS DEL FOOTER------------------ */
-
-.pie {
-    height: 100%;
-}
-
-/* ----------------------------footer------------------ */
-
-/* ------------------------------- media queries ------------------------*/
-
-@media(max-width:600px) {
-
-    #logo {
-        width: 50%;
-        margin-left: 50%;
-    }
-
-    nav {
-        position: fixed;
-    }
-
-    nav .list {
-        float: none;
-        position: fixed;
-        z-index: 9;
-        left: 0;
-        right: 0;
-        top: 48px;
-        bottom: 100%;
-        width: auto;
-        height: auto;
-        flex-direction: column;
-        justify-content: space-evenly;
-        background-color: black;
-        overflow: hidden;
-        transition: all .3s ease-in-out;
-    }
-
-    .navbar nav .list a {
-        font-size: 1em;
-    }
-
-    .navbar nav :checked~.list {
-        bottom: 0;
-    }
-
-    .navbar nav .icon-bars {
-        display: block;
-    }
-
-    .pie {
-        display: grid;
-        justify-content: space-around;
-        grid-template: auto auto / auto auto;
-        grid-template-areas: "direccion grupo" "redes redes";
-        row-gap: 5px;
-        text-align: center;
-        font-size: 0.8em;
-    }
-
-    .grupo {
-        grid-area: grupo;
-    }
-
-    .direccion {
-        grid-area: direccion;
-        text-align: center;
-    }
-
-    .redes {
-        grid-area: redes;
-        text-align: center;
-    }
-}
-
-@media only screen and (min-width: 601px) {
-
-    #logo {
-        width: 50%;
-    }
-
-    .pie {
-        padding-left: 10px;
-        padding-right: 10px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto auto auto;
-        /* row-gap: 10px; */
-        font-size: 0.9em;
-        justify-content: space-between;
-    }
-}
-
-@media only screen and (min-width: 900px) {
-
-    #logo {
-        width: 20%;
-    }
-}
-
-/* ------------------------------- media queries ------------------------*/
-/*----------------------Login-----------------*/
-
-.body_login {
-    background-color: #333;
-}
-
-.container_login {
-
+.login_formulario {
     width: 100%;
     max-width: 500px;
     margin: 20px auto;
@@ -526,35 +241,39 @@ input[type="reset"] {
     }
 }
 
-.T {
+.login_formulario-h2 {
     font-size: 24px;
     color: #3f3d3d;
     text-align: center;
     margin-bottom: 30px;
 }
 
-.form-group_login {
+.login_formulario-inputs {
     margin-bottom: 20px;
-
     align-items: center;
 }
 
-.form-group_login input {
+.login_formulario-inputs input {
     display: block;
     margin: 10px auto;
-}
-
-.us_login[type="text"],
-textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 20px;
     font-size: 16px;
     box-sizing: border-box;
 }
 
-.boton[type="sub"] {
+.login_desvio p {
+    display: inline;
+}
+
+.login_desvio {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login_formulario-boton {
     background-color: #110b0c;
     margin: 3px;
     border-radius: 5px;
@@ -566,24 +285,27 @@ textarea {
     cursor: pointer;
     width: 100%;
     transition: background-color 0.3s;
+
 }
 
-.boton[type="sub"]:hover {
-    background-color: #727471;
+.login_formulario-boton:hover {
+    background-color: #333;
+    color: #01ff22
 }
 
-.footer_login {
+.login_footer {
     background-color: #000;
     color: #fff;
     text-align: center;
     padding: 50px 0;
-    position: fixed;
     bottom: 0;
     width: 100%;
+    margin-bottom: 0;
 }
 
+
 @media screen and (max-width: 600px) {
-    .container_login {
+    .login_formulario {
         max-width: calc(100% - 40px);
         padding: 10px;
     }

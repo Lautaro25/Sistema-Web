@@ -12,10 +12,12 @@
     <title>Menú</title>
 </head>
 
-<body class="menu_body">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<body class="login_body">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><h2>Página Principal</h2></a>
+            <a class="navbar-brand" href="#">
+                <h2>Página Principal</h2>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -26,7 +28,8 @@
                         <a class="nav-link" href="Login.html"><i class="fas fa-users"></i>Contacta con nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="registro.html"><i class="fas fa-right-to-bracket"></i>Cerrar Sesión</a>
+                        <a class="nav-link" href="registro.html"><i class="fas fa-right-to-bracket"></i>Cerrar
+                            Sesión</a>
                     </li>
                 </ul>
             </div>
@@ -42,17 +45,48 @@
                 <div class="menu_main-nav-content-input"><input type="text" placeholder="Ingrese su Deporte"></div>
                 <div class="menu_main-nav-content-input"><input type="date"></div>
                 <div class="menu_main-nav-content-input"><input type="time"></div>
-                <div class="menu_main-nav-content-input"><input type="submit"></div>
+                <div><input type="submit"></div>
 
 
             </div>
+        </div>
+        <div class="menu_main-horarios">
+            <h2>Horarios Disponibles</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Día</th>
+                        <th>Horario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lunes</td>
+                        <td>8:00 - 10:00</td>
+                    </tr>
+                    <tr>
+                        <td>Martes</td>
+                        <td>8:00 - 10:00</td>
+                    </tr>
+                    <!-- Agrega más filas según sea necesario -->
+                </tbody>
+            </table>
+        </div>
+
+
         </div>
         <div class="menu_main-ubi"></div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-        <script src="código.js"></script>
-</body>
+    <script src="código.js"></script>
 
+    <footer class="login_footer">
+        <div>
+            <p>&copy; 2024 Mi Página Web. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
 </html>

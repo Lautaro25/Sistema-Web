@@ -133,10 +133,6 @@ i {
 }
 
 /*--------------------------------------------------------------------------     Menú     ---------------------------------------------------------------------------------*/
-.menu_body {
-    background-color: #a3a1a196;
-}
-
 #navbarNav {
     justify-content: right;
     margin-right: 20px;
@@ -195,6 +191,14 @@ i {
     margin: auto;
     padding: 10px;
     border-bottom: 1px solid #000;
+}
+
+.menu_main-nav-content input[type="submit"] {
+    background-color: #555;
+    border-radius: 20px;
+    margin-right: 20px;
+    padding: 10px 20px;
+
 }
 
 .menu_main-nav-content input::placeholder {
@@ -301,8 +305,6 @@ i {
     text-align: center;
     padding: 50px 0;
     bottom: 0;
-    width: 100%;
-    margin-bottom: 0;
 }
 
 

@@ -212,22 +212,11 @@ i {
     border: none;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th,
-td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-
-td:first-child,
-th:first-child {
-    background-color: #f2f2f2;
-    width: 15%;
+.menu_main-horarios {
+    background-color: #777;
+    height: 150px;
+    margin: 50px 50px;
+    border-radius: 50px;
 }
 
 .menu_main-ubi {
@@ -343,8 +332,8 @@ th:first-child {
     box-sizing: border-box;
 }
 
-.select_contacto{
-    
+.select_contacto {
+
     display: block;
     margin: 10px auto;
     width: 100%;

@@ -233,7 +233,7 @@ i {
 .login_formulario {
     width: 100%;
     max-width: 500px;
-    margin: 20px auto;
+    margin: 50px auto;
     background-color: #6a6d6d;
     border-radius: 8px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
@@ -311,6 +311,8 @@ i {
     text-align: center;
     padding: 50px 0;
     bottom: 0;
+    height: 300px;
+
 }
 
 

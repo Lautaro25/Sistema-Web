@@ -238,7 +238,7 @@ th:first-child {
 /*----------------------Login y Registro-----------------*/
 
 .login_body {
-    background: radial-gradient(circle, #0F0, #0b2c0e)
+    background: radial-gradient(circle, rgba(0, 255, 0, 0.781), #0b2c0e)
 }
 
 .login_formulario {
@@ -333,6 +333,18 @@ th:first-child {
 }
 
 .contacto_txt {
+    display: block;
+    margin: 10px auto;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.select_contacto{
+    
     display: block;
     margin: 10px auto;
     width: 100%;

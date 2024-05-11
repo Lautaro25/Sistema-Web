@@ -224,7 +224,7 @@ i {
 
 }
 
-/*----------------------Login y Registro-----------------*/
+/*----------------------------------------------------------Login y Registro------------------------------------------*/
 
 .login_body {
     background: radial-gradient(circle, rgba(0, 255, 0, 0.781), #0b2c0e)
@@ -344,4 +344,79 @@ i {
     border-radius: 20px;
     font-size: 16px;
     box-sizing: border-box;
+}
+
+/*----------------------------------------Sección Torneos------------------------------------------*/
+
+.torneo_main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.torneo_equipo {
+    background: radial-gradient(circle, rgba(0, 255, 0, 0.781), #0b2c0e);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.torneo_equipo h3 {
+    color: #f5f1f1;
+
+}
+
+.torneo_equipo ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.torneos_ul {
+    color: #f5f1f1;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.torneos_select {
+    font-size: 16px;
+}
+
+.pagada {
+    color: green;
+}
+
+.sin-pagar {
+    color: red;
+}
+
+
+
+.torneos_btn_equipos {
+
+    padding-top: 10px;
+    text-align: center;
+    margin: auto;
+
+    .torneos-boton {
+        background-color: #110b0c;
+        margin: 3px;
+        border-radius: 5px;
+        color: #f2f1f5;
+        padding: 8px 20px;
+
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+
+        transition: background-color 0.3s;
+
+    }
+
+    .torneos-boton:hover {
+        background-color: #333;
+        color: #01ff22
+    }
+
+
 }

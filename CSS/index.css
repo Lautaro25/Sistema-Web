@@ -2,7 +2,6 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
     justify-content: center;
-    align-items: center;
 }
 
 .index_body {
@@ -98,7 +97,7 @@ i {
 }
 
 /* Estilos para dispositivos pequeños como teléfonos móviles */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 780px) {
     .index_body {
         padding: 5%;
     }
@@ -130,6 +129,14 @@ i {
     .index_main_div-alquiler input {
         font-size: 1em;
     }
+
+    .nav-link {
+        width: 100%;
+        border: 1px solid #000;
+        border-top: none;
+        padding-left: 5px;
+        margin: 20px 0;
+    }
 }
 
 /*--------------------------------------------------------------------------     Menú     ---------------------------------------------------------------------------------*/
@@ -140,11 +147,6 @@ i {
 
 #navbarNav a:hover {
     text-decoration: underline;
-}
-
-
-.navbar-brand {
-    margin-left: 30px;
 }
 
 .menu_main-img {
@@ -160,7 +162,6 @@ i {
 
 .menu_main-nav {
     display: flex;
-    background-color: #555;
     height: 120px;
 }
 
@@ -171,6 +172,10 @@ i {
     width: 70%;
     margin: auto;
     border-radius: 40px;
+}
+
+.menu_main-nav-content-boton {
+    align-self: center;
 }
 
 .fas {
@@ -213,7 +218,7 @@ i {
 }
 
 .menu_main-horarios {
-    background-color: #777;
+    background-color: #999;
     height: 150px;
     margin: 50px 50px;
     border-radius: 50px;
@@ -323,6 +328,8 @@ i {
     }
 }
 
+/*------------------------------------------Contacto------------------------------------------*/
+
 .contacto_txt {
     display: block;
     margin: 10px auto;
@@ -335,7 +342,7 @@ i {
 }
 
 .select_contacto {
-
+    color: #777;
     display: block;
     margin: 10px auto;
     width: 100%;
@@ -354,7 +361,7 @@ i {
     padding: 0 20px;
 }
 
-.torneo_equipo {
+.torneo_main-equipo {
     background: radial-gradient(circle, rgba(0, 255, 0, 0.781), #0b2c0e);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -362,61 +369,57 @@ i {
     margin-bottom: 20px;
 }
 
-.torneo_equipo h3 {
+.torneo_main-equipo h3 {
     color: #f5f1f1;
 
 }
 
-.torneo_equipo ul {
+.torneo_main-equipo ul {
     list-style-type: none;
     padding: 0;
 }
 
-.torneos_ul {
+.torneos_main-inscripcion {
     color: #f5f1f1;
     font-family: Arial, sans-serif;
     font-size: 16px;
 }
 
-.torneos_select {
+.torneos_main-select {
     font-size: 16px;
 }
 
-.pagada {
+.torneo_main-pagada {
     color: green;
 }
 
-.sin-pagar {
+.torneo_main-sinPagar {
     color: red;
 }
-
-
 
 .torneos_btn_equipos {
 
     padding-top: 10px;
     text-align: center;
     margin: auto;
+}
 
-    .torneos-boton {
-        background-color: #110b0c;
-        margin: 3px;
-        border-radius: 5px;
-        color: #f2f1f5;
-        padding: 8px 20px;
+.torneos-boton {
+    background-color: #110b0c;
+    margin: 3px;
+    border-radius: 5px;
+    color: #f2f1f5;
+    padding: 8px 20px;
 
-        border-radius: 4px;
-        font-size: 16px;
-        cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
 
-        transition: background-color 0.3s;
+    transition: background-color 0.3s;
 
-    }
+}
 
-    .torneos-boton:hover {
-        background-color: #333;
-        color: #01ff22
-    }
-
-
+.torneos-boton:hover {
+    background-color: #333;
+    color: #01ff22
 }

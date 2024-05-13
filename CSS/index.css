@@ -310,6 +310,12 @@ i {
     color: #01ff22
 }
 
+.login_formulario-boton i {
+    color: #fff;
+    margin: auto 8px;
+    font-size: 25px;
+}
+
 .login_footer {
     background-color: #000;
     color: #fff;

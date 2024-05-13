@@ -37,9 +37,11 @@
 }
 
 .index_main_div-img img {
-    width: 100px;
+    margin-bottom: 50px;
+    width: 150px;
     border-radius: 5em;
-    border: 2px solid #000;
+    padding: 20px;
+    border: 2px solid #01ff22;
 }
 
 .index_main_div-redes i {
@@ -97,7 +99,7 @@ i {
 }
 
 /* Estilos para dispositivos pequeños como teléfonos móviles */
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 700px) {
     .index_body {
         padding: 5%;
     }
@@ -109,9 +111,11 @@ i {
     }
 
     .index_main_div-img img {
-        width: 70px;
+        margin-bottom: 50px;
+        width: 100px;
         border-radius: 3em;
-        border: 1px solid #000;
+        padding: 20px;
+        border: 2px solid #01ff22;
     }
 
     .index_main_div-h1 h2 {
@@ -129,6 +133,18 @@ i {
     .index_main_div-alquiler input {
         font-size: 1em;
     }
+
+    .index_main_div-redes i {
+        font-size: 40px;
+    }
+
+    .index_main_div-alquiler {
+
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 800px) {
 
     .nav-link {
         width: 100%;

@@ -207,37 +207,6 @@ i {
     margin: auto 10px;
 }
 
-.menu_main-nav-content input {
-    margin: auto;
-    background: transparent;
-    border: none;
-}
-
-.menu_main-nav-content-input {
-    margin: auto;
-    padding: 10px;
-    border-bottom: 1px solid #000;
-}
-
-.menu_main-nav-content input[type="submit"] {
-    background-color: #555;
-    border-radius: 20px;
-    margin-right: 20px;
-    padding: 10px 20px;
-
-}
-
-.menu_main-nav-content input::placeholder {
-    color: #000;
-    opacity: .7;
-
-}
-
-.menu_main-nav-content input:focus-visible {
-    outline: none;
-    border: none;
-}
-
 .menu_main-horarios {
     background-color: #999;
     height: 150px;
@@ -247,7 +216,7 @@ i {
 
 .menu_multimedia {
     display: flex;
-    flex-grow: inherit;
+    flex-wrap: wrap;
 }
 
 .menu_section {
@@ -257,6 +226,7 @@ i {
     padding: 10px;
     border: 2px solid #000;
     height: 480px;
+    flex: 1;
 }
 
 
@@ -265,10 +235,11 @@ i {
     margin: 50px;
     border-radius: 8px;
     max-width: 35%;
+    flex: 1;
 
 }
 
-.comments-container {
+.menu_aside-fondoComentarios {
     width: 80%;
     margin: 50px auto;
     background-color: #fff;
@@ -280,7 +251,11 @@ i {
 
 }
 
-.comment {
+.menu_aside-fondoComentarios h3 {
+    text-align: center;
+}
+
+.menu_aside-comentarios {
     border-bottom: 1px solid #eee;
     padding: 15px 0;
     display: flex;
@@ -289,42 +264,42 @@ i {
     max-height: 450px;
 }
 
-.comment:last-child {
+.menu_aside-comentarios:last-child {
     border-bottom: none;
 }
 
-.comment-avatar {
-    width: 50px;
-    height: 50px;
+.menu_aside-comentarios-avatar {
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     overflow: hidden;
     margin-right: 15px;
 }
 
-.comment-avatar img {
+.menu_aside-comentarios-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.comment-content {
+.menu_aside-comentarios-content {
     flex: 1;
 }
 
-.comment-author {
+.menu_aside-comentarios-author {
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.comment-text {
+.menu_aside-comentarios-text {
     color: #555;
 }
 
-.comment-form {
+.menu_aside-comentarios-form {
     margin-top: 30px;
 }
 
-.comment-form textarea {
+.menu_aside-comentarios-form textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -333,7 +308,7 @@ i {
     resize: none;
 }
 
-.comment-form button {
+.menu_aside-comentarios-form button {
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
@@ -343,10 +318,9 @@ i {
     transition: background-color 0.3s;
 }
 
-.comment-form button:hover {
+.menu_aside-comentarios-form button:hover {
     background-color: #45a049;
 }
-
 
 /*----------------------------------------------------------Login y Registro------------------------------------------*/
 
@@ -357,6 +331,7 @@ i {
 .login_formulario {
     width: 100%;
     max-width: 500px;
+
     margin: 50px auto;
     background-color: #6a6d6d;
     border-radius: 8px;

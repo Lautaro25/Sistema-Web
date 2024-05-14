@@ -170,15 +170,6 @@ i {
     margin: auto 10px;
 }
 
-.menu_section {
-    grid-area: section;
-    margin: 50px;
-    border-radius: 8px;
-    padding: 10px;
-    border: 2px solid #000;
-    height: 480px;
-}
-
 .menu_main-img {
     display: flex;
 }
@@ -254,13 +245,26 @@ i {
     border-radius: 50px;
 }
 
-.menu_section {}
+.menu_multimedia {
+    display: flex;
+    flex-grow: inherit;
+}
+
+.menu_section {
+    width: 65%;
+    margin: 50px;
+    border-radius: 8px;
+    padding: 10px;
+    border: 2px solid #000;
+    height: 480px;
+}
 
 
 .menu_aside {
     background-color: #888;
     margin: 50px;
     border-radius: 8px;
+    max-width: 35%;
 
 }
 

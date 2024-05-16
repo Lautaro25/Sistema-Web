@@ -147,8 +147,7 @@ i {
 
     .nav-link {
         width: 100%;
-        border: 1px solid #000;
-        border-top: none;
+        border-bottom: 1px solid #000;
         padding-left: 5px;
         margin: 20px 0;
     }
@@ -165,7 +164,7 @@ i {
 }
 
 .container-fluid h2:hover {
-    transform: scaleY(1.5);
+    color: #777;
 }
 
 .menu_header-img {
@@ -219,7 +218,7 @@ i {
 }
 
 .menu_main-horarios-deportes {
-    background-color: red;
+    background-color: #888;
     height: 100%;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
@@ -237,13 +236,13 @@ i {
 }
 
 .menu_main-horarios-turnos-días {
-    background-color: yellow;
+    background-color: #444;
     height: 30%;
     border-top-right-radius: 50px;
 }
 
 .menu_main-horarios-turnos-hora {
-    background-color: orange;
+    background-color: #666;
     height: 70%;
     border-bottom-right-radius: 50px;
 }

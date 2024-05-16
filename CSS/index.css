@@ -1,8 +1,6 @@
 * {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
-    justify-content: center;
-    align-items: center;
 }
 
 .index_body {
@@ -38,9 +36,11 @@
 }
 
 .index_main_div-img img {
-    width: 100px;
+    margin-bottom: 50px;
+    width: 150px;
     border-radius: 5em;
-    border: 2px solid #000;
+    padding: 20px;
+    border: 2px solid #01ff22;
 }
 
 .index_main_div-redes i {
@@ -98,7 +98,7 @@ i {
 }
 
 /* Estilos para dispositivos pequeños como teléfonos móviles */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 700px) {
     .index_body {
         padding: 5%;
     }
@@ -110,9 +110,11 @@ i {
     }
 
     .index_main_div-img img {
-        width: 70px;
+        margin-bottom: 50px;
+        width: 100px;
         border-radius: 3em;
-        border: 1px solid #000;
+        padding: 20px;
+        border: 2px solid #01ff22;
     }
 
     .index_main_div-h1 h2 {
@@ -130,6 +132,26 @@ i {
     .index_main_div-alquiler input {
         font-size: 1em;
     }
+
+    .index_main_div-redes i {
+        font-size: 40px;
+    }
+
+    .index_main_div-alquiler {
+
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .nav-link {
+        width: 100%;
+        border: 1px solid #000;
+        border-top: none;
+        padding-left: 5px;
+        margin: 20px 0;
+    }
 }
 
 /*--------------------------------------------------------------------------     Menú     ---------------------------------------------------------------------------------*/
@@ -143,8 +165,9 @@ i {
 }
 
 
-.navbar-brand {
-    margin-left: 30px;
+.menu_header-img {
+    width: 50px;
+    margin: auto 10px;
 }
 
 .menu_main-img {
@@ -160,7 +183,6 @@ i {
 
 .menu_main-nav {
     display: flex;
-    background-color: #555;
     height: 120px;
 }
 
@@ -173,6 +195,10 @@ i {
     border-radius: 40px;
 }
 
+.menu_main-nav-content-boton {
+    align-self: center;
+}
+
 .fas {
     margin-right: 10px;
 }
@@ -181,61 +207,122 @@ i {
     margin: auto 10px;
 }
 
-.menu_main-nav-content input {
-    margin: auto;
-    background: transparent;
-    border: none;
+.menu_main-horarios {
+    background-color: #999;
+    height: 150px;
+    margin: 50px 50px;
+    border-radius: 50px;
 }
 
-.menu_main-nav-content-input {
-    margin: auto;
+.menu_multimedia {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu_section {
+    width: 65%;
+    margin: 50px;
+    border-radius: 8px;
     padding: 10px;
-    border-bottom: 1px solid #000;
+    border: 2px solid #000;
+    height: 480px;
+    flex: 1;
 }
 
-.menu_main-nav-content input[type="submit"] {
-    background-color: #555;
-    border-radius: 20px;
-    margin-right: 20px;
-    padding: 10px 20px;
+
+.menu_aside {
+    background-color: #888;
+    margin: 50px;
+    border-radius: 8px;
+    max-width: 35%;
+    flex: 1;
 
 }
 
-.menu_main-nav-content input::placeholder {
-    color: #000;
-    opacity: .7;
+.menu_aside-fondoComentarios {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 
 }
 
-.menu_main-nav-content input:focus-visible {
-    outline: none;
-    border: none;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th,
-td {
-    border: 1px solid #ddd;
-    padding: 8px;
+.menu_aside-fondoComentarios h3 {
     text-align: center;
 }
 
-td:first-child,
-th:first-child {
-    background-color: #f2f2f2;
-    width: 15%;
+.menu_aside-comentarios {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 450px;
 }
 
-.menu_main-ubi {
-    height: 200px;
-
+.menu_aside-comentarios:last-child {
+    border-bottom: none;
 }
 
-/*----------------------Login y Registro-----------------*/
+.menu_aside-comentarios-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.menu_aside-comentarios-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu_aside-comentarios-content {
+    flex: 1;
+}
+
+.menu_aside-comentarios-author {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.menu_aside-comentarios-text {
+    color: #555;
+}
+
+.menu_aside-comentarios-form {
+    margin-top: 30px;
+}
+
+.menu_aside-comentarios-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+.menu_aside-comentarios-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu_aside-comentarios-form button:hover {
+    background-color: #45a049;
+}
+
+/*----------------------------------------------------------Login y Registro------------------------------------------*/
 
 .login_body {
     background: radial-gradient(circle, rgba(0, 255, 0, 0.781), #0b2c0e)
@@ -244,7 +331,8 @@ th:first-child {
 .login_formulario {
     width: 100%;
     max-width: 500px;
-    margin: 20px auto;
+
+    margin: 50px auto;
     background-color: #6a6d6d;
     border-radius: 8px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
@@ -316,12 +404,20 @@ th:first-child {
     color: #01ff22
 }
 
+.login_formulario-boton i {
+    color: #fff;
+    margin: auto 8px;
+    font-size: 25px;
+}
+
 .login_footer {
     background-color: #000;
     color: #fff;
     text-align: center;
     padding: 50px 0;
     bottom: 0;
+    height: 300px;
+
 }
 
 
@@ -331,6 +427,8 @@ th:first-child {
         padding: 10px;
     }
 }
+
+/*------------------------------------------Contacto------------------------------------------*/
 
 .contacto_txt {
     display: block;
@@ -343,8 +441,8 @@ th:first-child {
     box-sizing: border-box;
 }
 
-.select_contacto{
-    
+.select_contacto {
+    color: #777;
     display: block;
     margin: 10px auto;
     width: 100%;
@@ -353,4 +451,75 @@ th:first-child {
     border-radius: 20px;
     font-size: 16px;
     box-sizing: border-box;
+}
+
+/*----------------------------------------Sección Torneos------------------------------------------*/
+
+.torneo_main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.torneo_main-equipo {
+    background: radial-gradient(circle, rgba(0, 255, 0, 0.781), #0b2c0e);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.torneo_main-equipo h3 {
+    color: #f5f1f1;
+
+}
+
+.torneo_main-equipo ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.torneos_main-inscripcion {
+    color: #f5f1f1;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.torneos_main-select {
+    font-size: 16px;
+}
+
+.torneo_main-pagada {
+    color: green;
+}
+
+.torneo_main-sinPagar {
+    color: red;
+}
+
+.torneos_btn_equipos {
+
+    padding-top: 10px;
+    text-align: center;
+    margin: auto;
+}
+
+.torneos-boton {
+    background-color: #110b0c;
+    margin: 3px;
+    border-radius: 5px;
+    color: #f2f1f5;
+    padding: 8px 20px;
+
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: background-color 0.3s;
+
+}
+
+.torneos-boton:hover {
+    background-color: #333;
+    color: #01ff22
 }

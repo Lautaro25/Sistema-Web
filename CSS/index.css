@@ -294,12 +294,15 @@ i {
 @media (max-width: 1280px) {
     .menu_main-grid {
         grid-template-columns: 1fr;
+        margin-right: 100px;
     }
 
     .menu_section,
     .menu_aside {
         width: 100%;
     }
+
+
 }
 
 /*todo aside*/

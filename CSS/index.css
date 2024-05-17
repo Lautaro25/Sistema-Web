@@ -1,6 +1,7 @@
 * {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
+    box-sizing: border-box;
 }
 
 .index_body {
@@ -165,7 +166,7 @@ i {
 
 .menu_body {
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto;
     margin: 0;
 }
 
@@ -176,6 +177,11 @@ i {
 .menu_header-img {
     width: 50px;
     margin: auto 10px;
+}
+
+.menu_main {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .menu_main-img {
@@ -216,6 +222,8 @@ i {
     margin: 50px 50px;
     border-radius: 50px;
     display: flex;
+    max-width: 100%;
+    overflow-x: auto;
 }
 
 .menu_main-horarios-deportes {
@@ -245,8 +253,20 @@ i {
 .menu_main-horarios-turnos-hora {
     background-color: #666;
     height: 70%;
-    border-bottom-right-radius: 50px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px;
 }
+
+.menu_main-horarios-turnos-hora span {
+    background-color: #1877f2;
+    margin: auto 10px;
+    padding: 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
 
 /*Grids del menu entero*/
 

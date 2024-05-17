@@ -163,6 +163,12 @@ i {
     text-decoration: underline;
 }
 
+.menu_body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin: 0;
+}
+
 .container-fluid h2:hover {
     color: #777;
 }
@@ -181,11 +187,6 @@ i {
     border-radius: 20px;
     height: 400px;
     width: 60%;
-}
-
-.menu_main-nav {
-    display: flex;
-    height: 120px;
 }
 
 .menu_main-nav-content {
@@ -247,43 +248,41 @@ i {
     border-bottom-right-radius: 50px;
 }
 
+/*Grids del menu entero*/
 
-.menu_multimedia {
-    display: flex;
-    flex-wrap: wrap;
+.menu_main-grid {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    gap: 1rem;
+    padding: 1rem;
 }
 
-/* Estilos para section */
 .menu_section {
     margin: 50px;
     border-radius: 8px;
     padding: 10px;
     border: 2px solid #000;
     height: 480px;
-    min-width: 60%;
-    flex: 1;
 }
 
-/* Estilos para aside */
 .menu_aside {
     background-color: #888;
     margin: 50px;
     border-radius: 8px;
-    flex: 1;
-    min-width: 25%;
 }
 
-/* Media query para pantallas pequeñas */
-@media (max-width: 800px) {
+@media (max-width: 1280px) {
+    .menu_main-grid {
+        grid-template-columns: 1fr;
+    }
 
     .menu_section,
     .menu_aside {
-        min-width: 100%;
-        margin: 10px;
-        /* Ajusta el margen según sea necesario */
+        width: 100%;
     }
 }
 
+/*todo aside*/
 .menu_aside-fondoComentarios {
     width: 80%;
     margin: 50px auto;

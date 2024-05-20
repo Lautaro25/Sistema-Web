@@ -2,100 +2,130 @@
 <html lang="en">
 
 <head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="./index.css" />
+    <script type="module" src="./código.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/2f7feb84f1.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="icon" href="Img/iconoWeb2.ico">
     <title>Alquilá tu Cancha</title>
 </head>
 
-<body class="login_body">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <h2>Página Principal</h2>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="Login.html"><i class="fas fa-users"></i>Contacta con nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="registro.html"><i class="fas fa-right-to-bracket"></i>Cerrar
-                            Sesión</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<!--Desarrollado por Lautaro Villabona-->
 
+<body class="login_body  menu_body">
+    <header class="menu_header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <img class="menu_header-img" src="/Img/iconoWeb2.ico" alt="">
+                <a class="navbar-brand" href="index.html">
+                    <h2 class="animate__animated animate__pulse">Página Principal</h2>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="torneo.html"><i class="fas fa-solid fa-trophy"></i></i>Torneos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contaco.html"><i class="fas fa-users"></i>Contacta con
+                                nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Login.html"><i class=""></i>Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="registro.html"><i class=""></i>Resgistrarse</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
     <main class="menu_main">
 
         <div class="menu_main-img"><img src="Img/Menú_Deportes.jpeg" alt="Imagen Principal de Deportes"></div>
 
         </div>
         <div class="menu_main-horarios">
-
+            <div class="menu_main-horarios-deportes">
+                <select class="select_contacto">
+                    <option value="" disabled selected hidden>Seleccione un deporte</option>
+                    <option value="Fútbol"></i>⚽ Fútbol</option>
+                    <option value="Tenis">🎾Tenis</option>
+                    <option value="Padel">🎾Padel</option>
+                </select>
+            </div>
+            <div class="menu_main-horarios-turnos">
+                <div class="menu_main-horarios-turnos-días"></div>
+                <div class="menu_main-horarios-turnos-hora"></div>
+            </div>
         </div>
 
 
         </div>
     </main>
-<div class="menu_multimedia">
-    <section class="menu_section">
-        <div class="menu_section-ubi">
+    <div class="menu_multimedia">
+        <section class="menu_section">
+            <div class="menu_section-ubi">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d351.1366134105441!2d-59.30895426033219!3d-33.1460484005007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b09ca04391d571%3A0x49cc8f71a8d57e24!2sEscuela%20Superior%20N%C2%B0%208%20%22Celestino%20Irineo%20Marc%C3%B3%22!5e0!3m2!1ses-419!2sar!4v1715637808003!5m2!1ses-419!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </section>
-    <aside class="menu_aside">
-        <div class="menu_aside-fondoComentarios">
-            <h3>Sección de Comentario</h3>
-            <div class="menu_aside-comentarios">
-                <div class="menu_aside-comentarios-content">
-                    <img class="menu_aside-comentarios-avatar" src="https://via.placeholder.com/50" alt="Avatar">
-                    <div class="menu_aside-comentarios-author">Lautaro Villabona</div>
-                    <div class="menu_aside-comentarios-text">La cancha estuvo buena, y se disfrutó bastante el partido, recomendado al 100%.</div>
+            </div>
+        </section>
+        <aside class="menu_aside">
+            <div class="menu_aside-fondoComentarios">
+                <h3>Sección de Comentario</h3>
+                <div class="menu_aside-comentarios">
+                    <div class="menu_aside-comentarios-content">
+                        <img class="menu_aside-comentarios-avatar" src="https://via.placeholder.com/50" alt="Avatar">
+                        <div class="menu_aside-comentarios-author">Lautaro Villabona</div>
+                        <div class="menu_aside-comentarios-text">La cancha estuvo buena, y se disfrutó bastante el
+                            partido, recomendado al 100%.</div>
+                    </div>
+                    <div class="menu_aside-comentarios-content">
+                        <img class="menu_aside-comentarios-avatar" src="https://via.placeholder.com/50" alt="Avatar">
+                        <div class="menu_aside-comentarios-author">Ramiro Menescardi</div>
+                        <div class="menu_aside-comentarios-text">Excelente las canchas, la verdad que pudimos jugar de
+                            10 sin ningún inconveniente</div>
+                    </div>
+                    <div class="menu_aside-comentarios-content">
+                        <img class="menu_aside-comentarios-avatar" src="https://via.placeholder.com/50" alt="Avatar">
+                        <div class="menu_aside-comentarios-author">Alejo Zapatiel</div>
+                        <div class="menu_aside-comentarios-text">No me gustó para nada, se largó a llover y nos re
+                            ganaron, en estas condiciones no se puede jugar, debería estar cubierto todo esto.</div>
+                    </div>
+                    <div class="menu_aside-comentarios-content">
+                        <img class="menu_aside-comentarios-avatar" src="https://via.placeholder.com/50" alt="Avatar">
+                        <div class="menu_aside-comentarios-author">Alejo Zapatiel</div>
+                        <div class="menu_aside-comentarios-text">No me gustó para nada, se largó a llover y nos re
+                            ganaron, en estas condiciones no se puede jugar, debería estar cubierto todo esto.</div>
+                    </div>
+                    <div class="menu_aside-comentarios-content">
+                        <img class="menu_aside-comentarios-avatar" src="https://via.placeholder.com/50" alt="Avatar">
+                        <div class="menu_aside-comentarios-author">Alejo Zapatiel</div>
+                        <div class="menu_aside-comentarios-text">No me gustó para nada, se largó a llover y nos re
+                            ganaron, en estas condiciones no se puede jugar, debería estar cubierto todo esto.</div>
+                    </div>
                 </div>
-                <div class="menu_aside-comentarios-content">
-                    <img class="menu_aside-comentarios-avatar" src="https://via.placeholder.com/50" alt="Avatar">
-                    <div class="menu_aside-comentarios-author">Ramiro Menescardi</div>
-                    <div class="menu_aside-comentarios-text">Excelente las canchas, la verdad que pudimos jugar de 10 sin ningún inconveniente</div>
-                </div>
-                <div class="menu_aside-comentarios-content">
-                    <img class="menu_aside-comentarios-avatar" src="https://via.placeholder.com/50" alt="Avatar">
-                    <div class="menu_aside-comentarios-author">Alejo Zapatiel</div>
-                    <div class="menu_aside-comentarios-text">No me gustó para nada, se largó a llover y nos re ganaron, en estas condiciones no se puede jugar, debería estar cubierto todo esto.</div>
-                </div>
-                <div class="menu_aside-comentarios-content">
-                    <img class="menu_aside-comentarios-avatar" src="https://via.placeholder.com/50" alt="Avatar">
-                    <div class="menu_aside-comentarios-author">Alejo Zapatiel</div>
-                    <div class="menu_aside-comentarios-text">No me gustó para nada, se largó a llover y nos re ganaron, en estas condiciones no se puede jugar, debería estar cubierto todo esto.</div>
-                </div>
-                <div class="menu_aside-comentarios-content">
-                    <img class="menu_aside-comentarios-avatar" src="https://via.placeholder.com/50" alt="Avatar">
-                    <div class="menu_aside-comentarios-author">Alejo Zapatiel</div>
-                    <div class="menu_aside-comentarios-text">No me gustó para nada, se largó a llover y nos re ganaron, en estas condiciones no se puede jugar, debería estar cubierto todo esto.</div>
-                </div>
+
+                <!-- Agrega más comentarios aquí -->
+
+                <form class="menu_aside-comentarios-form" id="commentForm">
+                    <textarea id="commentText" placeholder="Escribe tu comentario aquí..." rows="4"></textarea>
+                    <button type="submit">Agregar comentario</button>
+                </form>
             </div>
 
-            <!-- Agrega más comentarios aquí -->
-
-            <form class="menu_aside-comentarios-form" id="commentForm">
-                <textarea id="commentText" placeholder="Escribe tu comentario aquí..." rows="4"></textarea>
-                <button type="submit">Agregar comentario</button>
-            </form>
-        </div>
-
-    </aside>
-</div>
+        </aside>
+    </div>
     <footer class="login_footer menu_footer">
         <div>
             <p>&copy; 2024 Mi Página Web. Todos los derechos reservados.</p>

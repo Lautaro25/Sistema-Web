@@ -175,8 +175,11 @@ i {
 }
 
 .menu_header-img {
+    margin: auto 20px;
+}
+
+.menu_header-img img {
     width: 50px;
-    margin: auto 10px;
 }
 
 .menu_main {

@@ -61,7 +61,7 @@
 .fa-instagram {
     color: #fff;
     background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
-    padding: 3px 9px;
+    padding: 3px 8px;
     border-radius: 20px;
 }
 
@@ -138,6 +138,11 @@ i {
         font-size: 40px;
     }
 
+    .fa-instagram {
+        padding: 1px 4px;
+        border-radius: 10px;
+    }
+
     .index_main_div-alquiler {
 
         margin-bottom: 20px;
@@ -175,8 +180,11 @@ i {
 }
 
 .menu_header-img {
+    margin: auto 20px;
+}
+
+.menu_header-img img {
     width: 50px;
-    margin: auto 10px;
 }
 
 .menu_main {

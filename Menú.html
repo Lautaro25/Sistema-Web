@@ -10,6 +10,7 @@
     <script src="https://kit.fontawesome.com/2f7feb84f1.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="icon" href="Img/iconoWeb2.ico">
@@ -20,16 +21,15 @@
 
 <body class="login_body  menu_body">
     <header class="menu_header">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <div class="menu_header-img"><img src="Img/iconoWeb2.ico" alt=""></div>
-                <a class="navbar-brand" href="index.html">
-                    <h2 class="animate__animated animate__pulse">Página Principal</h2>
-                </a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    <a class="navbar-brand" href="index.html">
+                        <h2 class="animate__animated animate__pulse">Página Principal</h2>
+                    </a>
+                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon "></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
@@ -46,53 +46,88 @@
                         <li class="nav-item">
                             <a class="nav-link" href="registro.html"><i class=""></i>Resgistrarse</a>
                         </li>
+                        <li class="nav-item menu_nav-select">
+                            <i class="fa-solid fa-user"></i>
+                            <select class="nav-link menu_nav-select " name="" id="Select" onchange="navigateToPage()">
+                                <option value="" disabled selected hidden>Cuenta</option>
+                                <option value="index.html">Perfil</option>
+                                <option value="gestion.html" class="">Gestionar</option>
+                                <option value="">Cerrar Sesión</option>
+                            </select>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <main class="menu_main">
-
         <section class="menu_section-main">
-            <div class="menu_main-img"><img src="Img/Menú_Deportes.jpeg" alt="Imagen Principal de Deportes"></div>
+            <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
+                <!-- Indicadores del carrusel -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <!-- Contenido del carrusel -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="Img/cancha3.jpg" class="d-block w-100" alt="Cancha 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Img/cancha2.jpg" class="d-block w-100" alt="Cancha 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Img/cancha1.jpg" class="d-block w-100" alt="Cancha 3">
+                    </div>
+                </div>
+                <!-- Controles de navegación -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
             <div class="menu_main-horarios">
                 <div class="menu_main-horarios-deportes">
                     <select class="select_contacto index_bodydeporteSelect" id="select-pc">
-                        <option value="" disabled selected hidden>Seleccione un deporte</option>
-                        <option value="Fútbol"></i>⚽Fútbol</option>
-                        <option value="Tenis">🎾Tenis</option>
-                        <option value="Padel">🎾Padel</option>
+                        <option value="" disabled selected hidden>Seleccione Cancha</option>
+                        <option value="Fútbol"></i>Cancha N°1</option>
+                        <option value="Tenis">Cancha N°2</option>
+                        <option value="Padel">Cancha N°3</option>
                     </select>
                     <select class="select_contacto index_bodydeporteSelect" id="select-celular">
-                        <option value="" disabled selected hidden>Deporte</option>
-                        <option value="Fútbol"></i>⚽Fútbol</option>
-                        <option value="Tenis">🎾Tenis</option>
-                        <option value="Padel">🎾Padel</option>
+                        <option value="" disabled selected hidden>N° Cancha</option>
+                        <option value="Fútbol"></i>Cancha N°1</option>
+                        <option value="Tenis">Cancha N°2</option>
+                        <option value="Padel">Cancha N°3</option>
                     </select>
                 </div>
                 <div class="menu_main-horarios-turnos">
-                    <div class="menu_main-horarios-turnos-días" >
-                        <input type="date">                        
+                    <div class="menu_main-horarios-turnos-días">
+                        <input type="date" id="date-input">
                     </div>
-                    <div class="menu_main-horarios-turnos-hora" >
+                    <div class="menu_main-horarios-turnos-hora">
                         <span>08:00hs</span>
-                        <span>09:00hs</span>
-                        <span>10:00hs</span>
+                        <span>09:30hs</span>
                         <span>11:00hs</span>
-                        <span>12:00hs</span>
-                        <span>13:00hs</span>
+                        <span>12:30hs</span>
                         <span>14:00hs</span>
-                        <span>15:00hs</span>
-                        <span>16:00hs</span>
+                        <span>15:30hs</span>
                         <span>17:00hs</span>
-                        <span>18:00hs</span>
-                        <span>19:00hs</span>
+                        <span>18:30hs</span>
                         <span>20:00hs</span>
-                        <span>21:00hs</span>
-                        <span>22:00hs</span>
+                        <span>21:30hs</span>
                         <span>23:00hs</span>
-                        <span>00:00hs</span>
-
+                        <span>00:30hs</span>
                     </div>
                 </div>
             </div>
@@ -165,11 +200,13 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="código.js"></script>
+    <script src="codigo.js"></script>
 </body>
 
 </html>

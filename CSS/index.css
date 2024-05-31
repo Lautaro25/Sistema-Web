@@ -485,7 +485,7 @@ i {
 /*----------------------------------------------------------Login y Registro------------------------------------------*/
 
 .login_body {
-    background: radial-gradient(circle, rgba(0, 255, 0, 0.781), #0b2c0e)
+    background: radial-gradient(circle, rgb(243, 245, 243), #f7f8f7fd)
 }
 
 .login_formulario {

@@ -289,14 +289,6 @@ i {
     padding: 10px;
 }
 
-.menu_main-horarios-turnos-hora span {
-    background-color: #1877f2;
-    margin: auto 10px;
-    padding: 10px;
-    border-radius: 20px;
-    white-space: nowrap;
-}
-
 .menu_main-horarios-turnos-días input[type="date"] {
     padding: 10px;
     font-size: 16px;
@@ -392,6 +384,14 @@ i {
         height: 100%;
     }
 
+    .menu_main-horarios-turnos-días input[type="date"] {
+        padding: 10px;
+        font-size: 16px;
+        width: 30%;
+        box-sizing: border-box;
+        background-color: #444;
+        border: none;
+    }
 }
 
 @media (max-width: 740px) {
@@ -459,7 +459,7 @@ i {
     .menu_aside {
         height: 60%;
         margin: 0;
-        margin-bottom: -1s0px;
+        margin-bottom: -1s 0px;
     }
 
     .menu_aside-fondoComentarios {
@@ -549,6 +549,27 @@ i {
 .menu_aside-comentarios-form button:hover {
     background-color: #45a049;
 }
+
+.menu_main-horarios-turnos-hora button {
+    background: none;
+    border: none;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.menu_main-horarios-turnos-hora span {
+    background-color: #1877f2;
+    padding: 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 740px) {
+    .menu_main-horarios-turnos-hora button {
+        margin: 10px 0;
+    }
+}
+
 
 .menu_nav-select {
     display: flex;
@@ -787,4 +808,72 @@ i {
 .torneos-boton:hover {
     background-color: #333;
     color: #01ff22
+}
+
+/*-----------------------Gestion------------------*/
+
+.gestion_main {
+    margin: auto 30px;
+    margin-top: 50px;
+}
+
+.gestion_main-busqueda {
+    display: flex;
+    justify-content: start;
+    margin: 20px auto;
+}
+
+.gestion_main-label {
+    display: block;
+    font-size: 30px;
+    margin: auto;
+}
+
+.gestion_main-busqueda div {
+    display: flex;
+    font-size: 20px;
+}
+
+.gestion_main-busqueda-div label {
+    margin: auto 10px;
+}
+
+.gestion_main-busqueda-div input {
+    margin-top: auto;
+}
+
+.gestion_main-table {
+    margin: auto;
+}
+
+.gestion_main-table table {
+    border: 1px solid #000;
+}
+
+.gestion_main-table td {
+    border: 1px solid #000;
+}
+
+.gestion_footer {
+    margin-top: 25%;
+}
+
+@media screen and (max-width: 720px) {
+    .gestion_main-busqueda div {
+        display: block;
+    }
+
+    .gestion_main-label-div {
+        margin: 10px auto;
+    }
+
+    .gestion_main-busqueda input {
+        float: right;
+        width: 68%;
+    }
+}
+
+/*Gestión de cuentas*/
+.DisplayNone {
+    display: none;
 }

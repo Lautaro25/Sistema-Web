@@ -34,25 +34,25 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="torneo.html"><i class="fas fa-solid fa-trophy"></i>Torneos</a>
+                            <a class="nav-link with-acount" href="torneo.html"><i class="fas fa-solid fa-trophy"></i>Torneos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contaco.html"><i class="fas fa-users"></i>Contacta con
                                 nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Login.html"><i class=""></i>Iniciar Sesión</a>
+                            <a class="nav-link without-acount" href="Login.html"><i class=""></i>Iniciar Sesión</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="registro.html"><i class=""></i>Resgistrarse</a>
+                            <a class="nav-link without-acount" href="registro.html"><i class=""></i>Resgistrarse</a>
                         </li>
-                        <li class="nav-item menu_nav-select">
+                        <li class="nav-item menu_nav-select with-acount">
                             <i class="fa-solid fa-user"></i>
                             <select class="nav-link menu_nav-select " name="" id="Select" onchange="navigateToPage()">
                                 <option value="" disabled selected hidden>Cuenta</option>
                                 <option value="index.html">Perfil</option>
                                 <option value="gestion.html" class="">Gestionar</option>
-                                <option value="">Cerrar Sesión</option>
+                                <option value="javascript:void(0);" onclick="cerrarSesion()" id="sesionCerrada">Cerrar Sesión</option>
                             </select>
                         </li>
                     </ul>
@@ -116,18 +116,18 @@
                         <input type="date" id="date-input">
                     </div>
                     <div class="menu_main-horarios-turnos-hora">
-                        <span>08:00hs</span>
-                        <span>09:30hs</span>
-                        <span>11:00hs</span>
-                        <span>12:30hs</span>
-                        <span>14:00hs</span>
-                        <span>15:30hs</span>
-                        <span>17:00hs</span>
-                        <span>18:30hs</span>
-                        <span>20:00hs</span>
-                        <span>21:30hs</span>
-                        <span>23:00hs</span>
-                        <span>00:30hs</span>
+                        <button><span>08:00hs</span></button>
+                        <button><span>09:30hs</span></button>
+                        <button><span>11:00hs</span></button>
+                        <button><span>12:00hs</span></button>
+                        <button><span>13:30hs</span></button>
+                        <button><span>15:00hs</span></button>
+                        <button><span>16:30hs</span></button>
+                        <button><span>18:00hs</span></button>
+                        <button><span>19:30hs</span></button>
+                        <button><span>21:00hs</span></button>
+                        <button><span>22:30hs</span></button>
+                        <button><span>00:00hs</span></button>
                     </div>
                 </div>
             </div>

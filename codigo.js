@@ -83,11 +83,27 @@ function updateMenu() {
     }
 }
 
-document.getElementById('sesionCerrada').addEventListener('click', function () {
-    cerrarSesion();
+function cerrarSesion() {
+    account = false;
+    updateMenu(); // Actualiza el menú
+    alert("Sesión Cerrada");
+}
+
+document.getElementById('Select').addEventListener('change', function () {
+    if (this.value === 'cerrarSesion') {
+        cerrarSesion();
+    } else {
+        // Manejar otras opciones, si es necesario
+        navigateToPage(this.value);
+    }
 });
 
+updateMenu(); // Actualiza el menú inicialmente
 
-function cerrarSesion() {
-    alert("holaaaaaaa")
+function navigateToPage(url) {
+    if (url === 'perfil') {
+        window.location.href = 'perfil.html';
+    } else if (url === 'gestion') {
+        window.location.href = 'gestion.html';
+    }
 }

@@ -135,6 +135,7 @@
         <div class="menu_main-grid">
             <section class="menu_section">
                 <div class="menu_section-ubi">
+                    <label for="">Encuantranos Aquí</label>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d351.1366134105441!2d-59.30895426033219!3d-33.1460484005007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b09ca04391d571%3A0x49cc8f71a8d57e24!2sEscuela%20Superior%20N%C2%B0%208%20%22Celestino%20Irineo%20Marc%C3%B3%22!5e0!3m2!1ses-419!2sar!4v1715637808003!5m2!1ses-419!2sar"
                         width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -144,54 +145,14 @@
             <aside class="menu_aside">
                 <div class="menu_aside-fondoComentarios">
                     <h3>Sección de Comentario</h3>
-                    <div class="menu_aside-comentarios">
-                        <div class="menu_aside-comentarios-content">
-                            <img class="menu_aside-comentarios-avatar" src="https://via.placeholder.com/50"
-                                alt="Avatar">
-                            <div class="menu_aside-comentarios-author">Lautaro Villabona</div>
-                            <div class="menu_aside-comentarios-text">La cancha estuvo buena, y se disfrutó bastante el
-                                partido, recomendado al 100%.</div>
-                        </div>
-                        <div class="menu_aside-comentarios-content">
-                            <img class="menu_aside-comentarios-avatar" src="https://via.placeholder.com/50"
-                                alt="Avatar">
-                            <div class="menu_aside-comentarios-author">Ramiro Menescardi</div>
-                            <div class="menu_aside-comentarios-text">Excelente las canchas, la verdad que pudimos jugar
-                                de
-                                10 sin ningún inconveniente</div>
-                        </div>
-                        <div class="menu_aside-comentarios-content">
-                            <img class="menu_aside-comentarios-avatar" src="https://via.placeholder.com/50"
-                                alt="Avatar">
-                            <div class="menu_aside-comentarios-author">Alejo Zapatiel</div>
-                            <div class="menu_aside-comentarios-text">No me gustó para nada, se largó a llover y nos re
-                                ganaron, en estas condiciones no se puede jugar, debería estar cubierto todo esto.</div>
-                        </div>
-                        <div class="menu_aside-comentarios-content">
-                            <img class="menu_aside-comentarios-avatar" src="https://via.placeholder.com/50"
-                                alt="Avatar">
-                            <div class="menu_aside-comentarios-author">Alejo Zapatiel</div>
-                            <div class="menu_aside-comentarios-text">No me gustó para nada, se largó a llover y nos re
-                                ganaron, en estas condiciones no se puede jugar, debería estar cubierto todo esto.</div>
-                        </div>
-                        <div class="menu_aside-comentarios-content">
-                            <img class="menu_aside-comentarios-avatar" src="https://via.placeholder.com/50"
-                                alt="Avatar">
-                            <div class="menu_aside-comentarios-author">Alejo Zapatiel</div>
-                            <div class="menu_aside-comentarios-text">No me gustó para nada, se largó a llover y nos re
-                                ganaron, en estas condiciones no se puede jugar, debería estar cubierto todo esto.</div>
-                        </div>
-                    </div>
-
-                    <!-- Agrega más comentarios aquí -->
-
+                    <div class="menu_aside-comentarios" id="commentsContainer"></div>
                     <form class="menu_aside-comentarios-form" id="commentForm">
                         <textarea id="commentText" placeholder="Escribe tu comentario aquí..." rows="4"></textarea>
-                        <button type="submit">Agregar comentario</button>
+                        <button type="submit" class="menu_aside-comentarios-form-button">Agregar comentario</button>
                     </form>
+                    <button id="clearCommentsButton" class="menu_aside-comentarios-form-button">Borrar</button>
                 </div>
-
-            </aside>
+            </aside>  
         </div>
     </main>
     <footer class="login_footer menu_footer">

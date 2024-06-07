@@ -107,3 +107,88 @@ function navigateToPage(url) {
         window.location.href = 'gestion.html';
     }
 }
+
+const MAX_COMMENTS = 15;
+
+document.addEventListener('DOMContentLoaded', function () {
+    loadComments();
+
+    document.getElementById('commentForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que el formulario se envíe por defecto
+        addComment();
+    });
+
+    document.getElementById('clearCommentsButton').addEventListener('click', function () {
+        clearComments();
+    });
+});
+
+function loadComments() {
+    const commentsContainer = document.getElementById('commentsContainer');
+    const comments = JSON.parse(localStorage.getItem('comments')) || [];
+    commentsContainer.innerHTML = '';
+
+    // Iterar a través de los comentarios en orden inverso para que los más recientes aparezcan arriba
+    for (let i = comments.length - 1; i >= 0; i--) {
+        commentsContainer.insertBefore(createCommentElement(comments[i]), commentsContainer.firstChild);
+    }
+}
+
+function addComment() {
+    const commentText = document.getElementById('commentText').value.trim();
+    if (commentText === '') {
+        alert('Por favor, escribe un comentario.');
+        return;
+    }
+
+    let comments = JSON.parse(localStorage.getItem('comments')) || [];
+
+    if (comments.length >= MAX_COMMENTS) {
+        comments.shift(); // Eliminar el comentario más antiguo si se alcanza el límite
+    }
+
+    const now = new Date();
+    const newComment = {
+        author: prompt("Ingrese su Nombre") || 'Anónimo',
+        text: commentText,
+        avatar: 'https://via.placeholder.com/50',
+        date: formatDate(now), // Formatear la fecha
+        time: formatTime(now) // Formatear la hora
+    };
+
+    comments.unshift(newComment); // Agregar el comentario al principio del array
+    localStorage.setItem('comments', JSON.stringify(comments));
+
+    // Insertar el nuevo comentario al principio del contenedor
+    const commentsContainer = document.getElementById('commentsContainer');
+    commentsContainer.insertBefore(createCommentElement(newComment), commentsContainer.firstChild);
+    document.getElementById('commentText').value = '';
+}
+
+function clearComments() {
+    localStorage.removeItem('comments');
+    document.getElementById('commentsContainer').innerHTML = '';
+}
+
+function createCommentElement(comment) {
+    const commentDiv = document.createElement('div');
+    commentDiv.classList.add('menu_aside-comentarios-content');
+    commentDiv.innerHTML = `
+        <div>
+            <div class="menu_aside-comentarios-author">${comment.author}</div>
+            <div class="menu_aside-comentarios-text">${comment.text}</div>
+            <div class="menu_aside-comentarios-date">${comment.date} ${comment.time}</div>
+        </div>
+    `;
+    return commentDiv;
+}
+
+function formatDate(date) {
+    const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+    return date.toLocaleDateString('es-ES', options);
+}
+
+function formatTime(date) {
+    const options = { hour: 'numeric', minute: 'numeric' };
+    return date.toLocaleTimeString('es-ES', options);
+}

@@ -147,6 +147,14 @@ i {
 
         margin-bottom: 20px;
     }
+
+    .navbar-toggler {
+        border: 1px solid #000;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
 }
 
 @media screen and (max-width: 990px) {
@@ -157,7 +165,10 @@ i {
         padding-left: 5px;
         margin: 20px 0;
     }
+
 }
+
+
 
 /*--------------------------------------------------------------------------     Menú     ---------------------------------------------------------------------------------*/
 #navbarNav {
@@ -165,8 +176,25 @@ i {
     margin-right: 20px;
 }
 
+.navbar-brand h2 {
+    margin: auto;
+}
+
+.navbar {
+    border-bottom: 1px solid #000;
+}
+
 #navbarNav a:hover {
     text-decoration: underline;
+}
+
+.menu_nav-select-first-child {
+    text-align: center;
+}
+
+.menu_nav-select:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 .menu_body {
@@ -181,6 +209,8 @@ i {
 
 .menu_header-img {
     margin: auto 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .menu_header-img img {
@@ -196,12 +226,7 @@ i {
     display: flex;
 }
 
-.menu_main-img img {
-    margin: 50px auto;
-    border-radius: 20px;
-    height: 400px;
-    width: 60%;
-}
+
 
 .menu_main-nav-content {
     display: flex;
@@ -264,12 +289,17 @@ i {
     padding: 10px;
 }
 
-.menu_main-horarios-turnos-hora span {
-    background-color: #1877f2;
-    margin: auto 10px;
+.menu_main-horarios-turnos-días input[type="date"] {
     padding: 10px;
-    border-radius: 20px;
-    white-space: nowrap;
+    font-size: 16px;
+    width: 20%;
+    box-sizing: border-box;
+    background-color: #444;
+    border: none;
+}
+
+.menu_main-horarios-turnos-días input[type="date"]:focus {
+    outline: none;
 }
 
 
@@ -290,8 +320,13 @@ i {
     padding: 0;
 }
 
+.menu_section-ubi label {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
 .menu_aside {
-    background-color: #888;
+    background-color: none;
     margin: 50px;
     border-radius: 8px;
 }
@@ -323,6 +358,71 @@ i {
         margin: 20px;
     }
 
+}
+
+.carousel-inner {
+    display: flex;
+    margin: 30px auto;
+    width: 60%;
+    height: 400px;
+    border-radius: 20px;
+}
+
+.carousel-item img {
+    border-radius: 20px;
+    height: 600px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none;
+}
+
+.carousel-control-prev-icon::after,
+.carousel-control-next-icon::after {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    background-color: #000;
+}
+
+.carousel-control-prev-icon::after {
+    mask-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27%23000%27 viewBox=%270 0 16 16%27%3E%3Cpath fill-rule=%27evenodd%27 d=%27M11.354 15.354a.5.5 0 0 0 0-.708L5.707 9.5l5.647-5.646a.5.5 0 1 0-.708-.708l-6 6a.5.5 0 0 0 0 .708l6 6a.5.5 0 0 0 .708 0z%27/%3E%3C/svg%3E');
+    /* SVG para el icono de 'prev' */
+}
+
+.carousel-control-next-icon::after {
+    mask-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27%23000%27 viewBox=%270 0 16 16%27%3E%3Cpath fill-rule=%27evenodd%27 d=%27M4.646 15.354a.5.5 0 0 1 0-.708L10.293 9.5 4.646 3.854a.5.5 0 1 1 .708-.708l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708 0z%27/%3E%3C/svg%3E');
+    /* SVG para el icono de 'next' */
+}
+
+@media screen and (max-width: 990px) {
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+
+    .carousel-inner {
+        width: 70%;
+        height: 200px;
+    }
+
+    .carousel-inner img {
+        height: 100%;
+    }
+
+    .menu_main-horarios-turnos-días input[type="date"] {
+        padding: 10px;
+        font-size: 16px;
+        width: 30%;
+        box-sizing: border-box;
+        background-color: #444;
+        border: none;
+    }
 }
 
 @media (max-width: 740px) {
@@ -359,12 +459,12 @@ i {
     }
 
     .menu_main-horarios-turnos-días {
-        margin: auto auto 10px auto;
         background-color: transparent;
-        width: 80%;
+        width: 90%;
+        margin-left: 5%;
     }
 
-    .menu_main-horarios-turnos-días input {
+    .menu_main-horarios-turnos-días input[type="date"] {
         text-align: center;
         width: 100%;
     }
@@ -390,7 +490,7 @@ i {
     .menu_aside {
         height: 60%;
         margin: 0;
-        margin-bottom: -1s0px;
+        margin-bottom: -1s 0px;
     }
 
     .menu_aside-fondoComentarios {
@@ -408,11 +508,14 @@ i {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    border: 1px solid #000;
 
 }
 
 .menu_aside-fondoComentarios h3 {
     text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #000;
 }
 
 .menu_aside-comentarios {
@@ -454,6 +557,13 @@ i {
     color: #555;
 }
 
+.menu_aside-comentarios-date {
+    color: #555;
+    font-size: 10px;
+    margin: 5px auto;
+    justify-content: space-between;
+}
+
 .menu_aside-comentarios-form {
     margin-top: 30px;
 }
@@ -467,7 +577,7 @@ i {
     resize: none;
 }
 
-.menu_aside-comentarios-form button {
+.menu_aside-comentarios-form-button {
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
@@ -475,17 +585,52 @@ i {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-bottom: 10px;
 }
 
-.menu_aside-comentarios-form button:hover {
+.menu_aside-comentarios-form-button:hover {
     background-color: #45a049;
 }
 
+.menu_main-horarios-turnos-hora button {
+    background: none;
+    border: none;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.menu_main-horarios-turnos-hora span {
+    background-color: #1877f2;
+    padding: 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 740px) {
+    .menu_main-horarios-turnos-hora button {
+        margin: 10px 0;
+    }
+}
+
+
+.menu_nav-select {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 0;
+}
+
+.menu_nav-select i {
+    margin: 10px auto;
+}
+
+.menu-nav-displayNone {
+    display: none;
+}
 
 /*----------------------------------------------------------Login y Registro------------------------------------------*/
 
 .login_body {
-    background: radial-gradient(circle, rgb(243, 245, 243), #f7f8f7fd)
+    background-color: #ADD8E6;
 }
 
 .login_formulario {
@@ -705,4 +850,72 @@ i {
 .torneos-boton:hover {
     background-color: #333;
     color: #01ff22
+}
+
+/*-----------------------Gestion------------------*/
+
+.gestion_main {
+    margin: auto 30px;
+    margin-top: 50px;
+}
+
+.gestion_main-busqueda {
+    display: flex;
+    justify-content: start;
+    margin: 20px auto;
+}
+
+.gestion_main-label {
+    display: block;
+    font-size: 30px;
+    margin: auto;
+}
+
+.gestion_main-busqueda div {
+    display: flex;
+    font-size: 20px;
+}
+
+.gestion_main-busqueda-div label {
+    margin: auto 10px;
+}
+
+.gestion_main-busqueda-div input {
+    margin-top: auto;
+}
+
+.gestion_main-table {
+    margin: auto;
+}
+
+.gestion_main-table table {
+    border: 1px solid #000;
+}
+
+.gestion_main-table td {
+    border: 1px solid #000;
+}
+
+.gestion_footer {
+    margin-top: 25%;
+}
+
+@media screen and (max-width: 720px) {
+    .gestion_main-busqueda div {
+        display: block;
+    }
+
+    .gestion_main-label-div {
+        margin: 10px auto;
+    }
+
+    .gestion_main-busqueda input {
+        float: right;
+        width: 68%;
+    }
+}
+
+/*Gestión de cuentas*/
+.DisplayNone {
+    display: none;
 }

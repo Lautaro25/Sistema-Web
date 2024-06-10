@@ -399,105 +399,6 @@ i {
     /* SVG para el icono de 'next' */
 }
 
-@media screen and (max-width: 990px) {
-
-    .carousel-control-prev,
-    .carousel-control-next {
-        display: none;
-    }
-
-    .carousel-inner {
-        width: 70%;
-        height: 200px;
-    }
-
-    .carousel-inner img {
-        height: 100%;
-    }
-
-    .menu_main-horarios-turnos-días input[type="date"] {
-        padding: 10px;
-        font-size: 16px;
-        width: 30%;
-        box-sizing: border-box;
-        background-color: #444;
-        border: none;
-    }
-}
-
-@media (max-width: 740px) {
-    .menu_main-img img {
-        margin: 50px auto;
-        border-radius: 20px;
-        height: 200px;
-        width: 80%;
-
-    }
-
-    .menu_main-horarios {
-        margin: auto 10px;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        margin-bottom: 30px;
-    }
-
-    .menu_main-horarios-deportes {
-        width: 100%;
-        margin: auto;
-        text-align: center;
-        border-radius: 0;
-        background-color: transparent;
-        background-color: #555;
-    }
-
-    .menu_main-horarios-turnos {
-        margin-top: 10px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .menu_main-horarios-turnos-días {
-        background-color: transparent;
-        width: 90%;
-        margin-left: 5%;
-    }
-
-    .menu_main-horarios-turnos-días input[type="date"] {
-        text-align: center;
-        width: 100%;
-    }
-
-    .menu_main-horarios-turnos-hora {
-        background-color: transparent;
-        margin: auto;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        width: 100%;
-    }
-
-    .menu_main-grid {
-        margin: 0;
-    }
-
-    .menu_section {
-        height: 80%;
-        margin: 0;
-        margin-bottom: -200px;
-    }
-
-    .menu_aside {
-        height: 60%;
-        margin: 0;
-        margin-bottom: -1s 0px;
-    }
-
-    .menu_aside-fondoComentarios {
-        height: 80%;
-    }
-}
-
 /*todo aside*/
 .menu_aside-fondoComentarios {
     width: 80%;
@@ -606,7 +507,116 @@ i {
     white-space: nowrap;
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 990px) {
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+
+    .carousel-inner {
+        width: 70%;
+        height: 200px;
+    }
+
+    .carousel-inner img {
+        height: 100%;
+    }
+
+    .menu_main-horarios-turnos-días input[type="date"] {
+        padding: 10px;
+        font-size: 16px;
+        width: 30%;
+        box-sizing: border-box;
+        background-color: #444;
+        border: none;
+    }
+}
+
+@media (max-width: 740px) {
+    .menu_main-img img {
+        margin: 50px auto;
+        border-radius: 20px;
+        height: 200px;
+        width: 80%;
+
+    }
+
+    .menu_main-horarios {
+        margin: auto 10px;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        margin-bottom: 30px;
+    }
+
+    .menu_main-horarios-deportes {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        border-radius: 0;
+        background-color: transparent;
+        background-color: #555;
+    }
+
+    .menu_main-horarios-turnos {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu_main-horarios-turnos-días {
+        background-color: transparent;
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .menu_main-horarios-turnos-días input[type="date"] {
+        text-align: center;
+        width: 100%;
+    }
+
+    .menu_main-horarios-turnos-hora {
+        background-color: transparent;
+        margin: auto;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    .menu_main-grid {
+        margin: 0;
+    }
+
+    .menu_section {
+        height: 80%;
+        margin: 0;
+        margin-bottom: -200px;
+    }
+
+    .menu_aside {
+        height: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .menu_aside-comentarios {
+        height: 100%;
+        max-height: 200px;
+    }
+
+    .menu_aside-fondoComentarios {
+        height: 100%;
+        margin: auto;
+    }
+
+    #commentText {}
+
+    #clearCommentsButton {
+        display: none;
+    }
+
     .menu_main-horarios-turnos-hora button {
         margin: 10px 0;
     }

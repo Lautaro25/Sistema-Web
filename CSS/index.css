@@ -611,8 +611,6 @@ i {
         margin: auto;
     }
 
-    #commentText {}
-
     #clearCommentsButton {
         display: none;
     }
@@ -620,6 +618,11 @@ i {
     .menu_main-horarios-turnos-hora button {
         margin: 10px 0;
     }
+
+    .carousel-inner {
+        width: 90%;
+    }
+
 }
 
 

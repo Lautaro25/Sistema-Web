@@ -181,7 +181,7 @@ i {
 }
 
 .navbar {
-    border-bottom: 1px solid #000;
+    background-color: #789461;
 }
 
 #navbarNav a:hover {
@@ -195,6 +195,10 @@ i {
 .menu_nav-select:focus {
     outline: none;
     box-shadow: none;
+}
+
+.select-hover:hover{
+    border-bottom: 1px solid #4d5f3e;
 }
 
 .menu_body {
@@ -217,6 +221,98 @@ i {
     width: 50px;
 }
 
+.user-perfil{
+    font-size: 100px;
+    margin: auto;
+}
+
+/*Ventana Flotante*/
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+    --transform: translateY(-100vh);
+    --transition: transform .8s;
+}
+
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+    --transform: translateY(0vh);
+}
+
+.modal_container{
+    width: 90%;
+    background-color: #ccc;
+    max-width: 460px;
+    max-height: 90%;
+    margin: auto;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    padding-bottom: 1.5em;
+    display: grid;
+    gap: 1em;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition: var(--transition);
+
+}
+
+.modal_title{
+    font-size: 2.5rem;
+    margin: auto ;
+    margin-bottom: 20px;
+}
+
+.modal_p{
+    margin-bottom: 20px;
+    
+}
+
+.modal_img{
+    width: 90%;
+    max-width: 300px;
+}
+
+.modal_close{
+    font-size: 25px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    text-decoration: none;
+    color: #000;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    transition: background-color .3s;
+}
+
+.modal_close:hover{
+    color: #444;
+    font-size: 27px;
+    top:9px;
+}
+
+.modal_button{
+    display: inline-block;
+    padding: 6px;
+    border-radius: 20px;
+    justify-self: left;
+    margin-bottom: 0;
+}
+
+.modal_button:hover{
+    transform: scale(1.02);
+}
+
 .menu_main {
     max-width: 100%;
     overflow-x: hidden;
@@ -225,8 +321,6 @@ i {
 .menu_main-img {
     display: flex;
 }
-
-
 
 .menu_main-nav-content {
     display: flex;
@@ -250,7 +344,7 @@ i {
 }
 
 .menu_main-horarios {
-    background-color: #999;
+    background-color: #789461;
     height: 150px;
     margin: 50px 50px;
     border-radius: 50px;
@@ -261,7 +355,7 @@ i {
 }
 
 .menu_main-horarios-deportes {
-    background-color: #888;
+    background-color: #789461;
     height: 100%;
     width: 20%;
 }
@@ -276,12 +370,12 @@ i {
 }
 
 .menu_main-horarios-turnos-días {
-    background-color: #444;
+    background-color: #294B29;
     height: 30%;
 }
 
 .menu_main-horarios-turnos-hora {
-    background-color: #666;
+    background-color: #50623A;
     height: 70%;
     display: flex;
     flex-wrap: nowrap;
@@ -294,7 +388,7 @@ i {
     font-size: 16px;
     width: 20%;
     box-sizing: border-box;
-    background-color: #444;
+    background-color: #294B29;
     border: none;
 }
 
@@ -501,7 +595,7 @@ i {
 }
 
 .menu_main-horarios-turnos-hora span {
-    background-color: #1877f2;
+    background-color: #DBE7C9;
     padding: 10px;
     border-radius: 20px;
     white-space: nowrap;
@@ -528,7 +622,7 @@ i {
         font-size: 16px;
         width: 30%;
         box-sizing: border-box;
-        background-color: #444;
+        background-color: #294B29;
         border: none;
     }
 }
@@ -556,7 +650,7 @@ i {
         text-align: center;
         border-radius: 0;
         background-color: transparent;
-        background-color: #555;
+        background-color: #50623A;
     }
 
     .menu_main-horarios-turnos {
@@ -643,7 +737,7 @@ i {
 /*----------------------------------------------------------Login y Registro------------------------------------------*/
 
 .login_body {
-    background-color: #ADD8E6;
+    background-color: #DBE7C9;
 }
 
 .login_formulario {
@@ -752,7 +846,7 @@ i {
 }
 
 .login_footer {
-    background-color: #000;
+    background-color: #222;
     color: #fff;
     text-align: center;
     padding: 50px 0;
@@ -932,3 +1026,4 @@ i {
 .DisplayNone {
     display: none;
 }
+

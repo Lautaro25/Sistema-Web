@@ -46,11 +46,11 @@
                         <li class="nav-item">
                             <a class="nav-link without-acount" href="registro.html"><i class=""></i>Resgistrarse</a>
                         </li>
-                        <li class="nav-item menu_nav-select with-acount">
+                        <li class="nav-item menu_nav-select with-acount select-hover">
                             <i class="fa-solid fa-user"></i>
                             <select class="nav-link menu_nav-select " name="" id="Select" onchange="navigateToPage()">
                                 <option value="" disabled selected hidden>Cuenta</option>
-                                <option value="perfil">Perfil</option>
+                                <option value="perfil" class="hero_cta">Perfil</option>
                                 <option value="gestion" class="">Gestionar</option>
                                 <option value="cerrarSesion">Cerrar Sesión</option>
                             </select>
@@ -60,6 +60,17 @@
             </div>
         </nav>
     </header>
+    <section class="modal">
+        <div class="modal_container">
+            <a href="#" class="modal_close" onclick="closeModal()">&times;</a>
+            <i class="fa-solid fa-user user-perfil"></i>
+            <h2 class="modal_title">Información del Perfil</h2>
+            <p class="modal_p">ID: 1957391</p>
+            <p class="modal_p">Nombre de Usuario: Lautaro Villabona</p>
+            <p class="modal_p">Email: lautarovillabona@gmail.com</p>
+            <button class="modal_button">Modificar Información</button>
+        </div>
+    </section>
     <main class="menu_main">
         <section class="menu_section-main">
             <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">

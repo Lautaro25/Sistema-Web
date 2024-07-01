@@ -102,11 +102,23 @@ updateMenu(); // Actualiza el menú inicialmente
 
 function navigateToPage(url) {
     if (url === 'perfil') {
-        window.location.href = 'perfil.html';
+const modal = document.querySelector('.modal');
+const closeModal = document.querySelector('.modal_close');
+modal.classList.add('modal--show');
+
+closeModal.addEventListener('click',(e)=>{
+    e.preventDefault();
+    modal.classList.remove('modal--show');
+    // Restablece el valor del select al valor predeterminado
+    const select = document.getElementById('Select');
+    select.value = '';
+});
     } else if (url === 'gestion') {
         window.location.href = 'gestion.html';
     }
 }
+
+
 
 const MAX_COMMENTS = 15;
 
@@ -192,3 +204,5 @@ function formatTime(date) {
     const options = { hour: 'numeric', minute: 'numeric' };
     return date.toLocaleTimeString('es-ES', options);
 }
+
+

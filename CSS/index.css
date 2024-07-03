@@ -395,6 +395,20 @@ i {
     margin: 10px auto;
 }
 
+@media (max-width: 750px) {
+    .modal_title-horarios{
+        font-size: 30px;
+    }
+    .modal_alquiler-info{
+        padding: 0 22px;
+        margin: 7px auto;
+    }
+
+    .modal_p-horarios{
+        margin-bottom: 10px;
+    }
+}
+
 .menu_main-horarios {
     background-color: #789461;
     height: 150px;

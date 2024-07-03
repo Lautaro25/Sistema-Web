@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 /*Muestras para Usuarios con Cuenta*/
 
 // Define la variable account en el ámbito global y empieza como 
+if(document.title==="Alquilá tu Cancha"){
 let decide = prompt("Decide (true/false)");
 let account;
 
@@ -58,6 +59,7 @@ else if (decide.trim().toLowerCase() === "false") {
 else {
     alert("Entrada inválida. Por favor, ingresa 'true' o 'false'.");
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
     updateMenu();
@@ -99,7 +101,7 @@ document.getElementById('Select').addEventListener('change', function () {
 });
 
 updateMenu(); // Actualiza el menú inicialmente
-
+}   
 function navigateToPage(url) {
     if (url === 'perfil') {
 const modal = document.querySelector('.modal-perfil');

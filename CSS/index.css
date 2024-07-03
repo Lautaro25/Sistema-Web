@@ -251,7 +251,7 @@ i {
 
 .modal_container{
     width: 90%;
-    background-color: #ccc;
+    background-color: #c1cbb2;
     max-width: 460px;
     max-height: 90%;
     margin: auto;
@@ -302,6 +302,7 @@ i {
 }
 
 .modal_button{
+    background-color: #789461;
     display: inline-block;
     padding: 6px;
     border-radius: 20px;
@@ -312,6 +313,28 @@ i {
 .modal_button:hover{
     transform: scale(1.02);
 }
+
+.modal_form h5{
+    padding-top: 20px;
+    text-align: center;
+    border-top: 1px solid #555;
+}
+
+.modal_form input{
+    display: block;
+    margin: 15px auto;
+    width: 80%;
+    height: 40px;
+    border-radius: 6px;
+    border: none;
+}
+
+.modal_form button{
+    display: block;
+    margin: auto;
+    border: 1px solid #000;
+}
+
 
 .menu_main {
     max-width: 100%;
@@ -335,6 +358,10 @@ i {
     align-self: center;
 }
 
+.icon-button{
+    margin: auto 10px;
+}
+
 .fas {
     margin-right: 10px;
 }
@@ -343,10 +370,36 @@ i {
     margin: auto 10px;
 }
 
+.horarios-label{
+    margin: 30px auto auto 70px;
+}
+
+.fa-bell{
+    font-size: 60px;
+}
+
+.modal_alquiler-horario{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+}
+
+.modal_alquiler-info{
+    justify-items: center;
+    text-align: center;
+    background-color: #789461;
+    padding: 10px 33px;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
 .menu_main-horarios {
     background-color: #789461;
     height: 150px;
-    margin: 50px 50px;
+    margin: 50px;
+    margin-top: 0;
     border-radius: 50px;
     display: flex;
     max-width: 100%;
@@ -414,7 +467,7 @@ i {
     padding: 0;
 }
 
-.menu_section-ubi label {
+.menu-label {
     font-size: 25px;
     margin-bottom: 5px;
 }
@@ -629,6 +682,15 @@ i {
 }
 
 @media (max-width: 740px) {
+
+    .menu-div-label{
+        display: flex;
+    }
+
+    .horarios-label{
+        margin: auto;
+    }
+
     .menu_main-img img {
         margin: 50px auto;
         border-radius: 20px;
@@ -1035,4 +1097,3 @@ i {
 .DisplayNone {
     display: none;
 }
-

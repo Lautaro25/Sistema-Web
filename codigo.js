@@ -102,8 +102,8 @@ updateMenu(); // Actualiza el menú inicialmente
 
 function navigateToPage(url) {
     if (url === 'perfil') {
-const modal = document.querySelector('.modal');
-const closeModal = document.querySelector('.modal_close');
+const modal = document.querySelector('.modal-perfil');
+const closeModal = document.querySelector('.modal_close-perfil');
 modal.classList.add('modal--show');
 
 closeModal.addEventListener('click',(e)=>{
@@ -206,3 +206,15 @@ function formatTime(date) {
 }
 
 
+/*Ventana de Alquiler*/
+function Alquiler(){
+    const modal = document.querySelector('.modal-alquiler');
+const closeModalAlquiler = document.querySelector('.modal_close-alquiler');
+modal.classList.add('modal--show');
+
+closeModalAlquiler.addEventListener('click',(e)=>{
+    e.preventDefault();
+    modal.classList.remove('modal--show');
+
+});
+}

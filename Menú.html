@@ -24,9 +24,9 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <div class="menu_header-img"><img src="Img/iconoWeb2.ico" alt=""></div>
-                    <a class="navbar-brand" href="index.html">
-                        <h2 class="animate__animated animate__pulse">Página Principal</h2>
-                    </a>
+                <a class="navbar-brand" href="index.html">
+                    <h2 class="animate__animated animate__pulse">Página Principal</h2>
+                </a>
                 <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon "></span>
@@ -34,7 +34,8 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link with-acount" href="torneo.html"><i class="fas fa-solid fa-trophy"></i>Torneos</a>
+                            <a class="nav-link with-acount" href="torneo.html"><i
+                                    class="fas fa-solid fa-trophy"></i>Torneos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contaco.html"><i class="fas fa-users"></i>Contacta con
@@ -46,11 +47,11 @@
                         <li class="nav-item">
                             <a class="nav-link without-acount" href="registro.html"><i class=""></i>Resgistrarse</a>
                         </li>
-                        <li class="nav-item menu_nav-select with-acount">
+                        <li class="nav-item menu_nav-select with-acount select-hover">
                             <i class="fa-solid fa-user"></i>
                             <select class="nav-link menu_nav-select " name="" id="Select" onchange="navigateToPage()">
                                 <option value="" disabled selected hidden>Cuenta</option>
-                                <option value="perfil">Perfil</option>
+                                <option value="perfil" class="hero_cta">Perfil</option>
                                 <option value="gestion" class="">Gestionar</option>
                                 <option value="cerrarSesion">Cerrar Sesión</option>
                             </select>
@@ -60,6 +61,18 @@
             </div>
         </nav>
     </header>
+    <section class="modal modal-perfil">
+        <div class="modal_container">
+            <a href="#" class="modal_close modal_close-perfil" onclick="closeModal()">&times;</a>
+            <i class="fa-solid fa-user user-perfil"></i>
+            <h2 class="modal_title">Información del Perfil</h2>
+            <p class="modal_p">ID: 1957391</p>
+            <p class="modal_p">Nombre de Usuario: Lautaro Villabona</p>
+            <p class="modal_p">Email: lautarovillabona@gmail.com</p>
+            <button class="modal_button"><i class="fa-solid fa-pen-to-square icon-button"></i>Modificar
+                Información</button>
+        </div>
+    </section>
     <main class="menu_main">
         <section class="menu_section-main">
             <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -96,6 +109,7 @@
                     <span class="visually-hidden">Siguiente</span>
                 </button>
             </div>
+            <div class="menu-div-label"><label for="" class="menu-label horarios-label">Alquilá tu Cancha</label></div>
             <div class="menu_main-horarios">
                 <div class="menu_main-horarios-deportes">
                     <select class="select_contacto index_bodydeporteSelect" id="select-pc">
@@ -116,26 +130,55 @@
                         <input type="date" id="date-input">
                     </div>
                     <div class="menu_main-horarios-turnos-hora">
-                        <button><span>08:00hs</span></button>
-                        <button><span>09:30hs</span></button>
-                        <button><span>11:00hs</span></button>
-                        <button><span>12:00hs</span></button>
-                        <button><span>13:30hs</span></button>
-                        <button><span>15:00hs</span></button>
-                        <button><span>16:30hs</span></button>
-                        <button><span>18:00hs</span></button>
-                        <button><span>19:30hs</span></button>
-                        <button><span>21:00hs</span></button>
-                        <button><span>22:30hs</span></button>
-                        <button><span>00:00hs</span></button>
+                        <button onclick="Alquiler()"><span>08:00hs</span></button>
+                        <button onclick="Alquiler()"><span>09:30hs</span></button>
+                        <button onclick="Alquiler()"><span>11:00hs</span></button>
+                        <button onclick="Alquiler()"><span>12:00hs</span></button>
+                        <button onclick="Alquiler()"><span>13:30hs</span></button>
+                        <button onclick="Alquiler()"><span>15:00hs</span></button>
+                        <button onclick="Alquiler()"><span>16:30hs</span></button>
+                        <button onclick="Alquiler()"><span>18:00hs</span></button>
+                        <button onclick="Alquiler()"><span>19:30hs</span></button>
+                        <button onclick="Alquiler()"><span>21:00hs</span></button>
+                        <button onclick="Alquiler()"><span>22:30hs</span></button>
+                        <button onclick="Alquiler()"><span>00:00hs</span></button>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="modal modal-alquiler">
+            <div class="modal_container">
+                <a href="#" class="modal_close modal_close-alquiler" onclick="closeModalAlquiler()">&times;</a>
+                <i class="fa-solid fa-bell user-perfil"></i>
+                <h2 class="modal_title">Hora de Alquilar</h2>
+                <div class="modal_alquiler-horario">
+                    <div class="modal_alquiler-info">
+                        <p class="modal_p">Horario</p>
+                        <p class="modal_p">20:00</p>
+                    </div>
+                    <div class="modal_alquiler-info">
+
+                        <p class="modal_p">Cancha</p>
+                        <p class="modal_p">2</p>
+                    </div>
+                    <div class="modal_alquiler-info">
+                        <p class="modal_p">Díá</p>
+                        <p class="modal_p">12/07</p>
+                    </div>
+                </div>
+                <form action="" class="modal_form">
+                    <h5>Información</h5>
+                    <input type="text" required placeholder="Ingrese su Nombre y Apellido">
+                    <input type="number" required placeholder="Ingrese su Teléfono">
+                    <input type="number" required placeholder="Ingrese su DNI">
+                <button class="modal_button"><i class="fa-solid fa-thumbtack icon-button"></i>Alquilar</button>
+                </form>          
             </div>
         </section>
         <div class="menu_main-grid">
             <section class="menu_section">
                 <div class="menu_section-ubi">
-                    <label for="">Encuantranos Aquí</label>
+                    <label for="" class="menu-label">Encuantranos Aquí</label>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d351.1366134105441!2d-59.30895426033219!3d-33.1460484005007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b09ca04391d571%3A0x49cc8f71a8d57e24!2sEscuela%20Superior%20N%C2%B0%208%20%22Celestino%20Irineo%20Marc%C3%B3%22!5e0!3m2!1ses-419!2sar!4v1715637808003!5m2!1ses-419!2sar"
                         width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -152,7 +195,7 @@
                     </form>
                     <button id="clearCommentsButton" class="menu_aside-comentarios-form-button">Borrar</button>
                 </div>
-            </aside>  
+            </aside>
         </div>
     </main>
     <footer class="login_footer menu_footer">

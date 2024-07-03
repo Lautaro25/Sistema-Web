@@ -1,3 +1,4 @@
+
 function navigateToPage() {
     let select = document.getElementById('Select');
     let url = select.value;
@@ -42,73 +43,83 @@ document.addEventListener('DOMContentLoaded', (event) => {
 /*Muestras para Usuarios con Cuenta*/
 
 // Define la variable account en el ámbito global y empieza como 
-if (document.title === "Alquilá tu Cancha") {
-    let decide = prompt("Decide (true/false)");
+let decide = prompt("Decide (true/false)");
+let account;
 
-    let account;
+// Verifica si la entrada del usuario es "true" (ignorando mayúsculas/minúsculas)
+if (decide.trim().toLowerCase() === "true") {
+    account = true;
+}
+// Verifica si la entrada del usuario es "false" (ignorando mayúsculas/minúsculas)
+else if (decide.trim().toLowerCase() === "false") {
+    account = false;
+}
+// Si la entrada no es ni "true" ni "false", muestra un mensaje de error
+else {
+    alert("Entrada inválida. Por favor, ingresa 'true' o 'false'.");
+}
 
-    // Verifica si la entrada del usuario es "true" (ignorando mayúsculas/minúsculas)
-    if (decide.trim().toLowerCase() === "true") {
-        account = true;
-    }
-    // Verifica si la entrada del usuario es "false" (ignorando mayúsculas/minúsculas)
-    else if (decide.trim().toLowerCase() === "false") {
-        account = false;
-    }
-    // Si la entrada no es ni "true" ni "false", muestra un mensaje de error
-    else {
-        alert("Entrada inválida. Por favor, ingresa 'true' o 'false'.");
-    }
+document.addEventListener("DOMContentLoaded", function () {
+    updateMenu();
+});
 
-    document.addEventListener("DOMContentLoaded", function () {
-        updateMenu();
-    });
-
-    function updateMenu() {
-        let withAccountElements = document.getElementsByClassName('with-acount');
-        let withoutAccountElements = document.getElementsByClassName('without-acount');
-        if (account === false) {
-            for (let i = 0; i < withAccountElements.length; i++) {
-                withAccountElements[i].classList.add('DisplayNone');
-            }
-            for (let i = 0; i < withoutAccountElements.length; i++) {
-                withoutAccountElements[i].classList.remove('DisplayNone');
-            }
-        } else {
-            for (let i = 0; i < withAccountElements.length; i++) {
-                withAccountElements[i].classList.remove('DisplayNone');
-            }
-            for (let i = 0; i < withoutAccountElements.length; i++) {
-                withoutAccountElements[i].classList.add('DisplayNone');
-            }
+function updateMenu() {
+    let withAccountElements = document.getElementsByClassName('with-acount');
+    let withoutAccountElements = document.getElementsByClassName('without-acount');
+    if (account === false) {
+        for (let i = 0; i < withAccountElements.length; i++) {
+            withAccountElements[i].classList.add('DisplayNone');
         }
-    }
-
-    function cerrarSesion() {
-        account = false;
-        updateMenu(); // Actualiza el menú
-        alert("Sesión Cerrada");
-    }
-
-    document.getElementById('Select').addEventListener('change', function () {
-        if (this.value === 'cerrarSesion') {
-            cerrarSesion();
-        } else {
-            // Manejar otras opciones, si es necesario
-            navigateToPage(this.value);
+        for (let i = 0; i < withoutAccountElements.length; i++) {
+            withoutAccountElements[i].classList.remove('DisplayNone');
         }
-    });
-
-    updateMenu(); // Actualiza el menú inicialmente
-
-    function navigateToPage(url) {
-        if (url === 'perfil') {
-            window.location.href = 'perfil.html';
-        } else if (url === 'gestion') {
-            window.location.href = 'gestion.html';
+    } else {
+        for (let i = 0; i < withAccountElements.length; i++) {
+            withAccountElements[i].classList.remove('DisplayNone');
+        }
+        for (let i = 0; i < withoutAccountElements.length; i++) {
+            withoutAccountElements[i].classList.add('DisplayNone');
         }
     }
 }
+
+function cerrarSesion() {
+    account = false;
+    updateMenu(); // Actualiza el menú
+    alert("Sesión Cerrada");
+}
+
+document.getElementById('Select').addEventListener('change', function () {
+    if (this.value === 'cerrarSesion') {
+        cerrarSesion();
+    } else {
+        // Manejar otras opciones, si es necesario
+        navigateToPage(this.value);
+    }
+});
+
+updateMenu(); // Actualiza el menú inicialmente
+
+function navigateToPage(url) {
+    if (url === 'perfil') {
+const modal = document.querySelector('.modal-perfil');
+const closeModal = document.querySelector('.modal_close-perfil');
+modal.classList.add('modal--show');
+
+closeModal.addEventListener('click',(e)=>{
+    e.preventDefault();
+    modal.classList.remove('modal--show');
+    // Restablece el valor del select al valor predeterminado
+    const select = document.getElementById('Select');
+    select.value = '';
+});
+    } else if (url === 'gestion') {
+        window.location.href = 'gestion.html';
+    }
+}
+
+
+
 const MAX_COMMENTS = 15;
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -192,4 +203,18 @@ function formatDate(date) {
 function formatTime(date) {
     const options = { hour: 'numeric', minute: 'numeric' };
     return date.toLocaleTimeString('es-ES', options);
+}
+
+
+/*Ventana de Alquiler*/
+function Alquiler(){
+    const modal = document.querySelector('.modal-alquiler');
+const closeModalAlquiler = document.querySelector('.modal_close-alquiler');
+modal.classList.add('modal--show');
+
+closeModalAlquiler.addEventListener('click',(e)=>{
+    e.preventDefault();
+    modal.classList.remove('modal--show');
+
+});
 }

@@ -875,6 +875,16 @@ i {
     margin: 50px auto;
 }
 
+.container-password{
+    display: flex;
+    align-items: center;
+}
+
+.pass{
+    font-size: 1.5rem;
+    width: 400px;
+    padding: 10px 5px;
+}
 
 .login_desvio {
     text-align: center;

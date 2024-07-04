@@ -220,3 +220,26 @@ closeModalAlquiler.addEventListener('click',(e)=>{
 
 });
 }
+
+        // Función para alternar la visibilidad de la contraseña
+        function togglePasswordVisibility(input, icon) {
+            const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+            input.setAttribute('type', type);
+
+            if (type === 'text') {
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+
+        // Añadir eventos de clic a todos los botones de mostrar/ocultar contraseña
+        document.querySelectorAll('.toggle-password').forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const input = this.previousElementSibling;
+                const icon = this.firstElementChild;
+                togglePasswordVisibility(input, icon);
+            });
+        });

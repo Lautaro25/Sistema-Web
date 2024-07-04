@@ -400,7 +400,7 @@ i {
         font-size: 30px;
     }
     .modal_alquiler-info{
-        padding: 0 22px;
+        padding: 0 10px;
         margin: 7px auto;
     }
 
@@ -875,15 +875,25 @@ i {
     margin: 50px auto;
 }
 
-.container-password{
-    display: flex;
-    align-items: center;
+.password-container {
+    position: relative;
+}
+.password-container input[type="password"],
+.password-container input[type="text"] {
+    width: 100%;
+    padding-right: 40px; /* Añade espacio para el icono */
+}
+.password-container .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
 }
 
-.pass{
-    font-size: 1.5rem;
-    width: 400px;
-    padding: 10px 5px;
+#toggleIcon, #toggleIcon1, #toggleIcon2 {
+    font-size: 25px;
+    margin: auto;
 }
 
 .login_desvio {
@@ -1116,6 +1126,7 @@ i {
         width: 68%;
     }
 }
+
 
 /*Gestión de cuentas*/
 .DisplayNone {

@@ -17,9 +17,10 @@
 
 <body class="login_body">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/index.html">
+                <div class="menu_header-img"><img src="Img/iconoWeb2.ico" alt=""></div>
+                <a class="navbar-brand" href="index.html">
                     <h2>Página Principal</h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
@@ -29,7 +30,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="menu">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link nav-li" href="Menú.html">Alquilá tu Cancha</a>
+                            <a class="nav-link nav-li" href="Menú.html"><i class="fas fa-home"></i>Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link nav-li" href="index.html">Volver</a>
@@ -52,11 +53,11 @@
                         <input type="tel" name="tel" id="tel" 
                         placeholder="Ingrese su telefono">   
                                             
-                        <select class="select_contacto" name="deporte" id="deporte" >
+                        <select class="select_contacto" name="deporte" id="deporte" required>
                             <option value="" disabled selected hidden>Seleccione un deporte</option>
-                            <option value="Fútbol"></i>⚽ Fútbol</option>
-                            <option value="Tenis">🎾Tenis</option>
-                            <option value="Padel">🎾Padel</option>
+                            <option value="Fútbol">Fútbol</option>
+                            <option value="Tenis">Tenis</option>
+                            <option value="Padel">Padel</option>
                         </select>
                         <textarea class="contacto_txt" name="comentario" rows="5" cols="50"  placeholder="Escriba el mensaje"></textarea>
 

@@ -1,6 +1,7 @@
 * {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
+    box-sizing: border-box;
 }
 
 .index_body {
@@ -60,7 +61,7 @@
 .fa-instagram {
     color: #fff;
     background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
-    padding: 3px 9px;
+    padding: 3px 8px;
     border-radius: 20px;
 }
 
@@ -137,22 +138,37 @@ i {
         font-size: 40px;
     }
 
+    .fa-instagram {
+        padding: 1px 4px;
+        border-radius: 10px;
+    }
+
     .index_main_div-alquiler {
 
         margin-bottom: 20px;
     }
+
+    .navbar-toggler {
+        border: 1px solid #000;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 990px) {
 
     .nav-link {
         width: 100%;
-        border: 1px solid #000;
-        border-top: none;
+        border-bottom: 1px solid #000;
         padding-left: 5px;
         margin: 20px 0;
     }
+
 }
+
+
 
 /*--------------------------------------------------------------------------     Menú     ---------------------------------------------------------------------------------*/
 #navbarNav {
@@ -160,39 +176,173 @@ i {
     margin-right: 20px;
 }
 
+.navbar-brand h2 {
+    margin: auto;
+}
+
+.navbar {
+    background-color: #789461;
+}
+
 #navbarNav a:hover {
     text-decoration: underline;
 }
 
-
-.menu_header-img {
-    width: 50px;
-    margin: auto 10px;
+.menu_nav-select-first-child {
+    text-align: center;
 }
 
-.menu_section {
-    grid-area: section;
-    margin: 50px;
-    border-radius: 8px;
-    padding: 10px;
-    border: 2px solid #000;
-    height: 480px;
+.menu_nav-select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.select-hover:hover{
+    border-bottom: 1px solid #4d5f3e;
+}
+
+.menu_body {
+    display: grid;
+    grid-template-rows: auto;
+    margin: 0;
+}
+
+.container-fluid h2:hover {
+    color: #777;
+}
+
+.menu_header-img {
+    margin: auto 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu_header-img img {
+    width: 50px;
+}
+
+.user-perfil{
+    font-size: 100px;
+    margin: auto;
+}
+
+/*Ventana Flotante*/
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+    --transform: translateY(-100vh);
+    --transition: transform .8s;
+}
+
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+    --transform: translateY(0vh);
+}
+
+.modal_container{
+    width: 90%;
+    background-color: #c1cbb2;
+    max-width: 460px;
+    max-height: 90%;
+    margin: auto;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    padding-bottom: 1.5em;
+    display: grid;
+    gap: 1em;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition: var(--transition);
+
+}
+
+.modal_title{
+    font-size: 2.5rem;
+    margin: auto ;
+    margin-bottom: 20px;
+}
+
+.modal_p{
+    margin-bottom: 20px;
+    
+}
+
+.modal_img{
+    width: 90%;
+    max-width: 300px;
+}
+
+.modal_close{
+    font-size: 25px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    text-decoration: none;
+    color: #000;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    transition: background-color .3s;
+}
+
+.modal_close:hover{
+    color: #444;
+    font-size: 27px;
+    top:9px;
+}
+
+.modal_button{
+    background-color: #789461;
+    display: inline-block;
+    padding: 6px;
+    border-radius: 20px;
+    justify-self: left;
+    margin-bottom: 0;
+}
+
+.modal_button:hover{
+    transform: scale(1.02);
+}
+
+.modal_form h5{
+    padding-top: 20px;
+    text-align: center;
+    border-top: 1px solid #555;
+}
+
+.modal_form input{
+    display: block;
+    margin: 15px auto;
+    width: 80%;
+    height: 40px;
+    border-radius: 6px;
+    border: none;
+}
+
+.modal_form button{
+    display: block;
+    margin: auto;
+    border: 1px solid #333;
+}
+
+
+.menu_main {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .menu_main-img {
     display: flex;
-}
-
-.menu_main-img img {
-    margin: 50px auto;
-    border-radius: 20px;
-    height: 400px;
-    width: 60%;
-}
-
-.menu_main-nav {
-    display: flex;
-    height: 120px;
 }
 
 .menu_main-nav-content {
@@ -208,6 +358,10 @@ i {
     align-self: center;
 }
 
+.icon-button{
+    margin: auto 10px;
+}
+
 .fas {
     margin-right: 10px;
 }
@@ -216,55 +370,198 @@ i {
     margin: auto 10px;
 }
 
-.menu_main-nav-content input {
-    margin: auto;
-    background: transparent;
-    border: none;
+.horarios-label{
+    margin: 30px auto auto 70px;
 }
 
-.menu_main-nav-content-input {
-    margin: auto;
-    padding: 10px;
-    border-bottom: 1px solid #000;
+.fa-bell{
+    font-size: 60px;
 }
 
-.menu_main-nav-content input[type="submit"] {
-    background-color: #555;
-    border-radius: 20px;
-    margin-right: 20px;
-    padding: 10px 20px;
-
+.modal_alquiler-horario{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: 1px solid #555;
 }
 
-.menu_main-nav-content input::placeholder {
-    color: #000;
-    opacity: .7;
-
+.modal_alquiler-info{
+    justify-items: center;
+    text-align: center;
+    background-color: #789461;
+    padding: 10px 33px;
+    border-radius: 10px;
+    margin: 10px auto;
 }
 
-.menu_main-nav-content input:focus-visible {
-    outline: none;
-    border: none;
+@media (max-width: 750px) {
+    .modal_title-horarios{
+        font-size: 30px;
+    }
+    .modal_alquiler-info{
+        padding: 0 10px;
+        margin: 7px auto;
+    }
+
+    .modal_p-horarios{
+        margin-bottom: 10px;
+    }
 }
 
 .menu_main-horarios {
-    background-color: #999;
+    background-color: #789461;
     height: 150px;
-    margin: 50px 50px;
+    margin: 50px;
+    margin-top: 0;
     border-radius: 50px;
+    display: flex;
+    max-width: 100%;
+    overflow: hidden;
+
 }
 
-.menu_section {}
+.menu_main-horarios-deportes {
+    background-color: #789461;
+    height: 100%;
+    width: 20%;
+}
 
+.menu_main-horarios-deportes select {
+    width: 80%;
+}
+
+.menu_main-horarios-turnos {
+    height: 100%;
+    width: 80%;
+}
+
+.menu_main-horarios-turnos-días {
+    background-color: #294B29;
+    height: 30%;
+}
+
+.menu_main-horarios-turnos-hora {
+    background-color: #50623A;
+    height: 70%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.menu_main-horarios-turnos-días input[type="date"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 20%;
+    box-sizing: border-box;
+    background-color: #294B29;
+    border: none;
+}
+
+.menu_main-horarios-turnos-días input[type="date"]:focus {
+    outline: none;
+}
+
+
+/*Grids del menu entero*/
+
+.menu_main-grid {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.menu_section {
+    margin: 50px;
+    border-radius: 15px;
+    height: 480px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.menu-label {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
 
 .menu_aside {
-    background-color: #888;
+    background-color: none;
     margin: 50px;
     border-radius: 8px;
+}
+
+#select-celular {
+    display: none;
+}
+
+@media (max-width: 1280px) {
+    .menu_main-grid {
+        grid-template-columns: 1fr;
+        margin-right: 100px;
+    }
+
+    .menu_section,
+    .menu_aside {
+        width: 100%;
+    }
+
+    #select-pc {
+        display: none;
+    }
+
+    #select-celular {
+        display: inline;
+    }
+
+    .menu_main-horarios-deportes select {
+        margin: 20px;
+    }
 
 }
 
-.comments-container {
+.carousel-inner {
+    display: flex;
+    margin: 30px auto;
+    width: 60%;
+    height: 400px;
+    border-radius: 20px;
+}
+
+.carousel-item img {
+    border-radius: 20px;
+    height: 600px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none;
+}
+
+.carousel-control-prev-icon::after,
+.carousel-control-next-icon::after {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    background-color: #000;
+}
+
+.carousel-control-prev-icon::after {
+    mask-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27%23000%27 viewBox=%270 0 16 16%27%3E%3Cpath fill-rule=%27evenodd%27 d=%27M11.354 15.354a.5.5 0 0 0 0-.708L5.707 9.5l5.647-5.646a.5.5 0 1 0-.708-.708l-6 6a.5.5 0 0 0 0 .708l6 6a.5.5 0 0 0 .708 0z%27/%3E%3C/svg%3E');
+    /* SVG para el icono de 'prev' */
+}
+
+.carousel-control-next-icon::after {
+    mask-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27%23000%27 viewBox=%270 0 16 16%27%3E%3Cpath fill-rule=%27evenodd%27 d=%27M4.646 15.354a.5.5 0 0 1 0-.708L10.293 9.5 4.646 3.854a.5.5 0 1 1 .708-.708l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708 0z%27/%3E%3C/svg%3E');
+    /* SVG para el icono de 'next' */
+}
+
+/*todo aside*/
+.menu_aside-fondoComentarios {
     width: 80%;
     margin: 50px auto;
     background-color: #fff;
@@ -273,54 +570,68 @@ i {
     padding: 20px;
     display: flex;
     flex-direction: column;
-
+    border: 1px solid #000;    
 }
 
-.comment {
+.menu_aside-fondoComentarios h3 {
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #000;
+}
+
+.menu_aside-comentarios {
+    height: 400px;
     border-bottom: 1px solid #eee;
     padding: 15px 0;
-    display: flex;
     flex-direction: column;
     overflow-y: auto;
     max-height: 450px;
+
 }
 
-.comment:last-child {
+.menu_aside-comentarios:last-child {
     border-bottom: none;
 }
 
-.comment-avatar {
-    width: 50px;
-    height: 50px;
+.menu_aside-comentarios-avatar {
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     overflow: hidden;
     margin-right: 15px;
 }
 
-.comment-avatar img {
+.menu_aside-comentarios-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.comment-content {
+.menu_aside-comentarios-content {
     flex: 1;
 }
 
-.comment-author {
+.menu_aside-comentarios-author {
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.comment-text {
+.menu_aside-comentarios-text {
     color: #555;
 }
 
-.comment-form {
+.menu_aside-comentarios-date {
+    color: #555;
+    font-size: 10px;
+    margin: 5px auto;
+    justify-content: space-between;
+}
+
+.menu_aside-comentarios-form {
     margin-top: 30px;
 }
 
-.comment-form textarea {
+.menu_aside-comentarios-form textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -329,7 +640,7 @@ i {
     resize: none;
 }
 
-.comment-form button {
+.menu_aside-comentarios-form-button {
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
@@ -337,22 +648,187 @@ i {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-bottom: 10px;
 }
 
-.comment-form button:hover {
+.menu_aside-comentarios-form-button:hover {
     background-color: #45a049;
 }
 
+.menu_main-horarios-turnos-hora button {
+    background: none;
+    border: none;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.menu_main-horarios-turnos-hora span {
+    background-color: #DBE7C9;
+    padding: 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 990px) {
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+
+    .carousel-inner {
+        width: 70%;
+        height: 200px;
+    }
+
+    .carousel-inner img {
+        height: 100%;
+    }
+
+    .menu_main-horarios-turnos-días input[type="date"] {
+        padding: 10px;
+        font-size: 16px;
+        width: 30%;
+        box-sizing: border-box;
+        background-color: #294B29;
+        border: none;
+    }
+}
+
+@media (max-width: 740px) {
+
+    .menu-div-label{
+        display: flex;
+    }
+
+    .horarios-label{
+        margin: auto;
+    }
+
+    .menu_main-img img {
+        margin: 50px auto;
+        border-radius: 20px;
+        height: 200px;
+        width: 80%;
+
+    }
+
+    .menu_main-horarios {
+        margin: auto 10px;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        margin-bottom: 30px;
+    }
+
+    .menu_main-horarios-deportes {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        border-radius: 0;
+        background-color: transparent;
+        background-color: #50623A;
+    }
+
+    .menu_main-horarios-turnos {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu_main-horarios-turnos-días {
+        background-color: transparent;
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .menu_main-horarios-turnos-días input[type="date"] {
+        text-align: center;
+        width: 100%;
+    }
+
+    .menu_main-horarios-turnos-hora {
+        background-color: transparent;
+        margin: auto;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    .menu_main-grid {
+        margin: 0;
+    }
+
+    .menu_section {
+        height: 80%;
+        margin: 0;
+        margin-bottom: -200px;
+    }
+
+    .menu_aside {
+        height: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .menu_aside-comentarios {
+        height: 100%;
+        max-height: 200px;
+    }
+
+    .menu_aside-fondoComentarios {
+        height: 100%;
+        margin: auto;
+    }
+
+
+    #commentText{
+        line-height: 1.5em;
+        height: calc(1.5em * 2); 
+        overflow: hidden; 
+        resize: none; 
+    }
+
+    #clearCommentsButton {
+        display: none;
+    }
+
+    .menu_main-horarios-turnos-hora button {
+        margin: 10px 0;
+    }
+
+    .carousel-inner {
+        width: 90%;
+    }
+
+}
+
+
+.menu_nav-select {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 0;
+}
+
+.menu_nav-select i {
+    margin: 10px auto;
+}
+
+.menu-nav-displayNone {
+    display: none;
+}
 
 /*----------------------------------------------------------Login y Registro------------------------------------------*/
 
 .login_body {
-    background: radial-gradient(circle, rgba(0, 255, 0, 0.781), #0b2c0e)
+    background-color: #DBE7C9;
 }
 
 .login_formulario {
     width: 100%;
     max-width: 500px;
+    min-height: 300px;
     margin: 50px auto;
     background-color: #6a6d6d;
     border-radius: 8px;
@@ -381,7 +857,6 @@ i {
 }
 
 .login_formulario-inputs {
-    margin-bottom: 20px;
     align-items: center;
 }
 
@@ -396,13 +871,57 @@ i {
     box-sizing: border-box;
 }
 
-.login_desvio p {
-    display: inline;
+.login_formulario-password {
+    margin: 50px auto;
+}
+
+.password-container {
+    position: relative;
+}
+.password-container input[type="password"],
+.password-container input[type="text"] {
+    width: 100%;
+    padding-right: 40px; /* Añade espacio para el icono */
+}
+.password-container .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#toggleIcon, #toggleIcon1, #toggleIcon2 {
+    font-size: 25px;
+    margin: auto;
 }
 
 .login_desvio {
     text-align: center;
     margin-bottom: 10px;
+}
+
+.login_desvio p {
+    display: inline;
+}
+
+.login_formulario i {
+    margin: 0 auto 20px auto;
+    font-size: 60px;
+    text-align: center;
+    display: block;
+}
+
+.login_formulario label {
+    display: block;
+}
+
+.login_desvio-a {
+    font-size: small;
+    display: block;
+    text-align: start;
+    margin: 10px 10px;
+    color: #3f3d3d;
 }
 
 .login_formulario-boton {
@@ -432,7 +951,7 @@ i {
 }
 
 .login_footer {
-    background-color: #000;
+    background-color: #222;
     color: #fff;
     text-align: center;
     padding: 50px 0;
@@ -543,4 +1062,73 @@ i {
 .torneos-boton:hover {
     background-color: #333;
     color: #01ff22
+}
+
+/*-----------------------Gestion------------------*/
+
+.gestion_main {
+    margin: auto 30px;
+    margin-top: 50px;
+}
+
+.gestion_main-busqueda {
+    display: flex;
+    justify-content: start;
+    margin: 20px auto;
+}
+
+.gestion_main-label {
+    display: block;
+    font-size: 30px;
+    margin: auto;
+}
+
+.gestion_main-busqueda div {
+    display: flex;
+    font-size: 20px;
+}
+
+.gestion_main-busqueda-div label {
+    margin: auto 10px;
+}
+
+.gestion_main-busqueda-div input {
+    margin-top: auto;
+}
+
+.gestion_main-table {
+    margin: auto;
+}
+
+.gestion_main-table table {
+    border: 1px solid #000;
+}
+
+.gestion_main-table td {
+    border: 1px solid #000;
+}
+
+.gestion_footer {
+    margin-top: 25%;
+}
+
+@media screen and (max-width: 720px) {
+    .gestion_main-busqueda div {
+        display: block;
+    }
+
+    .gestion_main-label-div {
+        margin: 10px auto;
+    }
+
+    .gestion_main-busqueda input {
+        float: right;
+        width: 68%;
+    }
+}
+
+
+/*Gestión de cuentas*/
+.DisplayNone {
+    display: none;
 }

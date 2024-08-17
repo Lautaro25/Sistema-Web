@@ -939,54 +939,16 @@ i {
 
 }
 
-.login_formulario-boton:hover {
-    background-color: #333;
-    color: #01ff22
+label {
+    /* display: block;*/
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-.login_formulario-boton i {
-    color: #fff;
-    margin: auto 8px;
-    font-size: 25px;
-}
-
-.login_footer {
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    padding: 50px 0;
-    bottom: 0;
-    height: 300px;
-
-}
-
-
-@media screen and (max-width: 600px) {
-    .login_formulario {
-        max-width: calc(100% - 40px);
-        padding: 10px;
-    }
-}
-
-/*------------------------------------------Contacto------------------------------------------*/
-
-.contacto_txt {
-    display: block;
-    margin: 10px auto;
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-.select_contacto {
-    color: #777;
-    display: block;
-    margin: 10px auto;
-    width: 100%;
-    padding: 10px;
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="email"] {
     border: 1px solid #ccc;
     border-radius: 20px;
     font-size: 16px;

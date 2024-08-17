@@ -822,7 +822,7 @@ i {
 @media screen and (max-width: 990px) {
     .menu_nav-select {
         margin-left: 10px;
-        padding: 8px 0px 5px 5px;
+        padding: 5px 0px 5px 5px;
         border-bottom: 1px solid #000;
         width: 100%;
     }

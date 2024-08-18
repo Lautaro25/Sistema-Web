@@ -210,42 +210,50 @@ function formatTime(date) {
 
 /*Ventana de Alquiler*/
 // Función para manejar el alquiler
-// Función para manejar el alquiler
 function Alquiler(horario) {
     const modal = document.querySelector('.modal-alquiler');
     const closeModalAlquiler = document.querySelector('.modal_close-alquiler');
 
-    // Mostrar el modal
-    modal.classList.add('modal--show');
     // Detectar el tamaño de la pantalla para seleccionar el select adecuado
     let selectCancha;
-    if (window.innerWidth <= 768) { // Asumiendo que 768px es el umbral para móviles
+    if (window.innerWidth <= 1280) { // Asumiendo que 768px es el umbral para móviles
         selectCancha = document.getElementById('select-celular');
     } else {
         selectCancha = document.getElementById('select-pc');
     }
 
-    // Obtener valores seleccionados
+    // Obtener la cancha seleccionada
     const canchaSeleccionada = selectCancha.value;
-    const fechaInput = document.getElementById('date-input').value;
 
-    // Formatear la fecha para mostrar solo el día y el mes
-    const fecha = new Date(fechaInput);
-    const dia = (fecha.getDate()+1).toString().padStart(2, '0');
-    const mes = (fecha.getMonth() + 1).toString().padStart(2, '0'); // Los meses en JavaScript son de 0 a 11
-    const fechaFormateada = `${dia}/${mes}`;
+    // Verificar si se ha seleccionado una cancha
+    if (canchaSeleccionada === "empty") {
+        alert("Debe seleccionar una Cancha");
+    } else {
+        // Mostrar el modal
+        modal.classList.add('modal--show');
 
-    // Actualizar contenido del modal
-    document.getElementById("modal-horarios").innerText = horario; // Usar el horario del botón
-    document.getElementById("modal-cancha").innerText = canchaSeleccionada; // Cancha seleccionada
-    document.getElementById("modal-dias").innerText = fechaFormateada; // Fecha formateada
+        // Obtener la fecha seleccionada
+        const fechaInput = document.getElementById('date-input').value;
 
-    // Cerrar modal al hacer clic en el botón de cerrar
-    closeModalAlquiler.addEventListener('click', (e) => {
-        e.preventDefault();
-        modal.classList.remove('modal--show');
-    });
+        // Formatear la fecha para mostrar solo el día y el mes
+        const fecha = new Date(fechaInput);
+        const dia = (fecha.getDate() + 1).toString().padStart(2, '0');
+        const mes = (fecha.getMonth() + 1).toString().padStart(2, '0'); // Los meses en JavaScript son de 0 a 11
+        const fechaFormateada = `${dia}/${mes}`;
+
+        // Actualizar contenido del modal
+        document.getElementById("modal-horarios").innerText = horario; // Usar el horario del botón
+        document.getElementById("modal-cancha").innerText = canchaSeleccionada; // Cancha seleccionada
+        document.getElementById("modal-dias").innerText = fechaFormateada; // Fecha formateada
+
+        // Cerrar modal al hacer clic en el botón de cerrar
+        closeModalAlquiler.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.remove('modal--show');
+        });
+    }
 }
+
 
 // Asignar la función a cada botón de horario con el horario correspondiente
 const buttons = document.querySelectorAll('.menu_main-horarios-turnos button');

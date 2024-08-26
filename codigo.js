@@ -192,3 +192,67 @@ function formatTime(date) {
     const options = { hour: 'numeric', minute: 'numeric' };
     return date.toLocaleTimeString('es-ES', options);
 }
+
+
+//Validacion formulario registro
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Reset error messages
+    document.getElementById('emailError').innerText = '';
+    document.getElementById('usernameError').innerText = '';
+    document.getElementById('passwordError').innerText = '';
+    document.getElementById('confirmPasswordError').innerText = '';
+
+    // Fetch form values
+    var email = document.getElementById('email').value.trim();
+    var username = document.getElementById('username').value.trim();
+    var password = document.getElementById('password').value.trim();
+    var confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+    var isValid = true;
+
+    // Validate email
+    if (email === '') {
+        document.getElementById('emailError').innerText = 'Por favor ingresa tu correo electrónico';
+        isValid = false;
+    } else if (!isValidEmail(email)) {
+        document.getElementById('emailError').innerText = 'El correo electrónico ingresado no es válido';
+        isValid = false;
+    }
+
+    // Validate username
+    if (username === '') {
+        document.getElementById('usernameError').innerText = 'Por favor ingresa tu nombre de usuario';
+        isValid = false;
+    }
+
+    // Validate password
+    if (password === '') {
+        document.getElementById('passwordError').innerText = 'Por favor ingresa tu contraseña';
+        isValid = false;
+    } else if (password.length < 6) {
+        document.getElementById('passwordError').innerText = 'La contraseña debe tener al menos 6 caracteres';
+        isValid = false;
+    }
+
+    // Validate confirmPassword
+    if (confirmPassword === '') {
+        document.getElementById('confirmPasswordError').innerText = 'Por favor confirma tu contraseña';
+        isValid = false;
+    } else if (confirmPassword !== password) {
+        document.getElementById('confirmPasswordError').innerText = 'Las contraseñas no coinciden';
+        isValid = false;
+    }
+
+    // If all fields are valid, submit the form
+    if (isValid) {
+        document.getElementById('registrationForm').submit();
+    }
+});
+
+function isValidEmail(email) {
+    // Basic email validation regex
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}

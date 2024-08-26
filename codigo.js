@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 /*Muestras para Usuarios con Cuenta*/
 
 // Define la variable account en el ámbito global y empieza como 
+if(document.title==="Alquilá tu Cancha"){
 let decide = prompt("Decide (true/false)");
 let account;
 
@@ -58,6 +59,7 @@ else if (decide.trim().toLowerCase() === "false") {
 else {
     alert("Entrada inválida. Por favor, ingresa 'true' o 'false'.");
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
     updateMenu();
@@ -99,14 +101,26 @@ document.getElementById('Select').addEventListener('change', function () {
 });
 
 updateMenu(); // Actualiza el menú inicialmente
-
+}   
 function navigateToPage(url) {
     if (url === 'perfil') {
-        window.location.href = 'perfil.html';
+const modal = document.querySelector('.modal-perfil');
+const closeModal = document.querySelector('.modal_close-perfil');
+modal.classList.add('modal--show');
+
+closeModal.addEventListener('click',(e)=>{
+    e.preventDefault();
+    modal.classList.remove('modal--show');
+    // Restablece el valor del select al valor predeterminado
+    const select = document.getElementById('Select');
+    select.value = '';
+});
     } else if (url === 'gestion') {
         window.location.href = 'gestion.html';
     }
 }
+
+
 
 const MAX_COMMENTS = 15;
 
@@ -192,6 +206,87 @@ function formatTime(date) {
     const options = { hour: 'numeric', minute: 'numeric' };
     return date.toLocaleTimeString('es-ES', options);
 }
+
+
+/*Ventana de Alquiler*/
+// Función para manejar el alquiler
+function Alquiler(horario) {
+    const modal = document.querySelector('.modal-alquiler');
+    const closeModalAlquiler = document.querySelector('.modal_close-alquiler');
+
+    // Detectar el tamaño de la pantalla para seleccionar el select adecuado
+    let selectCancha;
+    if (window.innerWidth <= 1280) { // Asumiendo que 768px es el umbral para móviles
+        selectCancha = document.getElementById('select-celular');
+    } else {
+        selectCancha = document.getElementById('select-pc');
+    }
+
+    // Obtener la cancha seleccionada
+    const canchaSeleccionada = selectCancha.value;
+
+    // Verificar si se ha seleccionado una cancha
+    if (canchaSeleccionada === "empty") {
+        alert("Debe seleccionar una Cancha");
+    } else {
+        // Mostrar el modal
+        modal.classList.add('modal--show');
+
+        // Obtener la fecha seleccionada
+        const fechaInput = document.getElementById('date-input').value;
+
+        // Formatear la fecha para mostrar solo el día y el mes
+        const fecha = new Date(fechaInput);
+        const dia = (fecha.getDate() + 1).toString().padStart(2, '0');
+        const mes = (fecha.getMonth() + 1).toString().padStart(2, '0'); // Los meses en JavaScript son de 0 a 11
+        const fechaFormateada = `${dia}/${mes}`;
+
+        // Actualizar contenido del modal
+        document.getElementById("modal-horarios").innerText = horario; // Usar el horario del botón
+        document.getElementById("modal-cancha").innerText = canchaSeleccionada; // Cancha seleccionada
+        document.getElementById("modal-dias").innerText = fechaFormateada; // Fecha formateada
+
+        // Cerrar modal al hacer clic en el botón de cerrar
+        closeModalAlquiler.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.remove('modal--show');
+        });
+    }
+}
+
+
+// Asignar la función a cada botón de horario con el horario correspondiente
+const buttons = document.querySelectorAll('.menu_main-horarios-turnos button');
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        Alquiler(button.querySelector('span').innerText);
+    });
+});
+
+
+
+        // Función para alternar la visibilidad de la contraseña
+        function togglePasswordVisibility(input, icon) {
+            const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+            input.setAttribute('type', type);
+
+            if (type === 'text') {
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+
+        // Añadir eventos de clic a todos los botones de mostrar/ocultar contraseña
+        document.querySelectorAll('.toggle-password').forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const input = this.previousElementSibling;
+                const icon = this.firstElementChild;
+                togglePasswordVisibility(input, icon);
+            });
+        });
 
 
 //Validacion formulario registro

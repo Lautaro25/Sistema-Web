@@ -1125,6 +1125,19 @@ i {
     margin-top: 25%;
 }
 
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
+}
+
+.contact button {
+    background-color: #f00;
+    border: none;
+    border-radius: 5px;
+}
+
+
 @media screen and (max-width: 720px) {
     .gestion_main-busqueda div {
         display: block;

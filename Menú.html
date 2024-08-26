@@ -47,9 +47,9 @@
                         <li class="nav-item">
                             <a class="nav-link without-acount" href="registro.html"><i class=""></i>Resgistrarse</a>
                         </li>
-                        <li class="nav-item menu_nav-select with-acount select-hover">
+                        <li class="nav-item menu_nav-select with-acount">
                             <i class="fa-solid fa-user"></i>
-                            <select class="nav-link menu_nav-select " name="" id="Select" onchange="navigateToPage()">
+                            <select class="nav-link menu_nav-select select-resp" name="" id="Select" onchange="navigateToPage()">
                                 <option value="" disabled selected hidden>Cuenta</option>
                                 <option value="perfil" class="hero_cta">Perfil</option>
                                 <option value="gestion" class="">Gestionar</option>
@@ -113,16 +113,16 @@
             <div class="menu_main-horarios">
                 <div class="menu_main-horarios-deportes">
                     <select class="select_contacto index_bodydeporteSelect" id="select-pc">
-                        <option value="" disabled selected hidden>Seleccione Cancha</option>
-                        <option value="Fútbol"></i>Cancha N°1</option>
-                        <option value="Tenis">Cancha N°2</option>
-                        <option value="Padel">Cancha N°3</option>
+                        <option value="empty" disabled selected hidden>Seleccione Cancha</option>
+                        <option value="N°1"></i>Cancha N°1</option>
+                        <option value="N°2">Cancha N°2</option>
+                        <option value="N°3">Cancha N°3</option>
                     </select>
                     <select class="select_contacto index_bodydeporteSelect" id="select-celular">
-                        <option value="" disabled selected hidden>N° Cancha</option>
-                        <option value="Fútbol"></i>Cancha N°1</option>
-                        <option value="Tenis">Cancha N°2</option>
-                        <option value="Padel">Cancha N°3</option>
+                        <option value="empty" disabled selected hidden>N° Cancha</option>
+                        <option value="N°1"></i>Cancha N°1</option>
+                        <option value="N°2">Cancha N°2</option>
+                        <option value="N°3">Cancha N°3</option>
                     </select>
                 </div>
                 <div class="menu_main-horarios-turnos">
@@ -154,16 +154,16 @@
                 <div class="modal_alquiler-horario">
                     <div class="modal_alquiler-info">
                         <p class="modal_p modal_p-horarios">Horario</p>
-                        <p class="modal_p modal_p-horarios">20:00</p>
+                        <p id="modal-horarios" class="modal_p modal_p-horarios"></p>
                     </div>
                     <div class="modal_alquiler-info">
 
                         <p class="modal_p modal_p-horarios">Cancha</p>
-                        <p class="modal_p modal_p-horarios">2</p>
+                        <p id="modal-cancha" class="modal_p modal_p-horarios"></p>
                     </div>
                     <div class="modal_alquiler-info">
                         <p class="modal_p modal_p-horarios">Díá</p>
-                        <p class="modal_p modal_p-horarios">12/07</p>
+                        <p id="modal-dias" class="modal_p modal_p-horarios"></p>
                     </div>
                 </div>
                 <form action="" class="modal_form">

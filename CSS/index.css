@@ -670,7 +670,7 @@ i {
 }
 
 @media screen and (max-width: 990px) {
-
+    
     .carousel-control-prev,
     .carousel-control-next {
         display: none;
@@ -817,6 +817,19 @@ i {
 
 .menu-nav-displayNone {
     display: none;
+}
+
+@media screen and (max-width: 990px) {
+    .menu_nav-select {
+        margin-left: 10px;
+        padding: 5px 0px 5px 5px;
+        border-bottom: 1px solid #000;
+        width: 100%;
+    }
+
+    .select-resp{
+        border: none;
+    }
 }
 
 /*----------------------------------------------------------Login y Registro------------------------------------------*/

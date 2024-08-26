@@ -209,17 +209,61 @@ function formatTime(date) {
 
 
 /*Ventana de Alquiler*/
-function Alquiler(){
+// Función para manejar el alquiler
+function Alquiler(horario) {
     const modal = document.querySelector('.modal-alquiler');
-const closeModalAlquiler = document.querySelector('.modal_close-alquiler');
-modal.classList.add('modal--show');
+    const closeModalAlquiler = document.querySelector('.modal_close-alquiler');
 
-closeModalAlquiler.addEventListener('click',(e)=>{
-    e.preventDefault();
-    modal.classList.remove('modal--show');
+    // Detectar el tamaño de la pantalla para seleccionar el select adecuado
+    let selectCancha;
+    if (window.innerWidth <= 1280) { // Asumiendo que 768px es el umbral para móviles
+        selectCancha = document.getElementById('select-celular');
+    } else {
+        selectCancha = document.getElementById('select-pc');
+    }
 
-});
+    // Obtener la cancha seleccionada
+    const canchaSeleccionada = selectCancha.value;
+
+    // Verificar si se ha seleccionado una cancha
+    if (canchaSeleccionada === "empty") {
+        alert("Debe seleccionar una Cancha");
+    } else {
+        // Mostrar el modal
+        modal.classList.add('modal--show');
+
+        // Obtener la fecha seleccionada
+        const fechaInput = document.getElementById('date-input').value;
+
+        // Formatear la fecha para mostrar solo el día y el mes
+        const fecha = new Date(fechaInput);
+        const dia = (fecha.getDate() + 1).toString().padStart(2, '0');
+        const mes = (fecha.getMonth() + 1).toString().padStart(2, '0'); // Los meses en JavaScript son de 0 a 11
+        const fechaFormateada = `${dia}/${mes}`;
+
+        // Actualizar contenido del modal
+        document.getElementById("modal-horarios").innerText = horario; // Usar el horario del botón
+        document.getElementById("modal-cancha").innerText = canchaSeleccionada; // Cancha seleccionada
+        document.getElementById("modal-dias").innerText = fechaFormateada; // Fecha formateada
+
+        // Cerrar modal al hacer clic en el botón de cerrar
+        closeModalAlquiler.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.remove('modal--show');
+        });
+    }
 }
+
+
+// Asignar la función a cada botón de horario con el horario correspondiente
+const buttons = document.querySelectorAll('.menu_main-horarios-turnos button');
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        Alquiler(button.querySelector('span').innerText);
+    });
+});
+
+
 
         // Función para alternar la visibilidad de la contraseña
         function togglePasswordVisibility(input, icon) {
@@ -243,3 +287,67 @@ closeModalAlquiler.addEventListener('click',(e)=>{
                 togglePasswordVisibility(input, icon);
             });
         });
+
+
+//Validacion formulario registro
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Reset error messages
+    document.getElementById('emailError').innerText = '';
+    document.getElementById('usernameError').innerText = '';
+    document.getElementById('passwordError').innerText = '';
+    document.getElementById('confirmPasswordError').innerText = '';
+
+    // Fetch form values
+    var email = document.getElementById('email').value.trim();
+    var username = document.getElementById('username').value.trim();
+    var password = document.getElementById('password').value.trim();
+    var confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+    var isValid = true;
+
+    // Validate email
+    if (email === '') {
+        document.getElementById('emailError').innerText = 'Por favor ingresa tu correo electrónico';
+        isValid = false;
+    } else if (!isValidEmail(email)) {
+        document.getElementById('emailError').innerText = 'El correo electrónico ingresado no es válido';
+        isValid = false;
+    }
+
+    // Validate username
+    if (username === '') {
+        document.getElementById('usernameError').innerText = 'Por favor ingresa tu nombre de usuario';
+        isValid = false;
+    }
+
+    // Validate password
+    if (password === '') {
+        document.getElementById('passwordError').innerText = 'Por favor ingresa tu contraseña';
+        isValid = false;
+    } else if (password.length < 6) {
+        document.getElementById('passwordError').innerText = 'La contraseña debe tener al menos 6 caracteres';
+        isValid = false;
+    }
+
+    // Validate confirmPassword
+    if (confirmPassword === '') {
+        document.getElementById('confirmPasswordError').innerText = 'Por favor confirma tu contraseña';
+        isValid = false;
+    } else if (confirmPassword !== password) {
+        document.getElementById('confirmPasswordError').innerText = 'Las contraseñas no coinciden';
+        isValid = false;
+    }
+
+    // If all fields are valid, submit the form
+    if (isValid) {
+        document.getElementById('registrationForm').submit();
+    }
+});
+
+function isValidEmail(email) {
+    // Basic email validation regex
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}

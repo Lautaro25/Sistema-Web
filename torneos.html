@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección Torneos</title>
+    <link rel="stylesheet" href="CSS/torneos.css">
+</head>
+
+<body class="torneos_body">
+
+    <header>
+        <h1>¡Bienvenido a nuestro Torneo!</h1>
+        <p>Inscripciones de Equipos</p>
+    </header>
+
+    <main>
+        <section id="equipos">
+            <h2>Equipos Inscritos</h2>
+            <div class="equipo">
+                <h3>Equipo 1</h3>
+                <ul class="torneos_ul">
+                    <li>Jugador 1</li>
+                    <li>Jugador 2</li>
+                    <li>Jugador 3</li>
+                    <li>Jugador 4</li>
+                </ul>
+                <div class="torneos_ul">
+                    Estado de Inscripción: <select class="torneos_select" name="">
+                        <option class="pagada">Pagada</option>
+                        <option class="sin-pagar">Sin pagar</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <!-- Agregar formulario para agregar equipo -->
+            <div id="formulario-equipo">
+                <h2>Agregar Nuevo Equipo</h2>
+                <form action="agregar_equipo.php" method="POST">
+                    <label for="nombre-equipo">Nombre del Equipo:</label>
+                    <input type="text" id="nombre-equipo" name="nombre-equipo" required>
+
+                    <label for="nombre-jugadores">Jugadores:</label>
+                    <input type="text" id="nombre-jugadores" name="nombre-jugadores" required>
+                   <div class="torneos_btn_equipos">
+                    <button class="torneos_boton" type="submit">Agregar</button>
+                    <button class="torneos_boton" type="submit">Modificar</button>
+                    <button class="torneos_boton" type="submit">Eliminar</button>
+                   </div>
+                    
+                </form>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="pie">
+        <p>&copy; 2023 Torneos Inc.</p>
+    </footer>
+    <link rel="stylesheet" href="CSS/torneos.js">
+</body>
+
+</html>

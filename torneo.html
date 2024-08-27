@@ -13,8 +13,47 @@
     <link rel="icon" href="Img/iconoWeb2.ico">
 </head>
 
-<!--Desarrollado por Ramiro  Menescardi-->
+<body>
+    <div class="containerT">
+        <h1>Registro para Torneos de Pádel</h1>
+        
+        <!-- Formulario de Registro de Equipos -->
+        <div class="form-container">
+            <h2>Registrar Equipo</h2>
+            <form id="teamForm">
+                <label for="teamName">Nombre del Equipo:</label>
+                <input type="text" id="teamName" name="teamName" required>
+                <button type="submit">Registrar Equipo</button>
+            </form>
+        </div>
 
+        <!-- Formulario de Registro de Jugadores -->
+        <div class="form-containerT">
+            <h2>Registrar Jugador</h2>
+            <form id="playerForm">
+                <label for="playerName">Nombre del Jugador:</label>
+                <input type="text" id="playerName" name="playerName" required>
+                
+                <label for="teamSelect">Seleccionar Equipo:</label>
+                <select id="teamSelect" name="teamSelect" required>
+                    <option value="">Selecciona un equipo</option>
+                </select>
+                <button type="submit">Registrar Jugador</button>
+            </form>
+        </div>
+
+        <!-- Sección para listar Equipos y Jugadores -->
+        <div class="list-container">
+            <h2>Equipos Registrados</h2>
+            <ul id="teamList"></ul>
+        </div>
+    </div>
+
+    <script src="CSS/torneos.js"></script>
+</body>
+
+<!--Desarrollado por Ramiro  Menescardi-->
+<!--
 <body class="login_body">
 
     <header>
@@ -61,9 +100,10 @@
                     </select>
                 </div>
 
-            </div>
+            </div> -->
 
             <!-- Agregar formulario para agregar equipo -->
+             <!--
             <div>
                 <h2>Agregar Nuevo Equipo</h2>
                 <form action="agregar_URL" method="POST">
@@ -85,7 +125,7 @@
 
 
     <link rel="stylesheet" href="CSS/torneos.js">
-</body>
+</body> -->
 
 <footer class="login_footer">
     <div>

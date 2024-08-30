@@ -302,46 +302,58 @@ buttons.forEach(button => {
 
 
 //Validacion formulario registro
-document.getElementById('registrationForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent default form submission
+document.addEventListener('DOMContentLoaded', function () {
+    // Obtener los elementos del formulario
+    const emailInput = document.querySelector('input[type="email"]');
+    const usernameInput = document.querySelector('input[type="text"]');
+    const passwordInput = document.querySelector('input[type="password"]:nth-of-type(1)');
+    const confirmPasswordInput = document.querySelector('input[type="password"]:nth-of-type(2)');
+    const form = document.querySelector('form');
 
-    // Reset error messages
-    document.getElementById('emailError').innerText = '';
-    document.getElementById('usernameError').innerText = '';
-    document.getElementById('passwordError').innerText = '';
-    document.getElementById('confirmPasswordError').innerText = '';
-
-    // Fetch form values
-    var email = document.getElementById('email').value.trim();
-    var username = document.getElementById('username').value.trim();
-    var password = document.getElementById('password').value.trim();
-    var confirmPassword = document.getElementById('confirmPassword').value.trim();
-
-    var isValid = true;
-
-    // Validate email
-    if (email === '') {
-        document.getElementById('emailError').innerText = 'Por favor ingresa tu correo electrónico';
-        isValid = false;
-    } else if (!isValidEmail(email)) {
-        document.getElementById('emailError').innerText = 'El correo electrónico ingresado no es válido';
-        isValid = false;
+    // Función para validar el email
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
     }
 
-    // Validate username
-    if (username === '') {
-        document.getElementById('usernameError').innerText = 'Por favor ingresa tu nombre de usuario';
-        isValid = false;
+    // Función para mostrar mensajes de error
+    function showError(element, message) {
+        const errorElement = document.createElement('div');
+        errorElement.className = 'error';
+        errorElement.style.color = 'white';
+        errorElement.textContent = message;
+        if (element.nextElementSibling) {
+            element.nextElementSibling.remove();
+        }
+        element.insertAdjacentElement('afterend', errorElement);
     }
 
-    // Validate password
-    if (password === '') {
-        document.getElementById('passwordError').innerText = 'Por favor ingresa tu contraseña';
-        isValid = false;
-    } else if (password.length < 6) {
-        document.getElementById('passwordError').innerText = 'La contraseña debe tener al menos 6 caracteres';
-        isValid = false;
+    // Función para eliminar mensajes de error
+    function clearError(element) {
+        if (element.nextElementSibling) {
+            element.nextElementSibling.remove();
+        }
     }
+
+    // Validación al enviar el formulario
+    form.addEventListener('submit', function (event) {
+        let isValid = true;
+
+        // Validar email
+        if (!validateEmail(emailInput.value)) {
+            showError(emailInput, 'Por favor ingrese un email válido.');
+            isValid = false;
+        } else {
+            clearError(emailInput);
+        }
+
+        // Validar nombre de usuario
+        if (usernameInput.value.trim() === '') {
+            showError(usernameInput, 'El nombre de usuario es obligatorio.');
+            isValid = false;
+        } else {
+            clearError(usernameInput);
+        }
 
     // Validate confirmPassword
     if (confirmPassword === '') {

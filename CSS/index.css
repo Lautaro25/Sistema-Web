@@ -1182,38 +1182,62 @@ i {
 
 
 
+.torneo-main {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
 .containerT {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    margin: 50px auto;
+    box-shadow: 20px #000 ;
+    
+
+    
 }
 
-h1, h2 {
+.title {
     text-align: center;
     color: #333;
 }
 
-.form-containerT {
+.form-container {
     margin-bottom: 20px;
 }
 
-label {
+.form-title {
+    text-align: center;
+    color: #333;
+}
+
+.form-label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-input, select {
+.form-input, .form-select {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box;
 }
 
-button {
+.form-button {
     width: 100%;
     padding: 10px;
     background-color: #28a745;
@@ -1223,36 +1247,47 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.form-button:hover {
     background-color: #218838;
 }
 
 .list-container {
     margin-top: 20px;
+
 }
 
-ul {
+.list-title {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos específicos para la lista de equipos */
+.team-list {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
     list-style-type: none;
     padding: 0;
+    overflow-x: auto;
 }
 
-ul li {
+.team-list-item {
     background-color: #e9ecef;
-    margin-bottom: 5px;
     padding: 10px;
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column; /* Ajustado para acomodar mejor el contenido */
 }
 
 .team-name {
-    color: rgb(69, 52, 228);
+    color: blue;
     font-weight: bold;
 }
 
 .player-name {
-    color: rgb(4, 105, 18);
+    color: green;
 }
 
 .delete-button {
@@ -1262,8 +1297,42 @@ ul li {
     border-radius: 4px;
     padding: 5px 10px;
     cursor: pointer;
+    margin-top: 10px; /* Añadido para separar el botón del texto */
 }
 
 .delete-button:hover {
     background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .form-input, .form-select, .form-button {
+        padding: 10px;
+    }
+
+    .team-list {
+        grid-template-columns: repeat(3, 1fr); /* 3 equipos por fila en pantallas medianas */
+    }
+
+    .team-list-item {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-input, .form-select, .form-button {
+        padding: 8px;
+    }
+
+    .team-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 equipos por fila en pantallas pequeñas */
+    }
+
+    .team-list-item {
+        padding: 8px;
+    }
 }

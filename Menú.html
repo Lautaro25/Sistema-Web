@@ -52,6 +52,7 @@
                             <select class="nav-link menu_nav-select select-resp" name="" id="Select" onchange="navigateToPage()">
                                 <option value="" disabled selected hidden>Cuenta</option>
                                 <option value="perfil" class="hero_cta">Perfil</option>
+                                <option value="turnos" class="hero_cta">Turnos</option>
                                 <option value="gestion" class="">Gestionar</option>
                                 <option value="cerrarSesion">Cerrar Sesión</option>
                             </select>
@@ -71,6 +72,33 @@
             <p class="modal_p">Email: lautarovillabona@gmail.com</p>
             <button class="modal_button"><i class="fa-solid fa-pen-to-square icon-button"></i>Modificar
                 Información</button>
+        </div>
+    </section>
+
+    <section class="modal modal-turnos">
+        <div class="modal_container">
+            <a href="#" class="modal_close modal_close-turnos" onclick="closeModal()">&times;</a>
+            <h2 class="modal_title"><i class="fa-solid fa-pen-to-square icon-button"></i>Turnos Agendados</h2>
+            <table class="table table-turnos">
+                <thead>
+                    <tr>
+                        <th scope="col">Turno</th>
+                        <th scope="col">Díá</th>
+                        <th scope="col">Horario</th>
+                        <th scope="col">Cancha</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <th scope="row">30/08</th>
+                        <td>20:00</td>
+                        <td>N1</td>
+                        <td><button><i class="fa-solid fa-trash"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
     <main class="menu_main">

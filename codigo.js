@@ -300,3 +300,75 @@ buttons.forEach(button => {
             });
         });
 
+//Validacion formulario registro
+document.addEventListener('DOMContentLoaded', function () {
+    const emailInput = document.getElementById('email');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirm-password');
+    const form = document.getElementById('register-form');
+
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
+    function showError(element, message) {
+        let errorElement = element.nextElementSibling;
+        if (!errorElement || !errorElement.classList.contains('error')) {
+            errorElement = document.createElement('div');
+            errorElement.className = 'error';
+            errorElement.style.color = 'red';
+            element.insertAdjacentElement('afterend', errorElement);
+        }
+        errorElement.textContent = message;
+    }
+
+    function clearError(element) {
+        let errorElement = element.nextElementSibling;
+        if (errorElement && errorElement.classList.contains('error')) {
+            errorElement.remove();
+        }
+    }
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevenir el envío del formulario y la recarga de la página
+        let isValid = true;
+
+        // Validación de email
+        if (!validateEmail(emailInput.value)) {
+            showError(emailInput, 'Por favor ingrese un email válido.');
+            isValid = false;
+        } else {
+            clearError(emailInput);
+        }
+
+        // Validación de nombre de usuario
+        if (usernameInput.value.trim() === '') {
+            showError(usernameInput, 'El nombre de usuario es obligatorio.');
+            isValid = false;
+        } else {
+            clearError(usernameInput);
+        }
+
+        // Validación de la contraseña
+        if (passwordInput.value.trim() === '') {
+            showError(passwordInput, 'La contraseña es obligatoria.');
+            isValid = false;
+        } else {
+            clearError(passwordInput);
+        }
+
+        // Validación de confirmación de contraseña
+        if (passwordInput.value !== confirmPasswordInput.value) {
+            showError(confirmPasswordInput, 'Las contraseñas no coinciden.');
+            isValid = false;
+        } else {
+            clearError(confirmPasswordInput);
+        }
+
+        if (isValid) {
+            alert('Formulario enviado exitosamente!');
+        }
+    });
+});

@@ -496,6 +496,10 @@ i {
     display: none;
 }
 
+.table-turnos{
+    text-align: center;
+}
+
 @media (max-width: 1280px) {
     .menu_main-grid {
         grid-template-columns: 1fr;
@@ -804,6 +808,9 @@ i {
 
 }
 
+.fa-pen-to-square{
+    font-size: 30px;
+}
 
 .menu_nav-select {
     display: flex;
@@ -1125,6 +1132,31 @@ i {
     margin-top: 25%;
 }
 
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+}
+
+.table button {
+    background-color: #f00;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 10px;
+    border: 2px solid transparent;
+}
+
+.contact button:hover{
+    border: 2px solid #000;
+}
+
+
 @media screen and (max-width: 720px) {
     .gestion_main-busqueda div {
         display: block;
@@ -1148,3 +1180,90 @@ i {
 
 /*-----------------------TORNEOS ACTUALIZADO------------------------*/
 
+
+
+.containerT {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.form-containerT {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.list-container {
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #e9ecef;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team-name {
+    color: rgb(69, 52, 228);
+    font-weight: bold;
+}
+
+.player-name {
+    color: rgb(4, 105, 18);
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}

@@ -115,6 +115,18 @@ closeModal.addEventListener('click',(e)=>{
     const select = document.getElementById('Select');
     select.value = '';
 });
+    }else if (url === 'turnos'){
+const modal = document.querySelector('.modal-turnos');
+const closeModal = document.querySelector('.modal_close-turnos');
+modal.classList.add('modal--show');
+
+closeModal.addEventListener('click',(e)=>{
+    e.preventDefault();
+    modal.classList.remove('modal--show');
+    // Restablece el valor del select al valor predeterminado
+    const select = document.getElementById('Select');
+    select.value = '';
+});
     } else if (url === 'gestion') {
         window.location.href = 'gestion.html';
     }

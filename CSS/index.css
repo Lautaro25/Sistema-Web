@@ -988,7 +988,7 @@ i {
     }
 }
 
-/*------------------------------------------Contacto------------------------------------------*/
+/*---------------------------------------------Contacto------------------------------------------*/
 
 .contacto_txt {
     display: block;
@@ -1014,7 +1014,7 @@ i {
 }
 
 /*----------------------------------------Sección Torneos------------------------------------------*/
-
+/*
 .torneo_main {
     max-width: 800px;
     margin: 20px auto;
@@ -1083,8 +1083,10 @@ i {
     background-color: #333;
     color: #01ff22
 }
+*/
 
-/*-----------------------Gestion------------------*/
+
+/*------------------------------------------------Gestion----------------------------------------*/
 
 .gestion_main {
     margin: auto 30px;
@@ -1214,11 +1216,13 @@ i {
 }
 
 /* Estilos Generales */
+
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    
 }
 
 .title {
@@ -1249,7 +1253,7 @@ i {
 
 .form-button, .bracket-button {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #110b0c;
     color: white;
     padding: 10px 15px;
     text-align: center;
@@ -1259,7 +1263,8 @@ i {
 }
 
 .form-button:hover, .bracket-button:hover {
-    background-color: #0056b3;
+   background-color: #333;
+   color: #01ff22 
 }
 
 .team-list {
@@ -1314,6 +1319,8 @@ i {
     justify-content: space-between;
     margin-bottom: 30px;
     flex-wrap: wrap;
+    background-color:#c7c2c2bd;
+
 }
 
 .bracket-stage h3 {
@@ -1346,93 +1353,3 @@ i {
 .bracket-input:focus {
     outline: 2px solid #007bff;
 }
-
-
-
-
-/*
-.containerT {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
-}
-
-h1, h2 {
-    text-align: center;
-    color: #333;
-}
-
-.form-containerT {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input, select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-.list-container {
-    margin-top: 20px;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    background-color: #e9ecef;
-    margin-bottom: 5px;
-    padding: 10px;
-    border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.team-name {
-    color: rgb(69, 52, 228);
-    font-weight: bold;
-}
-
-.player-name {
-    color: rgb(4, 105, 18);
-}
-
-.delete-button {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.delete-button:hover {
-    background-color: #c82333;
-}  */

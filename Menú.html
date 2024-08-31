@@ -70,8 +70,29 @@
             <p class="modal_p">ID: 1957391</p>
             <p class="modal_p">Nombre de Usuario: Lautaro Villabona</p>
             <p class="modal_p">Email: lautarovillabona@gmail.com</p>
-            <button class="modal_button"><i class="fa-solid fa-pen-to-square icon-button"></i>Modificar
+            <button class="modal_button hero_cta" onclick="modificarPerfil()"><i class="fa-solid fa-pen-to-square icon-button"></i>Modificar
                 Información</button>
+        </div>
+    </section>
+
+    <section class="modal modal-modificar">
+        <div class="modal_container">
+            <a href="#" class="modal_close modal_close-modificar" onclick="closeModal()">&times;</a>
+            <form action="">
+                <h2 class="modal_title">Modificación del Perfil</h2>
+                <div class="login_formulario-inputs">
+                <label for="">Cambiar Nombre</label>
+                <input type="text" name="" id="" placeholder="Ingresar nuevo nombre de Usuario">
+                <label for="">Cambiar Contraseña</label>
+                <div class="password-container">
+                    <input type="password" name="contraseña" class="pass" id="pass" required
+                        placeholder="Ingrese su contraseña">
+                    <span class="toggle-password"><i class="fa-regular fa-eye" id="toggleIcon"></i></span>
+                </div>
+            </div>
+            </form>
+
+
         </div>
     </section>
 
@@ -95,6 +116,13 @@
                         <th scope="row">30/08</th>
                         <td>20:00</td>
                         <td>N1</td>
+                        <td><button><i class="fa-solid fa-trash"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <th scope="row">10/09</th>
+                        <td>14:00</td>
+                        <td>N3</td>
                         <td><button><i class="fa-solid fa-trash"></i></button></td>
                     </tr>
                 </tbody>

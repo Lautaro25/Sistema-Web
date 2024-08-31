@@ -1154,7 +1154,7 @@ i {
     border: 2px solid transparent;
 }
 
-.contact button:hover{
+.table button:hover{
     border: 2px solid #000;
 }
 
@@ -1180,70 +1180,34 @@ i {
     display: none;
 }
 
-/*-------------------------------------TORNEOS ACTUALIZADO--------------------------------------------*/
+/*-----------------------TORNEOS ACTUALIZADO------------------------*/
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
 
-    .form-input, .form-select, .form-button {
-        padding: 10px;
-    }
 
-    .team-list {
-        grid-template-columns: repeat(3, 1fr); /* 3 equipos por fila en pantallas medianas */
-    }
-
-    .team-list-item {
-        padding: 8px;
-    }
-}
-
-@media (max-width: 480px) {
-    .form-input, .form-select, .form-button {
-        padding: 8px;
-    }
-
-    .team-list {
-        grid-template-columns: repeat(2, 1fr); /* 2 equipos por fila en pantallas pequeñas */
-    }
-
-    .team-list-item {
-        padding: 8px;
-    }
-}
-
-/* Estilos Generales */
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+.containerT {
+    background-color: #ffffff;
     padding: 20px;
-    
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
 }
 
-.title {
+h1, h2 {
     text-align: center;
-    margin-bottom: 30px;
+    color: #333;
 }
 
-.form-container {
+.form-containerT {
     margin-bottom: 20px;
 }
 
-.form-title {
-    margin-bottom: 10px;
-}
-
-.form-label {
+label {
     display: block;
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
-.form-input, .form-select {
+input, select {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -1251,82 +1215,59 @@ i {
     border-radius: 4px;
 }
 
-.form-button, .bracket-button {
-    display: inline-block;
-    background-color: #110b0c;
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
     color: white;
-    padding: 10px 15px;
-    text-align: center;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-.form-button:hover, .bracket-button:hover {
-   background-color: #333;
-   color: #01ff22 
+button:hover {
+    background-color: #218838;
 }
 
-.team-list {
+.list-container {
+    margin-top: 20px;
+}
+
+ul {
     list-style-type: none;
     padding: 0;
 }
 
-.team-list-item {
+ul li {
+    background-color: #e9ecef;
+    margin-bottom: 5px;
     padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 4px;
-    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .team-name {
-    color: blue;
+    color: rgb(69, 52, 228);
     font-weight: bold;
 }
 
 .player-name {
-    color: green;
-    margin-left: 5px;
+    color: rgb(4, 105, 18);
 }
 
 .delete-button {
-    background-color: red;
+    background-color: #dc3545;
     color: white;
     border: none;
-    padding: 5px 10px;
     border-radius: 4px;
+    padding: 5px 10px;
     cursor: pointer;
 }
 
 .delete-button:hover {
-    background-color: darkred;
-}
-
-.bracket-container {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(3, 102, 44, 0.1);
-    overflow-x: auto; /* Permitir scroll horizontal para pantallas pequeñas */
-}
-
-.bracket-stage {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-    background-color:#c7c2c2bd;
-
-}
-
-.bracket-stage h3 {
-    text-align: center;
-    margin-bottom: 20px;
-    flex-basis: 100%;
+    background-color: #c82333;
 }
 
 .bracket-match {

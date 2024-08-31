@@ -8,38 +8,6 @@ function navigateToPage() {
 }
 
 
-/*Día*/
-// scripts.js
-document.addEventListener('DOMContentLoaded', (event) => {
-    const dateInput = document.getElementById('date-input');
-    const today = new Date().toISOString().split('T')[0];
-    dateInput.value = today;
-});
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    const timeInput = document.getElementById('time-input');
-    const now = new Time().toISOString().split('T')[0];
-    dateInput.value = now;
-});
-
-/*Horaa*/
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    const timeInput = document.getElementById('currentTime');
-
-    // Obtener la hora actual
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = "00";
-
-    // Formatear la hora en HH:MM
-    const currentTime = `${hours}:${minutes}`;
-
-    // Asignar el valor al campo de entrada
-    timeInput.value = currentTime;
-});
-
-
 /*Muestras para Usuarios con Cuenta*/
 
 // Define la variable account en el ámbito global y empieza como 
@@ -130,6 +98,22 @@ closeModal.addEventListener('click',(e)=>{
     } else if (url === 'gestion') {
         window.location.href = 'gestion.html';
     }
+}
+
+function modificarPerfil(){
+    const modalp = document.querySelector('.modal-perfil');
+    const modal = document.querySelector('.modal-modificar');
+const closeModal = document.querySelector('.modal_close-modificar');
+modal.classList.add('modal--show');
+modalp.classList.remove('modal--show');
+
+closeModal.addEventListener('click',(e)=>{
+    e.preventDefault();
+    modal.classList.remove('modal--show');
+    // Restablece el valor del select al valor predeterminado
+    const select = document.getElementById('Select');
+    select.value = '';
+});
 }
 
 
@@ -367,8 +351,14 @@ document.addEventListener('DOMContentLoaded', function () {
             clearError(confirmPasswordInput);
         }
 
-        if (isValid) {
-            alert('Formulario enviado exitosamente!');
-        }
-    });
+    // If all fields are valid, submit the form
+    if (isValid) {
+        document.getElementById('registrationForm').submit();
+    }
 });
+
+function isValidEmail(email) {
+    // Basic email validation regex
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}})

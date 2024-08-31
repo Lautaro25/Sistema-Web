@@ -988,7 +988,7 @@ i {
     }
 }
 
-/*------------------------------------------Contacto------------------------------------------*/
+/*---------------------------------------------Contacto------------------------------------------*/
 
 .contacto_txt {
     display: block;
@@ -1014,7 +1014,7 @@ i {
 }
 
 /*----------------------------------------Sección Torneos------------------------------------------*/
-
+/*
 .torneo_main {
     max-width: 800px;
     margin: 20px auto;
@@ -1083,8 +1083,10 @@ i {
     background-color: #333;
     color: #01ff22
 }
+*/
 
-/*-----------------------Gestion------------------*/
+
+/*------------------------------------------------Gestion----------------------------------------*/
 
 .gestion_main {
     margin: auto 30px;
@@ -1178,34 +1180,70 @@ i {
     display: none;
 }
 
-/*-----------------------TORNEOS ACTUALIZADO------------------------*/
+/*-------------------------------------TORNEOS ACTUALIZADO--------------------------------------------*/
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
 
+    .form-input, .form-select, .form-button {
+        padding: 10px;
+    }
 
-.containerT {
-    background-color: #ffffff;
+    .team-list {
+        grid-template-columns: repeat(3, 1fr); /* 3 equipos por fila en pantallas medianas */
+    }
+
+    .team-list-item {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-input, .form-select, .form-button {
+        padding: 8px;
+    }
+
+    .team-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 equipos por fila en pantallas pequeñas */
+    }
+
+    .team-list-item {
+        padding: 8px;
+    }
+}
+
+/* Estilos Generales */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    
 }
 
-h1, h2 {
+.title {
     text-align: center;
-    color: #333;
+    margin-bottom: 30px;
 }
 
-.form-containerT {
+.form-container {
     margin-bottom: 20px;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+.form-title {
+    margin-bottom: 10px;
 }
 
-input, select {
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-input, .form-select {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -1213,57 +1251,105 @@ input, select {
     border-radius: 4px;
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
+.form-button, .bracket-button {
+    display: inline-block;
+    background-color: #110b0c;
     color: white;
+    padding: 10px 15px;
+    text-align: center;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #218838;
+.form-button:hover, .bracket-button:hover {
+   background-color: #333;
+   color: #01ff22 
 }
 
-.list-container {
-    margin-top: 20px;
-}
-
-ul {
+.team-list {
     list-style-type: none;
     padding: 0;
 }
 
-ul li {
-    background-color: #e9ecef;
-    margin-bottom: 5px;
+.team-list-item {
     padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 4px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .team-name {
-    color: rgb(69, 52, 228);
+    color: blue;
     font-weight: bold;
 }
 
 .player-name {
-    color: rgb(4, 105, 18);
+    color: green;
+    margin-left: 5px;
 }
 
 .delete-button {
-    background-color: #dc3545;
+    background-color: red;
     color: white;
     border: none;
-    border-radius: 4px;
     padding: 5px 10px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
 .delete-button:hover {
-    background-color: #c82333;
+    background-color: darkred;
+}
+
+.bracket-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(3, 102, 44, 0.1);
+    overflow-x: auto; /* Permitir scroll horizontal para pantallas pequeñas */
+}
+
+.bracket-stage {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    background-color:#c7c2c2bd;
+
+}
+
+.bracket-stage h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    flex-basis: 100%;
+}
+
+.bracket-match {
+    margin-bottom: 20px;
+    text-align: center;
+    flex: 1 0 20%; /* Ocupa el 20% del ancho del contenedor */
+    min-width: 150px;
+}
+
+.bracket-team {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.bracket-input {
+    width: 40px;
+    text-align: center;
+    margin: 5px;
+}
+
+.bracket-input:focus {
+    outline: 2px solid #007bff;
 }

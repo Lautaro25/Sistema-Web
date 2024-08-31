@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const playerForm = document.getElementById('playerForm');
     const teamList = document.getElementById('teamList');
     const teamSelect = document.getElementById('teamSelect');
+    const showBracketButton = document.getElementById('showBracketButton');
+    const bracketContainer = document.getElementById('bracketContainer');
 
     let teams = [];
 
@@ -12,33 +14,28 @@ document.addEventListener('DOMContentLoaded', () => {
         teamSelect.innerHTML = '<option value="">Selecciona un equipo</option>';
         
         teams.forEach((team, index) => {
-            // Añadir equipo al select
             const option = document.createElement('option');
             option.value = index;
             option.textContent = team.name;
             teamSelect.appendChild(option);
 
-            // Crear el elemento de lista para el equipo
             const li = document.createElement('li');
             li.className = 'team-list-item';
 
-            // Crear un span para el nombre del equipo
             const teamNameSpan = document.createElement('span');
             teamNameSpan.textContent = team.name;
             teamNameSpan.className = 'team-name';
             li.appendChild(teamNameSpan);
 
-            // Crear el texto de jugadores
             const playersText = document.createElement('span');
             if (team.players.length > 0) {
                 const playerNames = team.players.map(player => `<span class="player-name">${player}</span>`).join(', ');
                 playersText.innerHTML = ` - Jugadores: ${playerNames}`;
             } else {
-                playersText.textContent = ' - Jugadores: Ninguno';
+                playersText.textContent = ' - Jugadores:';
             }
             li.appendChild(playersText);
 
-            // Crear botón de eliminar
             const deleteButton = document.createElement('button');
             deleteButton.textContent = 'Eliminar';
             deleteButton.className = 'delete-button';
@@ -81,4 +78,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
 });

@@ -372,3 +372,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+//Validacion formulario login

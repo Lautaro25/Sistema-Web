@@ -302,9 +302,14 @@ i {
 }
 
 .modal_button{
+    min-width: 100px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #789461;
     display: inline-block;
-    padding: 6px;
+    padding: 5px;
     border-radius: 20px;
     justify-self: left;
     margin-bottom: 0;
@@ -809,7 +814,7 @@ i {
 }
 
 .fa-pen-to-square{
-    font-size: 30px;
+    font-size: 15px;
 }
 
 .menu_nav-select {

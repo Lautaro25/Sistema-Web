@@ -988,7 +988,7 @@ i {
     }
 }
 
-/*------------------------------------------Contacto------------------------------------------*/
+/*---------------------------------------------Contacto------------------------------------------*/
 
 .contacto_txt {
     display: block;
@@ -1014,7 +1014,7 @@ i {
 }
 
 /*----------------------------------------Sección Torneos------------------------------------------*/
-
+/*
 .torneo_main {
     max-width: 800px;
     margin: 20px auto;
@@ -1083,8 +1083,10 @@ i {
     background-color: #333;
     color: #01ff22
 }
+*/
 
-/*-----------------------Gestion------------------*/
+
+/*------------------------------------------------Gestion----------------------------------------*/
 
 .gestion_main {
     margin: auto 30px;
@@ -1152,7 +1154,7 @@ i {
     border: 2px solid transparent;
 }
 
-.contact button:hover{
+.table button:hover{
     border: 2px solid #000;
 }
 
@@ -1266,4 +1268,29 @@ ul li {
 
 .delete-button:hover {
     background-color: #c82333;
+}
+
+.bracket-match {
+    margin-bottom: 20px;
+    text-align: center;
+    flex: 1 0 20%; /* Ocupa el 20% del ancho del contenedor */
+    min-width: 150px;
+}
+
+.bracket-team {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.bracket-input {
+    width: 40px;
+    text-align: center;
+    margin: 5px;
+}
+
+.bracket-input:focus {
+    outline: 2px solid #007bff;
 }

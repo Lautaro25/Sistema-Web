@@ -48,8 +48,14 @@
             <div class="login_formulario-inputs">
                 <input type="email" id="email" placeholder="Ingrese su email" required>
                 <input type="text" id="username" placeholder="Ingrese su nombre de usuario" required>
-                <input type="password" id="password" placeholder="Ingrese su contraseña" required>
-                <input type="password" id="confirm-password" placeholder="Confirme su contraseña" required>
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="Ingrese su contraseña" required>
+                    <span class="toggle-password"><i class="fa-regular fa-eye" id="toggleIcon"></i></span>
+                </div>                    
+                <div class="password-container">
+                    <input type="password" id="confirm-password" placeholder="Confirme su contraseña" required>
+                    <span class="toggle-password"><i class="fa-regular fa-eye" id="toggleIcon"></i></span>
+                </div> 
             </div>
 
             <div class="login_desvio">

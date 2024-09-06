@@ -351,14 +351,8 @@ document.addEventListener('DOMContentLoaded', function () {
             clearError(confirmPasswordInput);
         }
 
-    // If all fields are valid, submit the form
-    if (isValid) {
-        document.getElementById('registrationForm').submit();
-    }
+        if (isValid) {
+            alert('Formulario enviado exitosamente!');
+        }
+    });
 });
-
-function isValidEmail(email) {
-    // Basic email validation regex
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}})

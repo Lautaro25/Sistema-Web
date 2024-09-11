@@ -356,3 +356,161 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+//Validacion del login
+document.addEventListener('DOMContentLoaded', function () {
+    const emailInput = document.getElementById('usuario');
+    const passwordInput = document.getElementById('pass');
+    const form = document.querySelector('form');
+
+    // Función para validar el email
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
+    // Mostrar error debajo del campo
+    function showError(element, message) {
+        let errorElement = element.nextElementSibling;
+        if (!errorElement || !errorElement.classList.contains('error')) {
+            errorElement = document.createElement('div');
+            errorElement.className = 'error';
+            errorElement.style.color = 'red';
+            element.insertAdjacentElement('afterend', errorElement);
+        }
+        errorElement.textContent = message;
+    }
+
+    // Limpiar mensaje de error
+    function clearError(element) {
+        let errorElement = element.nextElementSibling;
+        if (errorElement && errorElement.classList.contains('error')) {
+            errorElement.remove();
+        }
+    }
+
+    // Manejo del envío del formulario
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevenir el envío del formulario hasta que se validen los datos
+        let isValid = true;
+
+        // Validación de email
+        if (!validateEmail(emailInput.value)) {
+            showError(emailInput, 'Por favor ingrese un email válido.');
+            isValid = false;
+        } else {
+            clearError(emailInput);
+        }
+
+        // Validación de la contraseña (mínimo 6 caracteres)
+        if (passwordInput.value.trim().length < 6) {
+            showError(passwordInput, 'La contraseña debe tener al menos 6 caracteres.');
+            isValid = false;
+        } else {
+            clearError(passwordInput);
+        }
+
+        // Si todo es válido, se muestra el mensaje de éxito
+        if (isValid) {
+            alert('Formulario enviado exitosamente!');
+            // Aquí podrías permitir el envío del formulario si fuera necesario:
+            // form.submit();
+        }
+    });
+});
+
+//Validacion del formulario contacto
+document.addEventListener('DOMContentLoaded', function () {
+    const nameInput = document.getElementById('usuario');
+    const emailInput = document.getElementById('email');
+    const telInput = document.getElementById('tel');
+    const deporteSelect = document.getElementById('deporte');
+    const comentarioInput = document.querySelector('.contacto_txt');
+    const form = document.querySelector('form');
+
+    // Función para validar el email
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
+    // Función para validar el teléfono (solo números y longitud mínima de 7 dígitos)
+    function validatePhone(tel) {
+        const re = /^[0-9]{7,15}$/;
+        return re.test(tel);
+    }
+
+    // Mostrar error debajo del campo
+    function showError(element, message) {
+        let errorElement = element.nextElementSibling;
+        if (!errorElement || !errorElement.classList.contains('error')) {
+            errorElement = document.createElement('div');
+            errorElement.className = 'error';
+            errorElement.style.color = 'red';
+            element.insertAdjacentElement('afterend', errorElement);
+        }
+        errorElement.textContent = message;
+    }
+
+    // Limpiar mensaje de error
+    function clearError(element) {
+        let errorElement = element.nextElementSibling;
+        if (errorElement && errorElement.classList.contains('error')) {
+            errorElement.remove();
+        }
+    }
+
+    // Manejar el evento de envío del formulario
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevenir el envío del formulario hasta que se validen los datos
+        let isValid = true;
+
+        // Validación del nombre
+        if (nameInput.value.trim() === '') {
+            showError(nameInput, 'El nombre es obligatorio.');
+            isValid = false;
+        } else {
+            clearError(nameInput);
+        }
+
+        // Validación de email
+        if (!validateEmail(emailInput.value)) {
+            showError(emailInput, 'Por favor ingrese un email válido.');
+            isValid = false;
+        } else {
+            clearError(emailInput);
+        }
+
+        // Validación del teléfono
+        if (!validatePhone(telInput.value)) {
+            showError(telInput, 'Por favor ingrese un teléfono válido');
+            isValid = false;
+        } else {
+            clearError(telInput);
+        }
+
+        // Validación del deporte
+        if (deporteSelect.value === '') {
+            showError(deporteSelect, 'Debe seleccionar un deporte.');
+            isValid = false;
+        } else {
+            clearError(deporteSelect);
+        }
+
+        // Validación del comentario
+        if (comentarioInput.value.trim() === '') {
+            showError(comentarioInput, 'El comentario es obligatorio.');
+            isValid = false;
+        } else {
+            clearError(comentarioInput);
+        }
+
+        // Si todo es válido, se muestra el mensaje de éxito
+        if (isValid) {
+            alert('Formulario enviado exitosamente!');
+            // Aquí podrías permitir el envío del formulario si fuera necesario:
+            // form.submit();
+        }
+    });
+});

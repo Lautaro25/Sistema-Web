@@ -206,6 +206,33 @@ function formatTime(date) {
 
 /*Ventana de Alquiler*/
 // Función para manejar el alquiler
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById("fecha").setAttribute("value", today);
+    document.getElementById("fecha").setAttribute("min", today);
+
+// Obtener la hora actual
+const now = new Date();
+let hours = now.getHours();
+let minutes = now.getMinutes();
+
+// Si los minutos son mayores a 0, siempre redondear al siguiente intervalo de 30 minutos
+if (minutes > 0 && minutes <= 30) {
+    minutes = "30";
+} else if (minutes > 30) {
+    minutes = "00";
+    hours += 1; // Aumentar la hora al siguiente si ya es más de 30 minutos
+}
+
+// Si la hora es menor de 10, agregar un 0 al inicio (para que sea 09:00 en lugar de 9:00)
+hours = hours < 10 ? `0${hours}` : hours;
+
+// Formatear la hora como "HH:MM"
+const timeString = `${hours}:${minutes}`;
+
+// Asignar la hora redondeada al campo de hora
+document.getElementById("hora").setAttribute("value", timeString);
+
+
 function Alquiler(horario) {
     const modal = document.querySelector('.modal-alquiler');
     const closeModalAlquiler = document.querySelector('.modal_close-alquiler');

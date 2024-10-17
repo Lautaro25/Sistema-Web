@@ -329,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Validación de nombre de usuario
         if (usernameInput.value.trim() === '') {
-            showError(usernameInput, 'El nombre de usuario es obligatorio.');
+            showError(usernameInput, 'El nombre y apellido son obligatorios.');
             isValid = false;
         } else {
             clearError(usernameInput);
@@ -404,8 +404,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Validación de la contraseña (mínimo 6 caracteres)
-        if (passwordInput.value.trim().length < 6) {
-            showError(passwordInput, 'La contraseña debe tener al menos 6 caracteres.');
+        if (passwordInput.value.trim().length < 8) {
+            showError(passwordInput, 'La contraseña debe tener al menos 8 caracteres.');
             isValid = false;
         } else {
             clearError(passwordInput);
@@ -468,7 +468,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Validación del nombre
         if (nameInput.value.trim() === '') {
-            showError(nameInput, 'El nombre es obligatorio.');
+            showError(nameInput, 'El email es obligatorio.');
             isValid = false;
         } else {
             clearError(nameInput);
@@ -513,4 +513,89 @@ document.addEventListener('DOMContentLoaded', function () {
             // form.submit();
         }
     });
+
+
+     //Validacion formulario de reserva
+
+     document.addEventListener('DOMContentLoaded', function () {
+        const nameInput = document.getElementById('name');
+        const phoneInput = document.getElementById('phone');
+        const dniInput = document.getElementById('dni');
+        const form = document.getElementById('rentalForm');
+    
+        // Función para validar el nombre (no vacío y con al menos 3 caracteres)
+        function validateName(name) {
+            return name.trim().length >= 3;
+        }
+    
+        // Función para validar el teléfono (solo números y longitud mínima de 7 dígitos)
+        function validatePhone(phone) {
+            const re = /^[0-9]{7,15}$/;
+            return re.test(phone);
+        }
+    
+        // Función para validar el DNI (solo números entre 7 y 8 dígitos)
+        function validateDni(dni) {
+            const re = /^[0-9]{7,8}$/;
+            return re.test(dni);
+        }
+    
+        // Mostrar error debajo del campo
+        function showError(element, message) {
+            let errorElement = element.nextElementSibling;
+            if (!errorElement || !errorElement.classList.contains('error')) {
+                errorElement = document.createElement('div');
+                errorElement.className = 'error';
+                errorElement.style.color = 'red';
+                element.insertAdjacentElement('afterend', errorElement);
+            }
+            errorElement.textContent = message;
+        }
+    
+        // Limpiar mensaje de error
+        function clearError(element) {
+            let errorElement = element.nextElementSibling;
+            if (errorElement && errorElement.classList.contains('error')) {
+                errorElement.remove();
+            }
+        }
+    
+        // Manejar el evento de envío del formulario
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevenir el envío del formulario hasta que se validen los datos
+            let isValid = true;
+    
+            // Validación del nombre
+            if (!validateName(nameInput.value)) {
+                showError(nameInput, 'El nombre debe tener al menos 3 caracteres.');
+                isValid = false;
+            } else {
+                clearError(nameInput);
+            }
+    
+            // Validación del teléfono
+            if (!validatePhone(phoneInput.value)) {
+                showError(phoneInput, 'Por favor ingrese un teléfono válido (solo números, entre 7 y 15 dígitos).');
+                isValid = false;
+            } else {
+                clearError(phoneInput);
+            }
+    
+            // Validación del DNI
+            if (!validateDni(dniInput.value)) {
+                showError(dniInput, 'Por favor ingrese un DNI válido (7 u 8 dígitos).');
+                isValid = false;
+            } else {
+                clearError(dniInput);
+            }
+    
+            // Si todo es válido, se muestra el mensaje de éxito
+            if (isValid) {
+                alert('Formulario enviado exitosamente!');
+                // Aquí podrías permitir el envío del formulario si fuera necesario:
+                // form.submit();
+            }
+        });
+    });
 });
+

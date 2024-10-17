@@ -168,75 +168,53 @@
                     <span class="visually-hidden">Siguiente</span>
                 </button>
             </div>
-            <div class="menu-div-label"><label for="" class="menu-label horarios-label">Alquilá tu Cancha</label></div>
-            <div class="menu_main-horarios">
-                <div class="menu_main-horarios-deportes">
-                    <select class="select_contacto index_bodydeporteSelect" id="select-pc">
-                        <option value="empty" disabled selected hidden>Seleccione Cancha</option>
-                        <option value="N°1"></i>Cancha N°1</option>
-                        <option value="N°2">Cancha N°2</option>
-                        <option value="N°3">Cancha N°3</option>
-                    </select>
-                    <select class="select_contacto index_bodydeporteSelect" id="select-celular">
-                        <option value="empty" disabled selected hidden>N° Cancha</option>
-                        <option value="N°1"></i>Cancha N°1</option>
-                        <option value="N°2">Cancha N°2</option>
-                        <option value="N°3">Cancha N°3</option>
-                    </select>
-                </div>
-                <div class="menu_main-horarios-turnos">
-                    <div class="menu_main-horarios-turnos-días">
-                        <input type="date" id="date-input">
+            <div class="reserva-section">
+                <h2>Reserva de Cancha</h2>
+                <form action="svReserva" method="POST">
+                    <!-- Primera fila: Número de cancha -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cancha">Número de Cancha</label>
+                            <select name="cancha" id="cancha" required>
+                                <option value="1">Cancha 1</option>
+                                <option value="2">Cancha 2</option>
+                                <option value="3">Cancha 3</option>
+                            </select>
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="fecha">Día</label>
+                            <input type="date" id="fecha" name="fecha" required>
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="hora">Hora</label>
+                            <input type="time" id="hora" name="horario" step="1800" required> <!-- 1800 segundos = 30 minutos -->
+                        </div>
                     </div>
-                    <div class="menu_main-horarios-turnos-hora">
-                        <button onclick="Alquiler()"><span>08:00hs</span></button>
-                        <button onclick="Alquiler()"><span>09:30hs</span></button>
-                        <button onclick="Alquiler()"><span>11:00hs</span></button>
-                        <button onclick="Alquiler()"><span>12:00hs</span></button>
-                        <button onclick="Alquiler()"><span>13:30hs</span></button>
-                        <button onclick="Alquiler()"><span>15:00hs</span></button>
-                        <button onclick="Alquiler()"><span>16:30hs</span></button>
-                        <button onclick="Alquiler()"><span>18:00hs</span></button>
-                        <button onclick="Alquiler()"><span>19:30hs</span></button>
-                        <button onclick="Alquiler()"><span>21:00hs</span></button>
-                        <button onclick="Alquiler()"><span>22:30hs</span></button>
-                        <button onclick="Alquiler()"><span>00:00hs</span></button>
+            
+                    <!-- Segunda fila: Datos personales -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre y Apellido</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido" required>
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="telefono">Número de Teléfono</label>
+                            <input type="tel" id="telefono" name="telef" placeholder="Teléfono" required>
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="dni">DNI</label>
+                            <input type="text" id="dni" name="dni" placeholder="DNI" required>
+                        </div>
                     </div>
-                </div>
+            
+                    <!-- Botón de enviar -->
+                    <button type="submit">Reservar Cancha</button>
+                </form>
             </div>
-        </section>
-        <section class="modal modal-alquiler">
-            <div class="modal_container">
-                <a href="#" class="modal_close modal_close-alquiler" onclick="closeModalAlquiler()">&times;</a>
-                <i class="fa-solid fa-bell user-perfil"></i>
-                <h2 class="modal_title modal_title-horarios">Hora de Alquilar</h2>
-                <div class="modal_alquiler-horario">
-                    <div class="modal_alquiler-info">
-                        <p class="modal_p modal_p-horarios">Horario</p>
-                        <p id="modal-horarios" class="modal_p modal_p-horarios"></p>
-                    </div>
-                    <div class="modal_alquiler-info">
-
-                        <p class="modal_p modal_p-horarios">Cancha</p>
-                        <p id="modal-cancha" class="modal_p modal_p-horarios"></p>
-                    </div>
-                    <div class="modal_alquiler-info">
-                        <p class="modal_p modal_p-horarios">Díá</p>
-                        <p id="modal-dias" class="modal_p modal_p-horarios"></p>
-                    </div>
-                </div>
-                <form id="rentalForm" class="modal_form">
-                    <h5>Información</h5>
-                    <input type="text" id="name" required placeholder="Ingrese su Nombre y Apellido">
-                    <input type="text" id="phone" required placeholder="Ingrese su Teléfono">
-                    <input type="text" id="dni" required placeholder="Ingrese su DNI">
-                    <button type="submit" class="modal_button">
-                      <i class="fa-solid fa-thumbtack icon-button"></i>Alquilar
-                    </button>
-                  </form>
-                  
-            </div>
-        </section>
         <div class="menu_main-grid">
             <section class="menu_section">
                 <div class="menu_section-ubi">

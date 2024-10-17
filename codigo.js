@@ -204,51 +204,39 @@ function formatTime(date) {
 }
 
 
+
+
+
+
+
+
 /*Ventana de Alquiler*/
 // Función para manejar el alquiler
-function Alquiler(horario) {
-    const modal = document.querySelector('.modal-alquiler');
-    const closeModalAlquiler = document.querySelector('.modal_close-alquiler');
+const today = new Date().toISOString().split('T')[0];
+document.getElementById("fecha").setAttribute("value", today);
+document.getElementById("fecha").setAttribute("min", today);
 
-    // Detectar el tamaño de la pantalla para seleccionar el select adecuado
-    let selectCancha;
-    if (window.innerWidth <= 1280) { // Asumiendo que 768px es el umbral para móviles
-        selectCancha = document.getElementById('select-celular');
-    } else {
-        selectCancha = document.getElementById('select-pc');
-    }
+// Obtener la hora actual
+const now = new Date();
+let hours = now.getHours();
+let minutes = now.getMinutes();
 
-    // Obtener la cancha seleccionada
-    const canchaSeleccionada = selectCancha.value;
-
-    // Verificar si se ha seleccionado una cancha
-    if (canchaSeleccionada === "empty") {
-        alert("Debe seleccionar una Cancha");
-    } else {
-        // Mostrar el modal
-        modal.classList.add('modal--show');
-
-        // Obtener la fecha seleccionada
-        const fechaInput = document.getElementById('date-input').value;
-
-        // Formatear la fecha para mostrar solo el día y el mes
-        const fecha = new Date(fechaInput);
-        const dia = (fecha.getDate() + 1).toString().padStart(2, '0');
-        const mes = (fecha.getMonth() + 1).toString().padStart(2, '0'); // Los meses en JavaScript son de 0 a 11
-        const fechaFormateada = `${dia}/${mes}`;
-
-        // Actualizar contenido del modal
-        document.getElementById("modal-horarios").innerText = horario; // Usar el horario del botón
-        document.getElementById("modal-cancha").innerText = canchaSeleccionada; // Cancha seleccionada
-        document.getElementById("modal-dias").innerText = fechaFormateada; // Fecha formateada
-
-        // Cerrar modal al hacer clic en el botón de cerrar
-        closeModalAlquiler.addEventListener('click', (e) => {
-            e.preventDefault();
-            modal.classList.remove('modal--show');
-        });
-    }
+// Si los minutos son mayores a 0, siempre redondear al siguiente intervalo de 30 minutos
+if (minutes > 0 && minutes <= 30) {
+minutes = "30";
+} else if (minutes > 30) {
+minutes = "00";
+hours += 1; // Aumentar la hora al siguiente si ya es más de 30 minutos
 }
+
+// Si la hora es menor de 10, agregar un 0 al inicio (para que sea 09:00 en lugar de 9:00)
+hours = hours < 10 ? `0${hours}` : hours;
+
+// Formatear la hora como "HH:MM"
+const timeString = `${hours}:${minutes}`;
+
+// Asignar la hora redondeada al campo de hora
+document.getElementById("hora").setAttribute("value", timeString);
 
 
 // Asignar la función a cada botón de horario con el horario correspondiente

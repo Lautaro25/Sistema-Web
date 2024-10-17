@@ -536,7 +536,7 @@ i {
     display: block;
     width: 100%;
     padding: 12px;
-    background-color: #3498db;
+    background-color: #789461;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -545,7 +545,7 @@ i {
 }
 
 .reserva-section button:hover {
-    background-color: #2980b9;
+    background-color: #5d754b;
 }
 
 @media (max-width: 768px) {

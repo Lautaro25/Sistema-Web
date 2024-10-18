@@ -116,38 +116,22 @@ closeModal.addEventListener('click',(e)=>{
 });
 }
 
+//Validacion de la caja de comentarios
 
 
-const MAX_COMMENTS = 15;
-
-document.addEventListener('DOMContentLoaded', function () {
-    loadComments();
-
-    document.getElementById('commentForm').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que el formulario se envíe por defecto
-        addComment();
-    });
-
-    document.getElementById('clearCommentsButton').addEventListener('click', function () {
-        clearComments();
-    });
-});
-
-function loadComments() {
-    const commentsContainer = document.getElementById('commentsContainer');
-    const comments = JSON.parse(localStorage.getItem('comments')) || [];
-    commentsContainer.innerHTML = '';
-
-    // Iterar a través de los comentarios en orden inverso para que los más recientes aparezcan arriba
-    for (let i = comments.length - 1; i >= 0; i--) {
-        commentsContainer.insertBefore(createCommentElement(comments[i]), commentsContainer.firstChild);
-    }
-}
+const MAX_COMMENTS = 10; // Ajusta el límite de comentarios según sea necesario
 
 function addComment() {
     const commentText = document.getElementById('commentText').value.trim();
+    const errorMessage = document.getElementById('commentError'); // Obtiene el elemento del mensaje de error
+
+    // Reinicia el mensaje de error
+    errorMessage.style.display = 'none';
+    errorMessage.innerText = '';
+
     if (commentText === '') {
-        alert('Por favor, escribe un comentario.');
+        errorMessage.innerText = 'Por favor, escribe un comentario.'; // Establece el mensaje de error
+        errorMessage.style.display = 'block'; // Muestra el mensaje de error
         return;
     }
 
@@ -161,7 +145,6 @@ function addComment() {
     const newComment = {
         author: prompt("Ingrese su Nombre") || 'Anónimo',
         text: commentText,
-        avatar: 'https://via.placeholder.com/50',
         date: formatDate(now), // Formatear la fecha
         time: formatTime(now) // Formatear la hora
     };
@@ -182,12 +165,10 @@ function clearComments() {
 
 function createCommentElement(comment) {
     const commentDiv = document.createElement('div');
-    commentDiv.classList.add('menu_aside-comentarios-content');
     commentDiv.innerHTML = `
         <div>
-            <div class="menu_aside-comentarios-author">${comment.author}</div>
-            <div class="menu_aside-comentarios-text">${comment.text}</div>
-            <div class="menu_aside-comentarios-date">${comment.date} ${comment.time}</div>
+            <strong>${comment.author}</strong>: ${comment.text}
+            <div style="font-size: small; color: gray;">${comment.date} ${comment.time}</div>
         </div>
     `;
     return commentDiv;
@@ -202,6 +183,14 @@ function formatTime(date) {
     const options = { hour: 'numeric', minute: 'numeric' };
     return date.toLocaleTimeString('es-ES', options);
 }
+
+// Cargar comentarios al iniciar la página
+window.onload = function() {
+    const comments = JSON.parse(localStorage.getItem('comments')) || [];
+    comments.forEach(comment => {
+        document.getElementById('commentsContainer').appendChild(createCommentElement(comment));
+    });
+};
 
 
 
@@ -505,85 +494,99 @@ document.addEventListener('DOMContentLoaded', function () {
 
      //Validacion formulario de reserva
 
-     document.addEventListener('DOMContentLoaded', function () {
-        const nameInput = document.getElementById('name');
-        const phoneInput = document.getElementById('phone');
-        const dniInput = document.getElementById('dni');
-        const form = document.getElementById('rentalForm');
+     document.getElementById("submitButton").addEventListener("click", function (event) {
+        event.preventDefault(); // Evita el envío del formulario para la validación
     
-        // Función para validar el nombre (no vacío y con al menos 3 caracteres)
-        function validateName(name) {
-            return name.trim().length >= 3;
+        let cancha = document.getElementById("cancha").value;
+        let fecha = document.getElementById("fecha").value;
+        let hora = document.getElementById("hora").value;
+        let nombre = document.getElementById("nombre1").value.trim();
+        let telefono = document.getElementById("telefono1").value.trim();
+        let dni = document.getElementById("dni1").value.trim();
+    
+        // Borrar mensajes de error previos
+        clearErrors();
+    
+        let isValid = true;
+    
+        // Validación de la selección de Cancha
+        if (cancha === "") {
+            showError("canchaError", "Por favor, selecciona una cancha.");
+            isValid = false;
         }
     
-        // Función para validar el teléfono (solo números y longitud mínima de 7 dígitos)
-        function validatePhone(phone) {
-            const re = /^[0-9]{7,15}$/;
-            return re.test(phone);
+        // Validación de la fecha (no puede ser una fecha pasada)
+        let hoy = new Date().toISOString().split('T')[0]; // Obtener la fecha actual en formato YYYY-MM-DD
+        if (fecha < hoy) {
+            showError("fechaError", "La fecha seleccionada no puede ser anterior a hoy.");
+            isValid = false;
         }
     
-        // Función para validar el DNI (solo números entre 7 y 8 dígitos)
-        function validateDni(dni) {
-            const re = /^[0-9]{7,8}$/;
-            return re.test(dni);
+        // Validación de la hora (opcional: rango de horas, por ejemplo, 8am a 10pm)
+        let horaRegex = /^([01]\d|2[0-3]):([0-5]\d)$/; // Formato HH:MM de 24 horas
+        if (!horaRegex.test(hora)) {
+            showError("horaError", "Por favor, ingrese una hora válida.");
+            isValid = false;
         }
     
-        // Mostrar error debajo del campo
-        function showError(element, message) {
-            let errorElement = element.nextElementSibling;
-            if (!errorElement || !errorElement.classList.contains('error')) {
-                errorElement = document.createElement('div');
-                errorElement.className = 'error';
-                errorElement.style.color = 'red';
-                element.insertAdjacentElement('afterend', errorElement);
-            }
-            errorElement.textContent = message;
+        // Validación de Nombre y Apellido (que no esté vacío)
+        if (nombre === "") {
+            showError("nombreError", "Por favor, ingrese su Nombre y Apellido.");
+            isValid = false;
         }
     
-        // Limpiar mensaje de error
-        function clearError(element) {
-            let errorElement = element.nextElementSibling;
-            if (errorElement && errorElement.classList.contains('error')) {
-                errorElement.remove();
-            }
+        // Validación de Teléfono (números de 7 a 15 dígitos)
+        let telefonoRegex = /^[0-9]{7,15}$/;
+        if (!telefonoRegex.test(telefono)) {
+            showError("telefonoError", "Por favor, ingrese un número de teléfono válido (7-15 dígitos).");
+            isValid = false;
         }
     
-        // Manejar el evento de envío del formulario
-        form.addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevenir el envío del formulario hasta que se validen los datos
-            let isValid = true;
+        // Validación de DNI (solo números, con 7 u 8 dígitos)
+        let dniRegex = /^[0-9]{7,8}$/;
+        if (!dniRegex.test(dni)) {
+            showError("dniError", "Por favor, ingrese un DNI válido (7 u 8 dígitos).");
+            isValid = false;
+        }
     
-            // Validación del nombre
-            if (!validateName(nameInput.value)) {
-                showError(nameInput, 'El nombre debe tener al menos 3 caracteres.');
-                isValid = false;
-            } else {
-                clearError(nameInput);
-            }
-    
-            // Validación del teléfono
-            if (!validatePhone(phoneInput.value)) {
-                showError(phoneInput, 'Por favor ingrese un teléfono válido (solo números, entre 7 y 15 dígitos).');
-                isValid = false;
-            } else {
-                clearError(phoneInput);
-            }
-    
-            // Validación del DNI
-            if (!validateDni(dniInput.value)) {
-                showError(dniInput, 'Por favor ingrese un DNI válido (7 u 8 dígitos).');
-                isValid = false;
-            } else {
-                clearError(dniInput);
-            }
-    
-            // Si todo es válido, se muestra el mensaje de éxito
-            if (isValid) {
-                alert('Formulario enviado exitosamente!');
-                // Aquí podrías permitir el envío del formulario si fuera necesario:
-                // form.submit();
-            }
-        });
+        // Si todas las validaciones son correctas, se envía el formulario
+        if (isValid) {
+            document.getElementById("reservaForm").submit();
+        }
     });
-});
+    
+    function showError(id, message) {
+        let errorElement = document.getElementById(id);
+        errorElement.style.display = "block";
+        errorElement.textContent = message;
+    }
+    
+    function clearErrors() {
+        let errors = document.querySelectorAll(".error");
+        errors.forEach(function(error) {
+            error.style.display = "none";
+            error.textContent = "";
+        });
+    }
+    //Generar horas cada 30 min
+    var selectHora = document.getElementById("hora");
+    var inicio = new Date();
+    inicio.setHours(0, 0, 0, 0); // Inicia desde la medianoche
 
+    for (var i = 0; i < 48; i++) { // Generar 48 opciones para cubrir un rango de 24 horas
+        var hora = new Date(inicio.getTime() + i * 30 * 60 * 1000);
+        var horaStr = hora.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+        // Verificar si la hora está entre las 02:00 y las 08:00 y omitirla si es así
+        var horaActual = hora.getHours();
+        if (horaActual >= 2 && horaActual < 8) {
+            continue; // Saltar esta iteración del bucle
+        }
+
+        var option = document.createElement("option");
+        option.text = horaStr;
+        option.value = horaStr;
+        selectHora.add(option);
+    }
+    
+}); 

@@ -204,51 +204,39 @@ function formatTime(date) {
 }
 
 
+
+
+
+
+
 /*Ventana de Alquiler*/
 // Función para manejar el alquiler
-function Alquiler(horario) {
-    const modal = document.querySelector('.modal-alquiler');
-    const closeModalAlquiler = document.querySelector('.modal_close-alquiler');
+const today = new Date().toISOString().split('T')[0];
+document.getElementById("fecha").setAttribute("value", today);
+document.getElementById("fecha").setAttribute("min", today);
 
-    // Detectar el tamaño de la pantalla para seleccionar el select adecuado
-    let selectCancha;
-    if (window.innerWidth <= 1280) { // Asumiendo que 768px es el umbral para móviles
-        selectCancha = document.getElementById('select-celular');
-    } else {
-        selectCancha = document.getElementById('select-pc');
-    }
+// Obtener la hora actual
+const now = new Date();
+let hours = now.getHours();
+let minutes = now.getMinutes();
 
-    // Obtener la cancha seleccionada
-    const canchaSeleccionada = selectCancha.value;
-
-    // Verificar si se ha seleccionado una cancha
-    if (canchaSeleccionada === "empty") {
-        alert("Debe seleccionar una Cancha");
-    } else {
-        // Mostrar el modal
-        modal.classList.add('modal--show');
-
-        // Obtener la fecha seleccionada
-        const fechaInput = document.getElementById('date-input').value;
-
-        // Formatear la fecha para mostrar solo el día y el mes
-        const fecha = new Date(fechaInput);
-        const dia = (fecha.getDate() + 1).toString().padStart(2, '0');
-        const mes = (fecha.getMonth() + 1).toString().padStart(2, '0'); // Los meses en JavaScript son de 0 a 11
-        const fechaFormateada = `${dia}/${mes}`;
-
-        // Actualizar contenido del modal
-        document.getElementById("modal-horarios").innerText = horario; // Usar el horario del botón
-        document.getElementById("modal-cancha").innerText = canchaSeleccionada; // Cancha seleccionada
-        document.getElementById("modal-dias").innerText = fechaFormateada; // Fecha formateada
-
-        // Cerrar modal al hacer clic en el botón de cerrar
-        closeModalAlquiler.addEventListener('click', (e) => {
-            e.preventDefault();
-            modal.classList.remove('modal--show');
-        });
-    }
+// Si los minutos son mayores a 0, siempre redondear al siguiente intervalo de 30 minutos
+if (minutes > 0 && minutes <= 30) {
+minutes = "30";
+} else if (minutes > 30) {
+minutes = "00";
+hours += 1; // Aumentar la hora al siguiente si ya es más de 30 minutos
 }
+
+// Si la hora es menor de 10, agregar un 0 al inicio (para que sea 09:00 en lugar de 9:00)
+hours = hours < 10 ? `0${hours}` : hours;
+
+// Formatear la hora como "HH:MM"
+const timeString = `${hours}:${minutes}`;
+
+// Asignar la hora redondeada al campo de hora
+document.getElementById("hora").setAttribute("value", timeString);
+
 
 
 // Asignar la función a cada botón de horario con el horario correspondiente
@@ -329,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Validación de nombre de usuario
         if (usernameInput.value.trim() === '') {
-            showError(usernameInput, 'El nombre de usuario es obligatorio.');
+            showError(usernameInput, 'El nombre y apellido son obligatorios.');
             isValid = false;
         } else {
             clearError(usernameInput);
@@ -404,8 +392,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Validación de la contraseña (mínimo 6 caracteres)
-        if (passwordInput.value.trim().length < 6) {
-            showError(passwordInput, 'La contraseña debe tener al menos 6 caracteres.');
+        if (passwordInput.value.trim().length < 8) {
+            showError(passwordInput, 'La contraseña debe tener al menos 8 caracteres.');
             isValid = false;
         } else {
             clearError(passwordInput);
@@ -468,7 +456,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Validación del nombre
         if (nameInput.value.trim() === '') {
-            showError(nameInput, 'El nombre es obligatorio.');
+            showError(nameInput, 'El email es obligatorio.');
             isValid = false;
         } else {
             clearError(nameInput);
@@ -513,4 +501,89 @@ document.addEventListener('DOMContentLoaded', function () {
             // form.submit();
         }
     });
+
+
+     //Validacion formulario de reserva
+
+     document.addEventListener('DOMContentLoaded', function () {
+        const nameInput = document.getElementById('name');
+        const phoneInput = document.getElementById('phone');
+        const dniInput = document.getElementById('dni');
+        const form = document.getElementById('rentalForm');
+    
+        // Función para validar el nombre (no vacío y con al menos 3 caracteres)
+        function validateName(name) {
+            return name.trim().length >= 3;
+        }
+    
+        // Función para validar el teléfono (solo números y longitud mínima de 7 dígitos)
+        function validatePhone(phone) {
+            const re = /^[0-9]{7,15}$/;
+            return re.test(phone);
+        }
+    
+        // Función para validar el DNI (solo números entre 7 y 8 dígitos)
+        function validateDni(dni) {
+            const re = /^[0-9]{7,8}$/;
+            return re.test(dni);
+        }
+    
+        // Mostrar error debajo del campo
+        function showError(element, message) {
+            let errorElement = element.nextElementSibling;
+            if (!errorElement || !errorElement.classList.contains('error')) {
+                errorElement = document.createElement('div');
+                errorElement.className = 'error';
+                errorElement.style.color = 'red';
+                element.insertAdjacentElement('afterend', errorElement);
+            }
+            errorElement.textContent = message;
+        }
+    
+        // Limpiar mensaje de error
+        function clearError(element) {
+            let errorElement = element.nextElementSibling;
+            if (errorElement && errorElement.classList.contains('error')) {
+                errorElement.remove();
+            }
+        }
+    
+        // Manejar el evento de envío del formulario
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevenir el envío del formulario hasta que se validen los datos
+            let isValid = true;
+    
+            // Validación del nombre
+            if (!validateName(nameInput.value)) {
+                showError(nameInput, 'El nombre debe tener al menos 3 caracteres.');
+                isValid = false;
+            } else {
+                clearError(nameInput);
+            }
+    
+            // Validación del teléfono
+            if (!validatePhone(phoneInput.value)) {
+                showError(phoneInput, 'Por favor ingrese un teléfono válido (solo números, entre 7 y 15 dígitos).');
+                isValid = false;
+            } else {
+                clearError(phoneInput);
+            }
+    
+            // Validación del DNI
+            if (!validateDni(dniInput.value)) {
+                showError(dniInput, 'Por favor ingrese un DNI válido (7 u 8 dígitos).');
+                isValid = false;
+            } else {
+                clearError(dniInput);
+            }
+    
+            // Si todo es válido, se muestra el mensaje de éxito
+            if (isValid) {
+                alert('Formulario enviado exitosamente!');
+                // Aquí podrías permitir el envío del formulario si fuera necesario:
+                // form.submit();
+            }
+        });
+    });
 });
+

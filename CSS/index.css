@@ -1196,78 +1196,6 @@ i {
     box-sizing: border-box;
 }
 
-/*----------------------------------------Sección Torneos------------------------------------------*/
-/*
-.torneo_main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-
-.torneo_main-equipo {
-    background: #4d5f3e;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.torneo_main-equipo h3 {
-    color: #f5f1f1;
-
-}
-
-.torneo_main-equipo ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.torneos_main-inscripcion {
-    color: #f5f1f1;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-}
-
-.torneos_main-select {
-    font-size: 16px;
-}
-
-.torneo_main-pagada {
-    color: green;
-}
-
-.torneo_main-sinPagar {
-    color: red;
-}
-
-.torneos_btn_equipos {
-
-    padding-top: 10px;
-    text-align: center;
-    margin: auto;
-}
-
-.torneos-boton {
-    background-color: #110b0c;
-    margin: 3px;
-    border-radius: 5px;
-    color: #f2f1f5;
-    padding: 8px 20px;
-
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-
-    transition: background-color 0.3s;
-
-}
-
-.torneos-boton:hover {
-    background-color: #333;
-    color: #01ff22
-}
-*/
-
 
 /*------------------------------------------------Gestion----------------------------------------*/
 
@@ -1363,34 +1291,70 @@ i {
     display: none;
 }
 
-/*-----------------------TORNEOS ACTUALIZADO------------------------*/
+/*-------------------------------------TORNEOS ACTUALIZADO--------------------------------------------*/
 
-/*
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
 
-.containerT {
-    background-color: #ffffff;
+    .form-input, .form-select, .form-button {
+        padding: 10px;
+    }
+
+    .team-list {
+        grid-template-columns: repeat(3, 1fr); /* 3 equipos por fila en pantallas medianas */
+    }
+
+    .team-list-item {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-input, .form-select, .form-button {
+        padding: 8px;
+    }
+
+    .team-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 equipos por fila en pantallas pequeñas */
+    }
+
+    .team-list-item {
+        padding: 8px;
+    }
+}
+
+/* Estilos Generales */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    
 }
 
-h1, h2 {
+.title {
     text-align: center;
-    color: #333;
+    margin-bottom: 30px;
 }
 
-.form-containerT {
+.form-container {
     margin-bottom: 20px;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+.form-title {
+    margin-bottom: 10px;
 }
 
-input, select {
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-input, .form-select {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -1398,74 +1362,58 @@ input, select {
     border-radius: 4px;
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
+.form-button, .bracket-button {
+    display: inline-block;
+    background-color: #110b0c;
     color: white;
+    padding: 10px 15px;
+    text-align: center;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #218838;
+.form-button:hover, .bracket-button:hover {
+   background-color: #333;
+   color: #01ff22 
 }
 
-.list-container {
-    margin-top: 20px;
-}
-
-ul {
+.team-list {
     list-style-type: none;
     padding: 0;
 }
 
-ul li {
-    background-color: #e9ecef;
-    margin-bottom: 5px;
+.team-list-item {
     padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 4px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-*/
+
 .team-name {
-    color: rgb(69, 52, 228);
+    color: blue;
     font-weight: bold;
 }
 
 .player-name {
-    color: rgb(4, 105, 18);
+    color: green;
+    margin-left: 5px;
 }
 
 .delete-button {
-    background-color: #dc3545;
+    background-color: red;
     color: white;
     border: none;
-    border-radius: 4px;
     padding: 5px 10px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
 .delete-button:hover {
-    background-color: #c82333;
-}
-
-.bracket-match {
-    margin-bottom: 20px;
-    text-align: center;
-    flex: 1 0 20%; /* Ocupa el 20% del ancho del contenedor */
-    min-width: 150px;
-}
-
-.bracket-team {
-    background-color: #e9ecef;
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 5px;
-    font-weight: bold;
+    background-color: darkred;
 }
 
 .bracket-input {

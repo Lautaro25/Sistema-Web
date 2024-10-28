@@ -168,53 +168,69 @@
                     <span class="visually-hidden">Siguiente</span>
                 </button>
             </div>
+           
             <div class="reserva-section">
                 <h2>Reserva de Cancha</h2>
-                <form action="svReserva" method="POST">
+                <form id="reservaForm" action="svReserva" method="POST">
                     <!-- Primera fila: Número de cancha -->
                     <div class="form-row">
                         <div class="form-group">
                             <label for="cancha">Número de Cancha</label>
                             <select name="cancha" id="cancha" required>
+                                <option value="">Selecciona una cancha</option> <!-- opción vacía -->
                                 <option value="1">Cancha 1</option>
                                 <option value="2">Cancha 2</option>
                                 <option value="3">Cancha 3</option>
                             </select>
+                            <small id="canchaError" class="error"></small> <!-- Mensaje de error -->
                         </div>
             
                         <div class="form-group">
                             <label for="fecha">Día</label>
                             <input type="date" id="fecha" name="fecha" required>
+                            <small id="fechaError" class="error"></small> <!-- Mensaje de error -->
                         </div>
             
                         <div class="form-group">
                             <label for="hora">Hora</label>
-                            <input type="time" id="hora" name="horario" step="1800" required> <!-- 1800 segundos = 30 minutos -->
+                            
+                            <select id="hora" name="horario" required>
+                                <!-- Opciones generadas por JavaScript -->
+                            </select>
+                            <small id="horaError" class="error"></small> <!-- Mensaje de error -->
                         </div>
                     </div>
             
                     <!-- Segunda fila: Datos personales -->
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="nombre">Nombre y Apellido</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido" required>
+                            <label for="nombre1">Nombre y Apellido</label>
+                            <input type="text" id="nombre1" name="nombre1" placeholder="Nombre y Apellido" required>
+                            <small id="nombreError" class="error"></small> <!-- Mensaje de error -->
                         </div>
             
                         <div class="form-group">
-                            <label for="telefono">Número de Teléfono</label>
-                            <input type="tel" id="telefono" name="telef" placeholder="Teléfono" required>
+                            <label for="telefono1">Número de Teléfono</label>
+                            <input type="tel" id="telefono1" name="telefono1" placeholder="Teléfono" required>
+                            <small id="telefonoError" class="error"></small> <!-- Mensaje de error -->
                         </div>
             
                         <div class="form-group">
-                            <label for="dni">DNI</label>
-                            <input type="text" id="dni" name="dni" placeholder="DNI" required>
+                            <label for="dni1">DNI</label>
+                            <input type="text" id="dni1" name="dni1" placeholder="DNI" required>
+                            <small id="dniError" class="error"></small> <!-- Mensaje de error -->
                         </div>
                     </div>
             
                     <!-- Botón de enviar -->
-                    <button type="submit">Reservar Cancha</button>
+                    <div class="reserva.form">
+                        <button type="submit" id="submitButton">Reservar Cancha</button>
+                    </div>
                 </form>
             </div>
+            
+            
+
         <div class="menu_main-grid">
             <section class="menu_section">
                 <div class="menu_section-ubi">
@@ -227,16 +243,16 @@
             </section>
             <aside class="menu_aside">
                 <div class="menu_aside-fondoComentarios">
-                    <h3>Sección de Comentario</h3>
+                    <h3>Sección de Comentarios</h3>
                     <div class="menu_aside-comentarios" id="commentsContainer"></div>
-                    <form class="menu_aside-comentarios-form" id="commentForm">
+                    <form class="menu_aside-comentarios-form" id="commentForm" onsubmit="return false;">
                         <textarea id="commentText" placeholder="Escribe tu comentario aquí..." rows="4"></textarea>
-                        <button type="submit" class="menu_aside-comentarios-form-button">Agregar comentario</button>
+                        <span id="commentError" class="error"></span> <!-- Mensaje de error -->
+                        <button type="button" onclick="addComment()" class="menu_aside-comentarios-form-button">Agregar comentario</button>
                     </form>
-                    <button id="clearCommentsButton" class="menu_aside-comentarios-form-button">Borrar</button>
+                    <button id="clearCommentsButton" class="menu_aside-comentarios-form-button" onclick="clearComments()">Borrar</button>
                 </div>
             </aside>
-        </div>
     </main>
     <footer class="login_footer menu_footer">
         <div>

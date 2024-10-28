@@ -587,3 +587,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.getElementById('search-button').addEventListener('click', function() {
+    const cancha = document.querySelector('select').value;
+    const fecha = document.getElementById('date-input').value;
+    const hora = document.getElementById('currentTime').value;
+
+    // Aquí puedes agregar la lógica para buscar los datos
+    console.log(`Cancha: ${cancha}, Fecha: ${fecha}, Hora: ${hora}`);
+});
+
+document.getElementById('search-user-button').addEventListener('click', function() {
+    const username = document.querySelector('input[type="text"]').value;
+
+    // Lógica para buscar el usuario
+    console.log(`Buscar usuario: ${username}`);
+});
+
+function confirmarEliminar(){
+    alert("wepp");
+}
+

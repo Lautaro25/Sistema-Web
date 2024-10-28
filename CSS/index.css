@@ -1252,21 +1252,12 @@ i {
     border: 2px solid #000;
 }
 
-
-@media screen and (max-width: 720px) {
-    .gestion_main-busqueda div {
-        display: block;
-    }
-
-    .gestion_main-label-div {
-        margin: 10px auto;
-    }
-
-    .gestion_main-busqueda input {
-        float: right;
-        width: 68%;
-    }
+.table-container {
+    max-height: 300px; /* Ajusta la altura máxima según tus necesidades */
+    overflow-y: auto; /* Agrega un scrollbar si hay más de 5 filas */
 }
+
+
 
 
 /*Gestión de cuentas*/

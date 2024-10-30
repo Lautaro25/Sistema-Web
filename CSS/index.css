@@ -1269,21 +1269,12 @@ i {
     border: 2px solid #000;
 }
 
-
-@media screen and (max-width: 720px) {
-    .gestion_main-busqueda div {
-        display: block;
-    }
-
-    .gestion_main-label-div {
-        margin: 10px auto;
-    }
-
-    .gestion_main-busqueda input {
-        float: right;
-        width: 68%;
-    }
+.table-container {
+    max-height: 300px; /* Ajusta la altura máxima según tus necesidades */
+    overflow-y: auto; /* Agrega un scrollbar si hay más de 5 filas */
 }
+
+
 
 
 /*Gestión de cuentas*/
@@ -1414,4 +1405,20 @@ i {
 
 .delete-button:hover {
     background-color: darkred;
+}
+
+.bracket-input {
+    width: 40px;
+    text-align: center;
+    margin: 5px;
+}
+
+.bracket-input:focus {
+    outline: 2px solid #007bff;
+}
+
+.error {
+    color: red;
+    font-size: 18px;
+    display: none; /* Oculto por defecto */
 }

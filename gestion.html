@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +9,12 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="icon" href="Img/iconoWeb2.ico">
-    <title>Gestión</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <title>Gestión</title>  
 </head>
-
-<body class="login_body gestion_body">
+<body class="login_body">
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
@@ -31,231 +32,189 @@
                             <a class="nav-link nav-li" href="Menú.html"><i class="fas fa-home"></i>Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contaco.html"><i class="fas fa-users"></i>Contacta con
-                                nosotros</a>
+                            <a class="nav-link nav-li" href="index.html">Volver</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-
-    <main class="gestion_main">
-        <label for="" class="gestion_main-label">Sección de Turnos</label>
-        <article class="gestion_main-busqueda">
-            <div class="gestion_main-busqueda-div">
-                <div class="gestion_main-label-div">
-                    <label for="">Cancha</label>
-                    <select name="" id="">
-                        <option value="" disabled selected hidden>Seleccione Cancha</option>
-                        <option value="">Cancha N°1</option>
-                        <option value="">Cancha N°2</option>
-                        <option value="">Cancha N°3</option>
-                    </select>
-                </div>
-                <div class="gestion_main-label-div">
-                    <label for="">Día</label>
-                    <input type="date" id="date-input">
-                </div>
-                <div class="gestion_main-label-div">
-                    <label for="">Hora</label>
-                    <input type="time" id="currentTime">
-                </div>
-                <div class="gestion_main-label-div">
-                    <button id="search-button" class="btn btn-primary">Buscar</button>
-                </div>
-            </div>
-        </article>
+    <div class="container my-5">
+        <h1>Gestión de Turnos de Canchas</h1>
         
-        <div class="gestion_main-table"> 
-            <div class="table-container">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#ID</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Teléfono</th>
-                            <th scope="col">DNI</th>
-                            <th scope="col">Nro Cancha</th>
-                            <th scope="col">Día</th>
-                            <th scope="col">Hora</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Susana</td>
-                            <td>3444-123456</td>
-                            <td>12345678</td>
-                            <td>1</td>
-                            <td>10/11/2024</td>
-                            <td class="contact">
-                                <div class="contact-container">
-                                    20:00
-                                    <button><i class="fa-solid fa-trash"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Lucas</td>
-                            <td>3444-123456</td>
-                            <td>12345678</td>
-                            <td>2</td>
-                            <td>25/10/2024</td>
-                            <td class="contact">
-                                <div class="contact-container">
-                                    14:00 
-                                    <button><i class="fa-solid fa-trash"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Juan</td>
-                            <td>3444-123456</td>
-                            <td>12345678</td>
-                            <td>3</td>
-                            <td>30/10/2024</td>
-                            <td class="contact">
-                                <div class="contact-container">
-                                    08:00
-                                    <button><i class="fa-solid fa-trash"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Ana</td>
-                            <td>3444-123456</td>
-                            <td>12345678</td>
-                            <td>1</td>
-                            <td>15/11/2024</td>
-                            <td class="contact">
-                                <div class="contact-container">
-                                    19:00
-                                    <button><i class="fa-solid fa-trash"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>Pablo</td>
-                            <td>3444-123456</td>
-                            <td>12345678</td>
-                            <td>2</td>
-                            <td>20/10/2024</td>
-                            <td class="contact">
-                                <div class="contact-container">
-                                    16:00
-                                    <button><i class="fa-solid fa-trash"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">6</th>
-                            <td>María</td>
-                            <td>3444-123456</td>
-                            <td>12345678</td>
-                            <td>3</td>
-                            <td>22/10/2024</td>
-                            <td class="contact">
-                                <div class="contact-container">
-                                    18:00
-                                    <button><i class="fa-solid fa-trash"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">7</th>
-                            <td>Javier</td>
-                            <td>3444-123456</td>
-                            <td>12345678</td>
-                            <td>1</td>
-                            <td>25/10/2024</td>
-                            <td class="contact">
-                                <div class="contact-container">
-                                    17:00
-                                    <button><i class="fa-solid fa-trash"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">8</th>
-                            <td>Carlos</td>
-                            <td>3444-123456</td>
-                            <td>12345678</td>
-                            <td>2</td>
-                            <td>28/10/2024</td>
-                            <td class="contact">
-                                <div class="contact-container">
-                                    15:00
-                                    <button><i class="fa-solid fa-trash"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+        <!-- Filtros de búsqueda -->
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="cancha-filter">Cancha:</label>
+                <select id="cancha-filter" class="form-select">
+                    <option value="">Todas</option>
+                    <option value="1">Cancha N°1</option>
+                    <option value="2">Cancha N°2</option>
+                    <option value="3">Cancha N°3</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="date-filter">Día:</label>
+                <input type="date" id="date-filter" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label for="time-filter">Hora:</label>
+                <input type="time" id="time-filter" class="form-control">
             </div>
         </div>
-
-        <label for="" class="gestion_main-label">Sección de Usuarios</label>
-        <article class="gestion_main-busqueda">
-            <div class="gestion_main-busqueda-div">
-                <div class="gestion_main-label-div">
-                    <label for="">Nombre de Usuario</label>
-                    <input type="text" name="" id="" placeholder="Ingrese usuario">
-                    <button id="search-user-button" class="btn btn-primary">Buscar Usuario</button>
-                </div>
-            </div>
-        </article>
         
-        <div class="gestion_main-table"> 
-            <div class="table-container">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#ID</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Teléfono</th>
-                            <th scope="col">DNI</th>
-                            <th scope="col">Fecha de Registro</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                                <td>1</td>
-                                <td>Lautaro</td>
-                                <td>lautarovillabona@gmail.com</td>
-                                <td>3444-123456</td>
-                                <td>12345678</td>
-                                <td class="contact">
-                                    <div class="contact-container">
-                                        25/10/2024
-                                            <form style="display:inline;">
-                                                <button type="submit" onclick="confirmarEliminar()"><i class="fa-solid fa-trash"></i></button>
-                                            </form>
-                                    </div>
-                                </td>
-                            </tr>
-                    </tbody>
-                        
-                </table>
+        <!-- Tabla -->
+        <table id="turnos-table" class="display table table-striped">
+            <thead>
+                <tr>
+                    <th>#ID</th>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>DNI</th>
+                    <th>Cancha</th>
+                    <th>Día</th>
+                    <th>Hora</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Ejemplo de datos. Aquí puedes añadir más filas según sea necesario. -->
+                <tr><td>1</td><td>Susana</td><td>3444-123456</td><td>12345678</td><td>1</td><td>2024-11-10</td>
+                    <td class="contact">
+                        <div class="contact-container">
+                            20:00
+                                <form style="display:inline;">
+                                    <button type="submit" onclick="confirmarEliminar()"><i class="fa-solid fa-trash"></i></button>
+                                </form>
+                        </div>
+                    </td>
+                </tr>
+                <tr><td>2</td><td>Lucas</td><td>3444-123456</td><td>12345678</td><td>2</td><td>2024-10-25</td>
+                    <td class="contact">
+                        <div class="contact-container">
+                            14:00
+                                <form style="display:inline;">
+                                    <button type="submit" onclick="confirmarEliminar()"><i class="fa-solid fa-trash"></i></button>
+                                </form>
+                        </div>
+                    </td>
+                </tr>
+                <tr><td>3</td><td>Juan</td><td>3444-123456</td><td>12345678</td><td>3</td><td>2024-10-30</td>
+                    <td class="contact">
+                        <div class="contact-container">
+                            08:00
+                                <form style="display:inline;">
+                                    <button type="submit" onclick="confirmarEliminar()"><i class="fa-solid fa-trash"></i></button>
+                                </form>
+                        </div>
+                    </td>
+                </tr>
+                <tr><td>4</td><td>Ana</td><td>3444-123456</td><td>12345678</td><td>1</td><td>2024-11-15</td>
+                    <td class="contact">
+                        <div class="contact-container">
+                            19:00
+                                <form style="display:inline;">
+                                    <button type="submit" onclick="confirmarEliminar()"><i class="fa-solid fa-trash"></i></button>
+                                </form>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Más filas aquí -->
+            </tbody>
+        </table>
+
+
+    <!-- Nueva Tabla de Usuarios -->
+<h2 class="mt-5">Gestión de Usuarios</h2>
+
+<!-- Tabla -->
+<table id="usuarios-table" class="display table table-striped">
+    <thead>
+        <tr>
+            <th>ID Usuario</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>DNI</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Ejemplo de datos -->
+        <tr><td>101</td><td>Pedro Gomez</td><td>pedro@example.com</td><td>3444-123456</td>                    
+            <td class="contact">
+            <div class="contact-container">
+                12345678
+                    <form style="display:inline;">
+                        <button type="submit" onclick="confirmarEliminar()"><i class="fa-solid fa-trash"></i></button>
+                    </form>
             </div>
-        </div>
-    </main>
-    
-    <footer class="login_footer gestion_footer">
+        </td></tr>
+        <tr><td>102</td><td>Laura Díaz</td><td>laura@example.com</td><td>3444-234567</td>                    
+            <td class="contact">
+            <div class="contact-container">
+                87654321
+                    <form style="display:inline;">
+                        <button type="submit" onclick="confirmarEliminar()"><i class="fa-solid fa-trash"></i></button>
+                    </form>
+            </div>
+        </td></tr>
+        <tr><td>103</td><td>Mario López</td><td>mario@example.com</td><td>3444-345678</td>                    
+            <td class="contact">
+            <div class="contact-container">
+                23456789
+                    <form style="display:inline;">
+                        <button type="submit" onclick="confirmarEliminar()"><i class="fa-solid fa-trash"></i></button>
+                    </form>
+            </div>
+        </td></tr>
+        <tr><td>104</td><td>Lucía Fernández</td><td>lucia@example.com</td><td>3444-456789</td>                    
+            <td class="contact">
+            <div class="contact-container">
+                98765432
+                    <form style="display:inline;">
+                        <button type="submit" onclick="confirmarEliminar()"><i class="fa-solid fa-trash"></i></button>
+                    </form>
+            </div>
+        </td></tr>
+        <!-- Más filas aquí -->
+    </tbody>
+</table>
+</div>
+    <footer class="login_footer">
         <div>
             <p>&copy; 2024 Mi Página Web. Todos los derechos reservados.</p>
         </div>
     </footer>
+<script>
+    $(document).ready(function() {
+        var usuariosTable = $('#usuarios-table').DataTable();
 
-    <script src="JS/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-oHjx88yXgJqRdj4/9e5P4iNfrGo+CK6IP3TqMw3yTqZ+W4LG9U2lN7T/0FX6mRM"
-        crossorigin="anonymous"></script>
+        // Filtro de búsqueda
+        $('#user-search').on('keyup', function() {
+            usuariosTable.search(this.value).draw();
+        });
+    });
+
+        $(document).ready(function() {
+            var table = $('#turnos-table').DataTable();
+
+            // Filtro por cancha
+            $('#cancha-filter').on('change', function() {
+                var cancha = $(this).val();
+                table.column(4).search(cancha).draw();
+            });
+
+            // Filtro por día
+            $('#date-filter').on('change', function() {
+                var date = $(this).val();
+                table.column(5).search(date).draw();
+            });
+
+            // Filtro por hora
+            $('#time-filter').on('change', function() {
+                var time = $(this).val();
+                table.column(6).search(time).draw();
+            });
+        });
+    </script>
 </body>
-
 </html>

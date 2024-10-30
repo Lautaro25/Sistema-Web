@@ -8,31 +8,6 @@ function navigateToPage() {
 }
 
 
-/*Muestras para Usuarios con Cuenta*/
-
-// Define la variable account en el ámbito global y empieza como 
-if(document.title==="Alquilá tu Cancha"){
-let decide = prompt("Decide (true/false)");
-let account;
-
-// Verifica si la entrada del usuario es "true" (ignorando mayúsculas/minúsculas)
-if (decide.trim().toLowerCase() === "true") {
-    account = true;
-}
-// Verifica si la entrada del usuario es "false" (ignorando mayúsculas/minúsculas)
-else if (decide.trim().toLowerCase() === "false") {
-    account = false;
-}
-// Si la entrada no es ni "true" ni "false", muestra un mensaje de error
-else {
-    alert("Entrada inválida. Por favor, ingresa 'true' o 'false'.");
-}
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    updateMenu();
-});
-
 function updateMenu() {
     let withAccountElements = document.getElementsByClassName('with-acount');
     let withoutAccountElements = document.getElementsByClassName('without-acount');
@@ -68,8 +43,6 @@ document.getElementById('Select').addEventListener('change', function () {
     }
 });
 
-updateMenu(); // Actualiza el menú inicialmente
-}   
 function navigateToPage(url) {
     if (url === 'perfil') {
 const modal = document.querySelector('.modal-perfil');
@@ -573,4 +546,3 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-

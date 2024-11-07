@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="icon" href="Img/iconoWeb2.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
     <title>Alquilá tu Cancha</title>
 </head>
 
@@ -187,9 +190,18 @@
                         <div class="form-group">
                             <label for="hora">Hora</label>
                             
-                            <select id="hora" name="horario" required>
-                                <!-- Opciones generadas por JavaScript -->
-                            </select>
+                            <input type="time" id="timePicker" placeholder="Selecciona una hora">
+
+<script>
+    flatpickr("#timePicker", {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+        time_24hr: true,
+        minuteIncrement: 30 // Intervalo de 30 minutos
+    });
+</script>
+
                             <small id="horaError" class="error"></small> <!-- Mensaje de error -->
                         </div>
                     </div>
